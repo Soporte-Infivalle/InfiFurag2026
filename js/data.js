@@ -29,20 +29,26 @@ const DataLoader = (() => {
 
   return {
     async load(filePath, sheetName) {
-      // Cache-bust so updates to the xlsx are picked up
       const url = `${filePath}?v=${Date.now()}`;
+      console.log('[DataLoader] Intentando cargar:', url);
+
       const res = await fetch(url);
+      console.log('[DataLoader] HTTP:', res.status, res.statusText);
 
       if (!res.ok) {
-        throw new Error(`HTTP ${res.status} al cargar ${filePath}`);
+        throw new Error(`HTTP ${res.status} — archivo no encontrado en: ${url}`);
       }
 
       const buffer = await res.arrayBuffer();
       const wb     = XLSX.read(buffer, { type: 'array' });
       const ws     = wb.Sheets[sheetName];
 
+      console.log('[DataLoader] Hojas disponibles:', Object.keys(wb.Sheets));
+
       if (!ws) {
-        throw new Error(`Hoja "${sheetName}" no encontrada en el archivo.`);
+        throw new Error(
+          `Hoja "${sheetName}" no encontrada. Hojas disponibles: ${Object.keys(wb.Sheets).join(', ')}`
+        );
       }
 
       const questions = parseSheet(ws);
@@ -51,6 +57,7 @@ const DataLoader = (() => {
         throw new Error('El archivo no contiene preguntas válidas.');
       }
 
+      console.log('[DataLoader] Preguntas cargadas:', questions.length);
       return questions;
     },
   };

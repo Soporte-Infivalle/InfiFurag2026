@@ -9,7 +9,7 @@ const CONFIG = {
   WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbz-05-Uhc7-OyA2-xmCpOBKmqP8nlxFkvWvMcwD_qEuIet_iy2IMYbG7ipICNoGWHnMYw/exec',
 
   // Ruta al archivo de preguntas dentro del repo (no cambiar si usas la estructura por defecto)
-  DATA_FILE: 'data/preguntas.xlsx',
+  DATA_FILE: '/InfiFurag2026/data/preguntas.xlsx',
 
   // Nombre del Sheet de la hoja de preguntas dentro del xlsx
   SHEET_NAME: 'Preguntas',
