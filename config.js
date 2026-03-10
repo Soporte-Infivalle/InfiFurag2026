@@ -6,7 +6,7 @@
 const CONFIG = {
   // URL del Apps Script que recibe y guarda las respuestas en Google Sheets
   // Ver instrucciones en README.md → Paso 3
-  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbxGIV9OeCRgU6Fm31DfAZvL3JUpeAjQp-BHpZgdgSMrbFSgM0XFy6blziGOCwxmaR_v2A/exec',
+  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbz-05-Uhc7-OyA2-xmCpOBKmqP8nlxFkvWvMcwD_qEuIet_iy2IMYbG7ipICNoGWHnMYw/exec',
 
   // Ruta al archivo de preguntas dentro del repo (no cambiar si usas la estructura por defecto)
   DATA_FILE: 'data/preguntas.xlsx',
