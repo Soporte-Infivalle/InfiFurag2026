@@ -39,11 +39,12 @@ const App = (() => {
     UI.setLoadingMsg('Cargando preguntas…');
 
     try {
-      const questions = await DataLoader.load(CONFIG.DATA_FILE, CONFIG.SHEET_NAME);
+      const questions = await DataLoader.load(CONFIG.DATA_FILE);
       State.setQuestions(questions);
       ModulesScreen.render();
       UI.show('s-modules');
     } catch (err) {
+      console.error('[App] Error en boot:', err);
       UI.showError(err.message);
     }
   }
@@ -79,9 +80,7 @@ const App = (() => {
 
     try {
       const ok = await Submitter.send(mod, nombre, entidad);
-      if (ok) {
-        UI.show('s-success');
-      }
+      if (ok) UI.show('s-success');
     } catch (err) {
       UI.toast('Error al enviar: ' + err.message, 'error');
     } finally {
@@ -94,4 +93,5 @@ const App = (() => {
 })();
 
 // ── Start ────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => App.boot());
+// Scripts están al final del <body>, el DOM ya está listo.
+App.boot();
