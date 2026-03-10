@@ -1,0 +1,36 @@
+/* ══════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════ */
+
+.app-header {
+  background: var(--navy);
+  height: 60px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(15,31,61,.35);
+}
+
+.header-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: .02em;
+}
+.header-logo em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.header-badge {
+  font-size: .72rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px;
+  padding: 3px 12px;
+}

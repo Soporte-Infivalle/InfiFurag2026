@@ -1,890 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FURAG 2025 — Formulario de Respuestas</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<!-- SheetJS for reading .xlsx -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<style>
-:root {
-  --navy:     #0f1f3d;
-  --navy-mid: #1a3260;
-  --blue:     #2255cc;
-  --blue-lt:  #3b72ff;
-  --accent:   #f0b429;
-  --green:    #0d9e6e;
-  --red:      #dc2626;
-  --bg:       #f4f6fb;
-  --surface:  #ffffff;
-  --border:   #dde3f0;
-  --text:     #1a2340;
-  --muted:    #6b7a99;
-  --r:        12px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURAG 2025 — Formulario de Respuestas</title>
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
-/* ── HEADER ─────────────────────────────────────── */
-header {
-  background: var(--navy);
-  height: 60px;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 16px rgba(15,31,61,.35);
-}
-.logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.25rem;
-  color: #fff;
-}
-.logo em { color: var(--accent); font-style: normal; }
-.hbadge {
-  font-size: .72rem;
-  font-weight: 500;
-  color: rgba(255,255,255,.65);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 20px;
-  padding: 3px 12px;
-}
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/ui.css">
 
-/* ── SCREENS ─────────────────────────────────────── */
-.screen { display: none; }
-.screen.active { display: block; }
+  <!-- SheetJS — reads .xlsx without server -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
 
-/* ── LOADING ─────────────────────────────────────── */
-#s-loading {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-}
-.spinner {
-  width: 44px; height: 44px;
-  border: 3px solid var(--border);
-  border-top-color: var(--blue);
-  border-radius: 50%;
-  animation: spin .75s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.loading-msg { color: var(--muted); font-size: .9rem; }
-
-/* ── MODULE SCREEN ───────────────────────────────── */
-#s-modules {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 2.75rem 1.5rem 4rem;
-}
-.page-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.9rem;
-  color: var(--navy);
-  margin-bottom: .4rem;
-}
-.page-sub {
-  color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.7;
-  margin-bottom: 2.25rem;
-}
-
-/* Identity row */
-.id-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.field label {
-  display: block;
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  margin-bottom: 5px;
-}
-.field input {
-  width: 100%;
-  padding: 9px 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .875rem;
-  color: var(--text);
-  background: var(--surface);
-  transition: border-color .2s, box-shadow .2s;
-}
-.field input:focus {
-  outline: none;
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(34,85,204,.1);
-}
-
-/* Module grid */
-.section-label {
-  font-size: .78rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 1rem;
-}
-.mod-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-  gap: .875rem;
-}
-.mod-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--r);
-  padding: 1.1rem 1.15rem .9rem;
-  cursor: pointer;
-  transition: transform .18s, box-shadow .18s, border-color .18s;
-  position: relative;
-  overflow: hidden;
-}
-.mod-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .2s;
-}
-.mod-card:hover {
-  border-color: var(--blue-lt);
-  box-shadow: 0 6px 24px rgba(34,85,204,.13);
-  transform: translateY(-2px);
-}
-.mod-card:hover::after { transform: scaleX(1); }
-.mod-card.done { border-color: #86efac; }
-.mod-card.done::after { background: var(--green); transform: scaleX(1); }
-.mod-card.partial::after { background: var(--accent); transform: scaleX(1); }
-
-.mod-code {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.35rem;
-  color: var(--navy);
-  margin-bottom: 3px;
-}
-.mod-name {
-  font-size: .75rem;
-  color: var(--muted);
-  font-weight: 500;
-  line-height: 1.4;
-  margin-bottom: .7rem;
-}
-.mod-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.mod-count {
-  font-size: .72rem;
-  font-weight: 600;
-  background: var(--bg);
-  color: var(--navy-mid);
-  padding: 2px 8px;
-  border-radius: 20px;
-}
-.mod-prog {
-  font-size: .7rem;
-  font-weight: 600;
-  color: var(--green);
-}
-.mod-prog.partial { color: var(--accent); }
-
-/* ── FORM SCREEN ─────────────────────────────────── */
-#s-form {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 6rem;
-}
-.form-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-.btn-back {
-  flex-shrink: 0;
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font-size: .82rem;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  color: var(--text);
-  transition: border-color .15s, color .15s;
-  margin-top: 4px;
-}
-.btn-back:hover { border-color: var(--blue); color: var(--blue); }
-.form-titles .mod-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.45rem;
-  color: var(--navy);
-}
-.form-titles .mod-subtitle { font-size: .82rem; color: var(--muted); margin-top: 2px; }
-
-/* Progress */
-.prog-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: .76rem;
-  color: var(--muted);
-  margin-bottom: 5px;
-}
-.prog-track {
-  height: 5px;
-  background: var(--border);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-.prog-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--blue), var(--blue-lt));
-  border-radius: 3px;
-  transition: width .4s ease;
-}
-
-/* Question cards */
-.q-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--r);
-  padding: 1.6rem;
-  margin-bottom: 1.1rem;
-  transition: border-color .2s;
-}
-.q-card.answered { border-color: #86efac; background: #f0fdf4; }
-
-.q-top {
-  display: flex;
-  gap: .9rem;
-  align-items: flex-start;
-  margin-bottom: .85rem;
-}
-.q-badge {
-  flex-shrink: 0;
-  background: var(--navy);
-  color: #fff;
-  font-size: .68rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 20px;
-  margin-top: 3px;
-  letter-spacing: .03em;
-}
-.q-text {
-  font-size: .92rem;
-  line-height: 1.65;
-  font-weight: 500;
-}
-.q-type-label {
-  font-size: .68rem;
-  color: var(--muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  margin-bottom: .85rem;
-}
-
-/* Options */
-.opts { display: flex; flex-direction: column; gap: 7px; }
-.opt {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 9px 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: border-color .15s, background .15s;
-  user-select: none;
-}
-.opt:hover { border-color: var(--blue-lt); background: #f0f4ff; }
-.opt.sel { border-color: var(--blue); background: #eef2ff; }
-.opt input { accent-color: var(--blue); flex-shrink: 0; margin-top: 2px; width: 15px; height: 15px; cursor: pointer; }
-.opt-lbl { font-size: .86rem; line-height: 1.5; cursor: pointer; }
-
-/* Text inputs */
-.q-textarea {
-  width: 100%;
-  padding: 10px 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .875rem;
-  color: var(--text);
-  resize: vertical;
-  min-height: 88px;
-  transition: border-color .2s;
-}
-.q-textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(34,85,204,.1); }
-.q-number {
-  padding: 9px 13px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .875rem;
-  width: 180px;
-  transition: border-color .2s;
-}
-.q-number:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(34,85,204,.1); }
-
-/* Submit bar */
-.submit-bar {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border);
-  padding: .875rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 50;
-  gap: 1rem;
-}
-.bar-info { font-size: .82rem; color: var(--muted); }
-.bar-info strong { color: var(--text); }
-.btn-submit {
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 22px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, transform .15s;
-  white-space: nowrap;
-}
-.btn-submit:hover { background: var(--navy-mid); transform: translateY(-1px); }
-.btn-submit:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
-
-/* ── SUCCESS ─────────────────────────────────────── */
-#s-success {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-.success-icon {
-  width: 68px; height: 68px;
-  background: #dcfce7;
-  border-radius: 50%;
-  font-size: 1.9rem;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.25rem;
-}
-.success-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.7rem;
-  color: var(--navy);
-  margin-bottom: .4rem;
-}
-.success-sub { color: var(--muted); font-size: .9rem; margin-bottom: 1.75rem; }
-.btn-outline {
-  background: transparent;
-  color: var(--blue);
-  border: 1.5px solid var(--blue);
-  border-radius: 8px;
-  padding: 9px 22px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, color .2s;
-}
-.btn-outline:hover { background: var(--blue); color: #fff; }
-
-/* ── ERROR SCREEN ────────────────────────────────── */
-#s-error {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  gap: 1rem;
-}
-.err-icon { font-size: 2.5rem; }
-.err-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); }
-.err-msg { color: var(--muted); font-size: .875rem; max-width: 420px; line-height: 1.6; }
-.err-code {
-  background: #fff1f2;
-  border: 1px solid #fecdd3;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: .8rem;
-  color: var(--red);
-  font-family: monospace;
-  max-width: 420px;
-  word-break: break-all;
-}
-
-/* ── TOAST ───────────────────────────────────────── */
-.toast {
-  position: fixed;
-  bottom: 72px; right: 1.25rem;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: .83rem;
-  font-weight: 500;
-  z-index: 300;
-  max-width: 300px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .3s, transform .3s;
-  pointer-events: none;
-}
-.toast.show { opacity: 1; transform: translateY(0); }
-.toast.error { background: var(--red); color: #fff; box-shadow: 0 4px 16px rgba(220,38,38,.3); }
-.toast.success { background: var(--green); color: #fff; box-shadow: 0 4px 16px rgba(13,158,110,.3); }
-.toast.warn { background: #f59e0b; color: #fff; box-shadow: 0 4px 16px rgba(245,158,11,.3); }
-
-/* ── RESPONSIVE ──────────────────────────────────── */
-@media (max-width: 580px) {
-  .id-row { grid-template-columns: 1fr; }
-  .mod-grid { grid-template-columns: repeat(2, 1fr); }
-  .submit-bar { flex-direction: column; align-items: stretch; padding: .75rem 1rem; }
-  .btn-submit { text-align: center; }
-}
-</style>
+  <!-- Config (edit before deploying) -->
+  <script src="config.js"></script>
 </head>
 <body>
 
-<header>
-  <div class="logo">FURAG <em>2025</em></div>
-  <div class="hbadge">Formulario de Respuestas</div>
-</header>
+  <!-- ══ HEADER ══════════════════════════════════════════ -->
+  <header class="app-header">
+    <div class="header-logo">FURAG <em>2025</em></div>
+    <div class="header-badge">Formulario de Respuestas</div>
+  </header>
 
-<!-- LOADING -->
-<div id="s-loading" class="screen active">
-  <div class="spinner"></div>
-  <div class="loading-msg" id="loading-msg">Cargando preguntas…</div>
-</div>
-
-<!-- MODULES -->
-<div id="s-modules" class="screen">
-  <h1 class="page-title">Selecciona tu módulo</h1>
-  <p class="page-sub">
-    Ingresa tu nombre y entidad, luego elige el módulo que te corresponde responder.<br>
-    Las respuestas se guardan automáticamente en Google Sheets.
-  </p>
-
-  <div class="id-row">
-    <div class="field">
-      <label>Tu nombre completo</label>
-      <input type="text" id="inp-nombre" placeholder="Ej: María García" autocomplete="name">
-    </div>
-    <div class="field">
-      <label>Entidad / Dependencia</label>
-      <input type="text" id="inp-entidad" placeholder="Ej: Ministerio de Salud" autocomplete="organization">
-    </div>
+  <!-- ══ SCREEN: LOADING ═════════════════════════════════ -->
+  <div id="s-loading" class="screen active center-screen">
+    <div class="spinner"></div>
+    <p class="loading-msg" id="loading-msg">Cargando preguntas…</p>
   </div>
 
-  <div class="section-label">Módulos disponibles</div>
-  <div class="mod-grid" id="mod-grid"></div>
-</div>
+  <!-- ══ SCREEN: MODULES ═════════════════════════════════ -->
+  <div id="s-modules" class="screen">
+    <div class="page">
+      <h1 class="page-title">Selecciona tu módulo</h1>
+      <p class="page-sub">
+        Ingresa tu nombre y entidad, luego elige el módulo que te corresponde.<br>
+        Las respuestas se guardan automáticamente en Google Sheets.
+      </p>
 
-<!-- FORM -->
-<div id="s-form" class="screen">
-  <div class="form-top">
-    <button class="btn-back" onclick="goBack()">← Volver</button>
-    <div class="form-titles">
-      <div class="mod-title" id="f-title"></div>
-      <div class="mod-subtitle" id="f-subtitle"></div>
+      <div class="id-row">
+        <div>
+          <label class="field-label" for="inp-nombre">Tu nombre completo</label>
+          <input id="inp-nombre" class="input-field" type="text"
+                 placeholder="Ej: María García" autocomplete="name">
+        </div>
+        <div>
+          <label class="field-label" for="inp-entidad">Entidad / Dependencia</label>
+          <input id="inp-entidad" class="input-field" type="text"
+                 placeholder="Ej: Ministerio de Salud" autocomplete="organization">
+        </div>
+      </div>
+
+      <div class="section-label">Módulos disponibles</div>
+      <div class="mod-grid" id="mod-grid"></div>
     </div>
   </div>
 
-  <div class="prog-header">
-    <span id="prog-label">0 de 0 respondidas</span>
-    <span id="prog-pct">0%</span>
-  </div>
-  <div class="prog-track">
-    <div class="prog-fill" id="prog-fill" style="width:0%"></div>
-  </div>
+  <!-- ══ SCREEN: FORM ════════════════════════════════════ -->
+  <div id="s-form" class="screen">
+    <div class="page-narrow">
+      <div class="form-top">
+        <button class="btn btn-ghost" onclick="App.closeModule()">← Volver</button>
+        <div class="form-titles">
+          <div class="mod-title"  id="f-title"></div>
+          <div class="mod-subtitle" id="f-subtitle"></div>
+        </div>
+      </div>
 
-  <div id="q-list"></div>
+      <div class="prog-header">
+        <span id="prog-label">0 de 0 respondidas</span>
+        <span id="prog-pct">0%</span>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="prog-fill" style="width: 0%"></div>
+      </div>
 
-  <div class="submit-bar">
-    <div class="bar-info">
-      <strong id="bar-ans">0</strong> respondidas ·
-      <strong id="bar-pend">0</strong> pendientes
+      <div id="q-list"></div>
     </div>
-    <button class="btn-submit" id="btn-submit" onclick="submitAnswers()">
-      Guardar respuestas ↗
+
+    <div class="submit-bar">
+      <div class="bar-info">
+        <strong id="bar-ans">0</strong> respondidas ·
+        <strong id="bar-pend">0</strong> pendientes
+      </div>
+      <button id="btn-submit" class="btn btn-primary"
+              onclick="App.submitAnswers()">
+        Guardar respuestas ↗
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN: SUCCESS ═════════════════════════════════ -->
+  <div id="s-success" class="screen center-screen">
+    <div class="success-icon">✓</div>
+    <h2 class="success-title">¡Enviado correctamente!</h2>
+    <p class="success-sub">Tus respuestas fueron guardadas en Google Sheets.</p>
+    <button class="btn btn-outline" onclick="App.closeModule()">
+      Responder otro módulo
     </button>
   </div>
-</div>
 
-<!-- SUCCESS -->
-<div id="s-success" class="screen">
-  <div class="success-icon">✓</div>
-  <h2 class="success-title">¡Enviado correctamente!</h2>
-  <p class="success-sub">Tus respuestas fueron guardadas en Google Sheets.</p>
-  <button class="btn-outline" onclick="goBack()">Responder otro módulo</button>
-</div>
-
-<!-- ERROR -->
-<div id="s-error" class="screen">
-  <div class="err-icon">⚠️</div>
-  <div class="err-title">No se pudo cargar el archivo</div>
-  <div class="err-msg">
-    Asegúrate de que el archivo <code>data/preguntas.xlsx</code> existe en el repositorio
-    y que <code>config.js</code> tiene la ruta correcta.
+  <!-- ══ SCREEN: ERROR ═══════════════════════════════════ -->
+  <div id="s-error" class="screen center-screen">
+    <div class="err-icon">⚠️</div>
+    <div class="err-title">No se pudo cargar el archivo</div>
+    <p class="err-msg">
+      Verifica que <code>data/preguntas.xlsx</code> existe en el repositorio
+      y que <code>config.js</code> tiene los valores correctos.
+    </p>
+    <div class="err-code" id="err-detail"></div>
+    <button class="btn btn-outline" onclick="location.reload()">Reintentar</button>
   </div>
-  <div class="err-code" id="err-detail"></div>
-  <button class="btn-outline" onclick="location.reload()">Reintentar</button>
-</div>
 
-<div class="toast" id="toast"></div>
+  <!-- ══ TOAST ════════════════════════════════════════════ -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
-<!-- Config — loaded before app logic -->
-<script src="config.js"></script>
+  <!-- ══ SCRIPTS (order matters) ═════════════════════════ -->
+  <script src="js/state.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/submit.js"></script>
+  <script src="js/app.js"></script>
 
-<script>
-// ══════════════════════════════════════════════════════════
-//  MODULE NAMES
-// ══════════════════════════════════════════════════════════
-const MODULE_NAMES = {
-  CCP: 'Control de Corrupción y Protección',
-  CIN: 'Control Interno',
-  DJU: 'Defensa Jurídica',
-  EMI: 'Emisiones y Medio Ambiente',
-  FIN: 'Financiero',
-  FOR: 'Fortalecimiento Organizacional',
-  GCI: 'Gestión Ciudadana',
-  GDI: 'Gestión de la Información',
-  GDO: 'Gestión Documental',
-  GTH: 'Gestión del Talento Humano',
-  INT: 'Integridad',
-  PCI: 'Participación Ciudadana',
-  PER: 'Percepción',
-  PLA: 'Planeación',
-  SDI: 'Seguridad Digital',
-  SEC: 'Servicio al Ciudadano',
-  SYE: 'Seguimiento y Evaluación',
-  THI: 'Tecnologías de la Información',
-  TRA: 'Transparencia',
-};
-
-// ══════════════════════════════════════════════════════════
-//  STATE
-// ══════════════════════════════════════════════════════════
-let questions    = [];      // all parsed questions
-let currentMod   = null;    // active module code
-let responses    = {};      // { qId: value }
-let savedState   = JSON.parse(localStorage.getItem('furag25_state') || '{}');
-//  savedState structure: { [modulo]: { [qId]: value } }
-
-// ══════════════════════════════════════════════════════════
-//  BOOT — load xlsx via SheetJS
-// ══════════════════════════════════════════════════════════
-async function boot() {
-  setMsg('Cargando preguntas desde el archivo…');
-  try {
-    const url = CONFIG.DATA_FILE + '?v=' + Date.now(); // cache-bust
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} al cargar ${CONFIG.DATA_FILE}`);
-    const buf = await res.arrayBuffer();
-    const wb  = XLSX.read(buf, { type: 'array' });
-    const ws  = wb.Sheets[CONFIG.SHEET_NAME];
-    if (!ws) throw new Error(`Hoja "${CONFIG.SHEET_NAME}" no encontrada en el archivo.`);
-    const rows = XLSX.utils.sheet_to_json(ws, { defval: null });
-    questions = rows
-      .filter(r => r['ID'] && r['Pregunta 2025'])
-      .map(r => {
-        const opciones = [];
-        for (let i = 1; i <= 15; i++) {
-          const v = r[`Opción ${i}`];
-          if (v && String(v).trim()) opciones.push(String(v).trim());
-        }
-        const cod = String(r['Código'] || '');
-        return {
-          id:      r['ID'],
-          codigo:  cod,
-          modulo:  cod.substring(0, 3),
-          texto:   String(r['Pregunta 2025']),
-          tipo:    String(r['Tipo de pregunta'] || 'Selección única'),
-          opciones,
-        };
-      });
-    if (questions.length === 0) throw new Error('El archivo no tiene preguntas válidas.');
-    renderModules();
-    show('s-modules');
-  } catch (err) {
-    document.getElementById('err-detail').textContent = err.message;
-    show('s-error');
-  }
-}
-
-// ══════════════════════════════════════════════════════════
-//  SCREENS
-// ══════════════════════════════════════════════════════════
-function show(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-function setMsg(t) { document.getElementById('loading-msg').textContent = t; }
-
-// ══════════════════════════════════════════════════════════
-//  MODULE SCREEN
-// ══════════════════════════════════════════════════════════
-function renderModules() {
-  const mods = [...new Set(questions.map(q => q.modulo))].sort();
-  document.getElementById('mod-grid').innerHTML = mods.map(m => {
-    const qs      = questions.filter(q => q.modulo === m);
-    const modSaved = savedState[m] || {};
-    const done    = Object.values(modSaved).filter(v =>
-      Array.isArray(v) ? v.length > 0 : (v !== undefined && v !== '')
-    ).length;
-    const total = qs.length;
-    const pct   = total ? Math.round(done / total * 100) : 0;
-    const cls   = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
-    return `
-      <div class="mod-card ${cls}" onclick="openModule('${m}')">
-        <div class="mod-code">${m}</div>
-        <div class="mod-name">${MODULE_NAMES[m] || m}</div>
-        <div class="mod-footer">
-          <span class="mod-count">${total} preguntas</span>
-          ${pct > 0 ? `<span class="mod-prog ${pct<100?'partial':''}">${pct}%</span>` : ''}
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function goBack() {
-  currentMod = null;
-  responses  = {};
-  renderModules();
-  show('s-modules');
-  window.scrollTo(0, 0);
-}
-
-// ══════════════════════════════════════════════════════════
-//  FORM SCREEN
-// ══════════════════════════════════════════════════════════
-function openModule(mod) {
-  const nombre = document.getElementById('inp-nombre').value.trim();
-  if (!nombre) {
-    toast('Ingresa tu nombre antes de continuar', 'warn');
-    document.getElementById('inp-nombre').focus();
-    return;
-  }
-  currentMod = mod;
-  responses  = savedState[mod] ? { ...savedState[mod] } : {};
-
-  const qs = questions.filter(q => q.modulo === mod);
-  document.getElementById('f-title').textContent    = `Módulo ${mod} — ${MODULE_NAMES[mod] || ''}`;
-  document.getElementById('f-subtitle').textContent = `${qs.length} preguntas · ${MODULE_NAMES[mod] || ''}`;
-
-  document.getElementById('q-list').innerHTML = qs.map(q => buildCard(q)).join('');
-  updateProgress(qs);
-  show('s-form');
-  window.scrollTo(0, 0);
-}
-
-// ── Build question card HTML ──────────────────────────────
-function buildCard(q) {
-  const answered = isAnswered(q.id);
-  const tipo = q.tipo || 'Selección única';
-  let input = '';
-
-  if (tipo === 'Selección múltiple' || tipo === 'Selección múltiple numérica') {
-    const sel = Array.isArray(responses[q.id]) ? responses[q.id] : [];
-    input = `<div class="opts">${q.opciones.map(op => {
-      const chk = sel.includes(op);
-      return `<label class="opt${chk ? ' sel' : ''}">
-        <input type="checkbox" name="q${q.id}" value="${esc(op)}"${chk ? ' checked' : ''}
-          onchange="onCheck(${q.id},this)">
-        <span class="opt-lbl">${esc(op)}</span>
-      </label>`;
-    }).join('')}</div>`;
-
-  } else if (tipo === 'Selección única') {
-    input = `<div class="opts">${q.opciones.map(op => {
-      const chk = responses[q.id] === op;
-      return `<label class="opt${chk ? ' sel' : ''}">
-        <input type="radio" name="q${q.id}" value="${esc(op)}"${chk ? ' checked' : ''}
-          onchange="onRadio(${q.id},this)">
-        <span class="opt-lbl">${esc(op)}</span>
-      </label>`;
-    }).join('')}</div>`;
-
-  } else if (tipo === 'Abierta numérica') {
-    input = `<input type="number" class="q-number"
-      value="${responses[q.id] || ''}"
-      placeholder="Ingresa un número"
-      oninput="onText(${q.id},this.value)">`;
-
-  } else {
-    input = `<textarea class="q-textarea"
-      placeholder="Escribe tu respuesta…"
-      oninput="onText(${q.id},this.value)">${responses[q.id] || ''}</textarea>`;
-  }
-
-  return `
-    <div class="q-card${answered ? ' answered' : ''}" id="qc${q.id}">
-      <div class="q-top">
-        <span class="q-badge">${esc(q.codigo)}</span>
-        <span class="q-text">${esc(q.texto)}</span>
-      </div>
-      <div class="q-type-label">${esc(tipo)}</div>
-      ${input}
-    </div>`;
-}
-
-// ── Event handlers ────────────────────────────────────────
-function onCheck(qId, el) {
-  const vals = [...document.querySelectorAll(`input[name="q${qId}"]:checked`)].map(i => i.value);
-  responses[qId] = vals.length ? vals : undefined;
-  el.closest('.opt').classList.toggle('sel', el.checked);
-  autosave();
-}
-
-function onRadio(qId, el) {
-  responses[qId] = el.value;
-  document.querySelectorAll(`input[name="q${qId}"]`)
-    .forEach(r => r.closest('.opt').classList.toggle('sel', r.checked));
-  autosave();
-}
-
-function onText(qId, val) {
-  responses[qId] = val.trim() || undefined;
-  autosave();
-}
-
-// ── Autosave + progress update ────────────────────────────
-function autosave() {
-  savedState[currentMod] = { ...responses };
-  localStorage.setItem('furag25_state', JSON.stringify(savedState));
-
-  // Update card answered style
-  const qs = questions.filter(q => q.modulo === currentMod);
-  qs.forEach(q => {
-    const card = document.getElementById('qc' + q.id);
-    if (card) card.classList.toggle('answered', isAnswered(q.id));
-  });
-  updateProgress(qs);
-}
-
-function isAnswered(qId) {
-  const v = responses[qId];
-  return v !== undefined && v !== '' && !(Array.isArray(v) && v.length === 0);
-}
-
-function updateProgress(qs) {
-  const ans   = qs.filter(q => isAnswered(q.id)).length;
-  const total = qs.length;
-  const pct   = total ? Math.round(ans / total * 100) : 0;
-  document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('prog-label').textContent = `${ans} de ${total} respondidas`;
-  document.getElementById('prog-pct').textContent   = pct + '%';
-  document.getElementById('bar-ans').textContent    = ans;
-  document.getElementById('bar-pend').textContent   = total - ans;
-}
-
-// ══════════════════════════════════════════════════════════
-//  SUBMIT
-// ══════════════════════════════════════════════════════════
-async function submitAnswers() {
-  if (!CONFIG.WEBHOOK_URL) {
-    toast('Configura WEBHOOK_URL en config.js', 'warn');
-    return;
-  }
-  const nombre  = document.getElementById('inp-nombre').value.trim();
-  const entidad = document.getElementById('inp-entidad').value.trim();
-  const qs      = questions.filter(q => q.modulo === currentMod);
-  const rows    = qs
-    .filter(q  => isAnswered(q.id))
-    .map(q => ({
-      timestamp:   new Date().toISOString(),
-      nombre,
-      entidad,
-      modulo:      currentMod,
-      id_pregunta: q.id,
-      codigo:      q.codigo,
-      pregunta:    q.texto,
-      tipo:        q.tipo,
-      respuesta:   Array.isArray(responses[q.id])
-                     ? responses[q.id].join(' | ')
-                     : (responses[q.id] || ''),
-    }));
-
-  if (!rows.length) { toast('No hay respuestas para guardar', 'warn'); return; }
-
-  const btn = document.getElementById('btn-submit');
-  btn.disabled    = true;
-  btn.textContent = 'Guardando…';
-
-  try {
-    await fetch(CONFIG.WEBHOOK_URL, {
-      method:  'POST',
-      mode:    'no-cors',          // Apps Script requires no-cors
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ rows }),
-    });
-    // no-cors means we can't read the response — assume success
-    savedState[currentMod] = { ...responses };
-    localStorage.setItem('furag25_state', JSON.stringify(savedState));
-    show('s-success');
-  } catch (err) {
-    toast('Error al enviar: ' + err.message, 'error');
-    btn.disabled    = false;
-    btn.textContent = 'Guardar respuestas ↗';
-  }
-}
-
-// ══════════════════════════════════════════════════════════
-//  HELPERS
-// ══════════════════════════════════════════════════════════
-function esc(s) {
-  return String(s || '')
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-let toastTimer;
-function toast(msg, type = 'error', dur = 3500) {
-  const el = document.getElementById('toast');
-  el.className = `toast ${type} show`;
-  el.textContent = msg;
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), dur);
-}
-
-// ══════════════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════════════
-boot();
-</script>
 </body>
 </html>
