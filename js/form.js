@@ -4,6 +4,9 @@
 
 const FormScreen = (() => {
 
+  // Listeners registrados una sola vez sobre el contenedor
+  let listenersAttached = false;
+
   // ── HTML helpers ───────────────────────────────────
 
   function esc(s) {
@@ -15,11 +18,11 @@ const FormScreen = (() => {
   }
 
   function buildMultiple(q, isUnique) {
-    const sel = isUnique
-      ? (State.getResponse(q.id) ? [State.getResponse(q.id)] : [])
-      : (Array.isArray(State.getResponse(q.id)) ? State.getResponse(q.id) : []);
-
-    const type = isUnique ? 'radio' : 'checkbox';
+    const saved = State.getResponse(q.id);
+    const sel   = isUnique
+      ? (saved ? [saved] : [])
+      : (Array.isArray(saved) ? saved : []);
+    const type  = isUnique ? 'radio' : 'checkbox';
 
     return `<div class="opts">${q.opciones.map(op => {
       const checked = sel.includes(op);
@@ -32,32 +35,32 @@ const FormScreen = (() => {
   }
 
   function buildTextarea(q) {
-    const val = State.getResponse(q.id) || '';
+    const val = esc(State.getResponse(q.id) || '');
     return `<textarea class="q-textarea"
       placeholder="Escribe tu respuesta…"
-      data-qid="${q.id}">${esc(val)}</textarea>`;
+      data-qid="${q.id}">${val}</textarea>`;
   }
 
   function buildNumber(q) {
-    const val = State.getResponse(q.id) || '';
+    const val = esc(String(State.getResponse(q.id) || ''));
     return `<input type="number" class="q-number"
-      value="${esc(val)}"
+      value="${val}"
       placeholder="Ingresa un número"
       data-qid="${q.id}">`;
   }
 
   function buildCard(q) {
     const answered = State.isAnswered(q.id);
-    let input = '';
+    let input;
 
     switch (q.tipo) {
       case 'Selección múltiple':
       case 'Selección múltiple numérica':
         input = buildMultiple(q, false); break;
       case 'Selección única':
-        input = buildMultiple(q, true); break;
+        input = buildMultiple(q, true);  break;
       case 'Abierta numérica':
-        input = buildNumber(q); break;
+        input = buildNumber(q);          break;
       default:
         input = buildTextarea(q);
     }
@@ -73,50 +76,48 @@ const FormScreen = (() => {
       </div>`;
   }
 
-  // ── Progress helpers ────────────────────────────────
+  // ── Progress ────────────────────────────────────────
 
   function updateProgress() {
-    const mod  = State.getCurrentModule();
+    const mod = State.getCurrentModule();
+    if (!mod) return;
     const { answered, total, pct } = State.getProgress(mod);
-
-    document.getElementById('prog-fill').style.width = pct + '%';
+    document.getElementById('prog-fill').style.width  = pct + '%';
     document.getElementById('prog-label').textContent = `${answered} de ${total} respondidas`;
     document.getElementById('prog-pct').textContent   = pct + '%';
     document.getElementById('bar-ans').textContent    = answered;
     document.getElementById('bar-pend').textContent   = total - answered;
   }
 
-  // ── Event delegation handler ────────────────────────
+  function refreshCard(qId) {
+    const card = document.getElementById('qc' + qId);
+    if (card) card.classList.toggle('answered', State.isAnswered(qId));
+  }
+
+  // ── Event handlers (delegados, registrados una sola vez) ──
 
   function onInteraction(e) {
     const target = e.target;
+    if (!target.matches('input[type="checkbox"], input[type="radio"]')) return;
 
-    // Checkbox / radio
-    if (target.matches('input[type="checkbox"], input[type="radio"]')) {
-      const name  = target.name;               // "q<id>"
-      const qId   = parseInt(name.slice(1));
-      const isChk = target.type === 'checkbox';
+    const name  = target.name;       // "q<id>"
+    const qId   = parseInt(name.slice(1));
+    const isChk = target.type === 'checkbox';
 
-      if (isChk) {
-        const vals = [...document.querySelectorAll(`input[name="${name}"]:checked`)]
-                       .map(i => i.value);
-        State.setResponse(qId, vals);
-      } else {
-        State.setResponse(qId, target.value);
-        // Toggle .sel on all siblings
-        document.querySelectorAll(`input[name="${name}"]`).forEach(r =>
-          r.closest('.opt').classList.toggle('sel', r.checked)
-        );
-      }
-
-      // Toggle .sel on the clicked option
-      if (isChk) target.closest('.opt').classList.toggle('sel', target.checked);
-
-      refreshCard(qId);
-      updateProgress();
+    if (isChk) {
+      const vals = [...document.querySelectorAll(`input[name="${name}"]:checked`)]
+                     .map(i => i.value);
+      State.setResponse(qId, vals);
+      target.closest('.opt').classList.toggle('sel', target.checked);
+    } else {
+      State.setResponse(qId, target.value);
+      document.querySelectorAll(`input[name="${name}"]`).forEach(r =>
+        r.closest('.opt').classList.toggle('sel', r.checked)
+      );
     }
 
-    // Textarea / number — use 'input' event instead (handled separately)
+    refreshCard(qId);
+    updateProgress();
   }
 
   function onTextInput(e) {
@@ -128,36 +129,33 @@ const FormScreen = (() => {
     updateProgress();
   }
 
-  function refreshCard(qId) {
-    const card = document.getElementById('qc' + qId);
-    if (card) card.classList.toggle('answered', State.isAnswered(qId));
+  function attachListeners() {
+    if (listenersAttached) return;
+    const list = document.getElementById('q-list');
+    list.addEventListener('change', onInteraction);
+    list.addEventListener('input',  onTextInput);
+    listenersAttached = true;
   }
 
   // ── Public API ──────────────────────────────────────
 
   function render(mod) {
-    const qs = State.getByModule(mod);
+    const qs   = State.getByModule(mod);
+    const list = document.getElementById('q-list');
 
-    // Header
     document.getElementById('f-title').textContent =
       `Módulo ${mod} — ${MODULE_NAMES[mod] || ''}`;
     document.getElementById('f-subtitle').textContent =
       `${qs.length} preguntas · ${MODULE_NAMES[mod] || ''}`;
 
-    // Questions
-    const list = document.getElementById('q-list');
     list.innerHTML = qs.map(buildCard).join('');
 
-    // Attach single delegated listener
-    list.addEventListener('change', onInteraction);
-    list.addEventListener('input',  onTextInput);
-
+    attachListeners();
     updateProgress();
   }
 
   function reset() {
-    const list = document.getElementById('q-list');
-    list.innerHTML = '';
+    document.getElementById('q-list').innerHTML = '';
   }
 
   return { render, reset, updateProgress };
