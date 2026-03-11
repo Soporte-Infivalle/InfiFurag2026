@@ -1,5 +1,6 @@
 // ══════════════════════════════════════════════════════
 //  SUBMIT — Envío de respuestas al webhook de Apps Script
+//  (versión v2 — usa State.getCurrentQuestions())
 // ══════════════════════════════════════════════════════
 
 const Submitter = (() => {
@@ -10,17 +11,30 @@ const Submitter = (() => {
     return qs
       .filter(q => State.isAnswered(q.id))
       .map(q => {
-        const val = State.getResponse(q.id);
+        const raw = State.getResponse(q.id);
+
+        // Respuesta puede ser { respuesta, evidencia } o valor directo
+        let respuesta, evidencia;
+        if (raw && typeof raw === 'object' && !Array.isArray(raw) && 'respuesta' in raw) {
+          respuesta = raw.respuesta;
+          evidencia = raw.evidencia || '';
+        } else {
+          respuesta = raw;
+          evidencia = '';
+        }
+
         return {
-          timestamp:   new Date().toISOString(),
+          timestamp:        new Date().toISOString(),
           nombre,
           entidad,
-          modulo:      mod,
-          id_pregunta: q.id,
-          codigo:      q.codigo,
-          pregunta:    q.texto,
-          tipo:        q.tipo,
-          respuesta:   Array.isArray(val) ? val.join(' | ') : String(val),
+          modulo:           mod,
+          id_pregunta:      q.id,
+          codigo:           q.codigo,
+          pregunta:         q.texto,
+          tipo:             q.tipo,
+          respuesta:        Array.isArray(respuesta) ? respuesta.join(' | ') : String(respuesta ?? ''),
+          requiere_evidencia: q.evidencia ? 'SI' : 'NO',
+          evidencia:        evidencia,
         };
       });
   }

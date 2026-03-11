@@ -307,7 +307,8 @@
             codigo:      q.codigo,
             pregunta:    q.texto,
             tipo:        q.tipo,
-            respuesta:   Array.isArray(resp) ? resp.join(' | ') : String(resp),
+            respuesta:          Array.isArray(resp) ? resp.join(" | ") : String(resp),
+            requiere_evidencia: q.evidencia ? "SI" : "NO",
             evidencia:   ev || '',
           };
         });
