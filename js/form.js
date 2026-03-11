@@ -140,7 +140,7 @@ const FormScreen = (() => {
   // ── Public API ──────────────────────────────────────
 
   function render(mod) {
-    const qs   = State.getByModule(mod);
+    const qs   = State.getCurrentQuestions();
     const list = document.getElementById('q-list');
 
     document.getElementById('f-title').textContent =

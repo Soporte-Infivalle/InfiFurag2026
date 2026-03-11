@@ -66,7 +66,7 @@ const App = (() => {
       const questions = await DataLoader.loadModule(mod);
       State.openModule(mod);
       State.setCurrentQuestions(questions);
-      FormScreen.render(mod, questions);
+      FormScreen.render(mod);
       UI.show('s-form');
       window.scrollTo(0, 0);
     } catch (err) {
