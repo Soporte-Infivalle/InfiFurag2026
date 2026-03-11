@@ -1,1 +1,41 @@
-[{"id":1,"codigo":"PER200","modulo":"PER","texto":"¿Considera que el MIPG ha generado valor agregado a la gestión de la entidad?","tipo":"Selección única","opciones":["SÍ, explique brevemente su respuesta:","No, explique brevemente su respuesta:"],"evidencia":false},{"id":2,"codigo":"PER202","modulo":"PER","texto":"¿Cuál ha sido la utilidad para la entidad de los resultados y recomendaciones obtenidas en la Medición del Desempeño Institucional?","tipo":"Abierta texto","opciones":[],"evidencia":false},{"id":3,"codigo":"PER203","modulo":"PER","texto":"¿Cuál es la política que considera ha generado mayor valor a la gestión institucional en su entidad? Explique brevemente su respuesta:","tipo":"Abierta texto","opciones":[],"evidencia":false},{"id":4,"codigo":"PER204","modulo":"PER","texto":"¿Cuál es la política que más dificultades ha presentado para la implementación en su entidad?  Explique brevemente su respuesta:","tipo":"Abierta texto","opciones":[],"evidencia":false}]
+[
+    {
+        "id": 1,
+        "codigo": "PER200",
+        "modulo": "PER",
+        "texto": "¿Considera que el MIPG ha generado valor agregado a la gestión de la entidad?",
+        "tipo": "Selección única",
+        "opciones": [
+            "SÍ, explique brevemente su respuesta:",
+            "No, explique brevemente su respuesta:"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 2,
+        "codigo": "PER202",
+        "modulo": "PER",
+        "texto": "¿Cuál ha sido la utilidad para la entidad de los resultados y recomendaciones obtenidas en la Medición del Desempeño Institucional?",
+        "tipo": "Abierta texto",
+        "opciones": [],
+        "evidencia": false
+    },
+    {
+        "id": 3,
+        "codigo": "PER203",
+        "modulo": "PER",
+        "texto": "¿Cuál es la política que considera ha generado mayor valor a la gestión institucional en su entidad? Explique brevemente su respuesta:",
+        "tipo": "Abierta texto",
+        "opciones": [],
+        "evidencia": false
+    },
+    {
+        "id": 4,
+        "codigo": "PER204",
+        "modulo": "PER",
+        "texto": "¿Cuál es la política que más dificultades ha presentado para la implementación en su entidad?  Explique brevemente su respuesta:",
+        "tipo": "Abierta texto",
+        "opciones": [],
+        "evidencia": false
+    }
+]
