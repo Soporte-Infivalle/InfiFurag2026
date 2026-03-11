@@ -131,9 +131,10 @@
         .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
-    // Una opción es "Otra ¿Cuál?" si contiene ¿Cuál? o ¿Cuáles?
+    // Una opción despliega texto libre si termina en ":"
+    // Cubre: "Otro ¿Cuál?:", "Ingrese el enlace:", "Justifique su respuesta:", etc.
     function isOtraOpcion(op) {
-      return /¿cu[aá]l/i.test(op);
+      return /:\s*$/.test(op);
     }
 
     function getRespuesta(qId) { return responses[qId]?.respuesta ?? responses[qId] ?? null; }
