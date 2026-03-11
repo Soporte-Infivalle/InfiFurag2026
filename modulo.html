@@ -30,8 +30,6 @@
   <!-- Form -->
   <div id="s-form" style="display:none">
     <div class="page-narrow">
-
-      <!-- Back + title -->
       <div class="form-top">
         <a href="index.html" class="btn btn-ghost">← Volver</a>
         <div>
@@ -40,7 +38,6 @@
         </div>
       </div>
 
-      <!-- Progress -->
       <div class="prog-header">
         <span id="prog-label">0 de 0 respondidas</span>
         <span id="prog-pct">0%</span>
@@ -49,11 +46,9 @@
         <div class="prog-fill" id="prog-fill" style="width:0%"></div>
       </div>
 
-      <!-- Questions -->
       <div id="q-list"></div>
     </div>
 
-    <!-- Submit bar -->
     <div class="submit-bar">
       <div class="bar-info">
         <strong id="bar-ans">0</strong> respondidas ·
@@ -100,28 +95,26 @@
       THI:'Tecnologías de la Información', TRA:'Transparencia',
     };
 
-    // ── Parse URL params ─────────────────────────────
     const params  = new URLSearchParams(location.search);
     const MOD     = (params.get('mod') || '').toUpperCase();
     const NOMBRE  = sessionStorage.getItem('furag_nombre')  || '';
     const ENTIDAD = sessionStorage.getItem('furag_entidad') || '';
 
     let questions = [];
-    let responses = {};   // { [id]: value }
+    // responses: { [qId]: { respuesta: value, evidencia: string } }
+    let responses = {};
 
     // ── Boot ─────────────────────────────────────────
     async function boot() {
       if (!MOD) { location.href = 'index.html'; return; }
-
       document.getElementById('loading-msg').textContent = `Cargando módulo ${MOD}…`;
       document.getElementById('h-badge').textContent = `Módulo ${MOD}`;
       document.title = `FURAG 2025 — ${MOD}`;
 
       try {
         questions = await fetchJSON(`${CONFIG.DATA_DIR}/modulos/${MOD}.json`);
-        // Restore saved responses for this module
         const saved = getSaved();
-        responses = saved[MOD] ? { ...saved[MOD] } : {};
+        responses = saved[MOD] ? deepClone(saved[MOD]) : {};
         renderForm();
         show('s-form');
       } catch(e) {
@@ -130,6 +123,8 @@
       }
     }
 
+    function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
+
     function show(id) {
       ['s-loading','s-form','s-success','s-error'].forEach(s => {
         const el = document.getElementById(s);
@@ -137,17 +132,39 @@
       });
     }
 
-    // ── Render ────────────────────────────────────────
+    // ── Helpers ───────────────────────────────────────
     function esc(s) {
-      return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return String(s||'')
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
+    function getRespuesta(qId)  { return responses[qId]?.respuesta ?? responses[qId] ?? null; }
+    function getEvidencia(qId)  { return responses[qId]?.evidencia ?? ''; }
+
+    function setRespuesta(qId, value) {
+      if (typeof responses[qId] === 'object' && responses[qId] !== null && !Array.isArray(responses[qId])) {
+        responses[qId].respuesta = value;
+      } else {
+        const prevEv = typeof responses[qId] === 'object' ? (responses[qId]?.evidencia || '') : '';
+        responses[qId] = { respuesta: value, evidencia: prevEv };
+      }
+    }
+
+    function setEvidencia(qId, value) {
+      const prevResp = getRespuesta(qId);
+      responses[qId] = { respuesta: prevResp, evidencia: value };
+    }
+
+    // ── Build card ────────────────────────────────────
     function buildCard(q) {
       const answered = isAnswered(q.id);
+      const respVal  = getRespuesta(q.id);
+      const evVal    = getEvidencia(q.id);
       let input = '';
 
       if (q.tipo === 'Selección única') {
-        const sel = responses[q.id] || '';
+        const sel = respVal || '';
         input = `<div class="opts">${q.opciones.map(op => `
           <label class="opt${sel===op?' sel':''}">
             <input type="radio" name="q${q.id}" value="${esc(op)}"${sel===op?' checked':''}>
@@ -155,7 +172,7 @@
           </label>`).join('')}</div>`;
 
       } else if (q.tipo === 'Selección múltiple' || q.tipo === 'Selección múltiple numérica') {
-        const sel = Array.isArray(responses[q.id]) ? responses[q.id] : [];
+        const sel = Array.isArray(respVal) ? respVal : [];
         input = `<div class="opts">${q.opciones.map(op => `
           <label class="opt${sel.includes(op)?' sel':''}">
             <input type="checkbox" name="q${q.id}" value="${esc(op)}"${sel.includes(op)?' checked':''}>
@@ -164,12 +181,24 @@
 
       } else if (q.tipo === 'Abierta numérica') {
         input = `<input type="number" class="q-number" data-qid="${q.id}"
-          value="${esc(String(responses[q.id]||''))}" placeholder="Ingresa un número">`;
+          value="${esc(String(respVal||''))}" placeholder="Ingresa un número">`;
 
       } else {
         input = `<textarea class="q-textarea" data-qid="${q.id}"
-          placeholder="Escribe tu respuesta…">${esc(responses[q.id]||'')}</textarea>`;
+          placeholder="Escribe tu respuesta…">${esc(respVal||'')}</textarea>`;
       }
+
+      // Evidencia block — shown when q.evidencia === true
+      const evidenciaHTML = q.evidencia ? `
+        <div class="ev-block">
+          <div class="ev-label">
+            <span class="ev-icon">📎</span>
+            Descripción de evidencia
+            <span class="ev-hint">Describe brevemente la evidencia que soporta tu respuesta</span>
+          </div>
+          <textarea class="ev-textarea" data-evid="${q.id}"
+            placeholder="Ej: Resolución N° 123 del 15/03/2025, disponible en el sistema SIGEP…">${esc(evVal)}</textarea>
+        </div>` : '';
 
       return `
         <div class="q-card${answered?' answered':''}" id="qc${q.id}">
@@ -177,26 +206,28 @@
             <span class="q-badge">${esc(q.codigo)}</span>
             <span class="q-text">${esc(q.texto)}</span>
           </div>
-          <div class="q-type-label">${esc(q.tipo)}</div>
+          <div class="q-meta">
+            <span class="q-type-label">${esc(q.tipo)}</span>
+            ${q.evidencia ? '<span class="ev-badge">Requiere evidencia</span>' : ''}
+          </div>
           ${input}
+          ${evidenciaHTML}
         </div>`;
     }
 
+    // ── Render ────────────────────────────────────────
     function renderForm() {
-      document.getElementById('f-title').textContent   = `Módulo ${MOD} — ${MODULE_NAMES[MOD]||''}`;
+      document.getElementById('f-title').textContent    = `Módulo ${MOD} — ${MODULE_NAMES[MOD]||''}`;
       document.getElementById('f-subtitle').textContent = `${questions.length} preguntas · orden oficial FURAG`;
 
       const list = document.getElementById('q-list');
       list.innerHTML = questions.map(buildCard).join('');
-
-      // Single delegated listeners
       list.addEventListener('change', onInteraction);
       list.addEventListener('input',  onTextInput);
-
       updateProgress();
     }
 
-    // ── Interaction ───────────────────────────────────
+    // ── Events ────────────────────────────────────────
     function onInteraction(e) {
       const t = e.target;
       if (!t.matches('input[type="checkbox"],input[type="radio"]')) return;
@@ -204,31 +235,35 @@
 
       if (t.type === 'checkbox') {
         const vals = [...document.querySelectorAll(`input[name="${t.name}"]:checked`)].map(i => i.value);
-        responses[qId] = vals;
+        setRespuesta(qId, vals);
         t.closest('.opt').classList.toggle('sel', t.checked);
       } else {
-        responses[qId] = t.value;
+        setRespuesta(qId, t.value);
         document.querySelectorAll(`input[name="${t.name}"]`).forEach(r =>
           r.closest('.opt').classList.toggle('sel', r.checked));
       }
-      persist();
-      refreshCard(qId);
-      updateProgress();
+      persist(); refreshCard(qId); updateProgress();
     }
 
     function onTextInput(e) {
       const t = e.target;
+      // Evidencia textarea
+      if (t.dataset.evid) {
+        setEvidencia(parseInt(t.dataset.evid), t.value);
+        persist();
+        return;
+      }
+      // Regular textarea / number
       if (!t.dataset.qid) return;
       const qId = parseInt(t.dataset.qid);
-      responses[qId] = t.value.trim();
-      persist();
-      refreshCard(qId);
-      updateProgress();
+      setRespuesta(qId, t.value.trim());
+      persist(); refreshCard(qId); updateProgress();
     }
 
+    // ── State helpers ─────────────────────────────────
     function isAnswered(qId) {
-      const v = responses[qId];
-      return v !== undefined && v !== '' && !(Array.isArray(v) && !v.length);
+      const v = getRespuesta(qId);
+      return v !== null && v !== undefined && v !== '' && !(Array.isArray(v) && !v.length);
     }
 
     function refreshCard(qId) {
@@ -236,7 +271,6 @@
       if (c) c.classList.toggle('answered', isAnswered(qId));
     }
 
-    // ── Progress ──────────────────────────────────────
     function updateProgress() {
       const answered = questions.filter(q => isAnswered(q.id)).length;
       const total    = questions.length;
@@ -248,10 +282,9 @@
       document.getElementById('bar-pend').textContent   = total - answered;
     }
 
-    // ── Persist ───────────────────────────────────────
     function persist() {
       const all = getSaved();
-      all[MOD]  = { ...responses };
+      all[MOD]  = deepClone(responses);
       localStorage.setItem('furag25_state', JSON.stringify(all));
     }
 
@@ -262,17 +295,22 @@
 
       const rows = questions
         .filter(q => isAnswered(q.id))
-        .map(q => ({
-          timestamp:   new Date().toISOString(),
-          nombre:      NOMBRE,
-          entidad:     ENTIDAD,
-          modulo:      MOD,
-          id_pregunta: q.id,
-          codigo:      q.codigo,
-          pregunta:    q.texto,
-          tipo:        q.tipo,
-          respuesta:   Array.isArray(responses[q.id]) ? responses[q.id].join(' | ') : String(responses[q.id]),
-        }));
+        .map(q => {
+          const resp = getRespuesta(q.id);
+          const ev   = getEvidencia(q.id);
+          return {
+            timestamp:   new Date().toISOString(),
+            nombre:      NOMBRE,
+            entidad:     ENTIDAD,
+            modulo:      MOD,
+            id_pregunta: q.id,
+            codigo:      q.codigo,
+            pregunta:    q.texto,
+            tipo:        q.tipo,
+            respuesta:   Array.isArray(resp) ? resp.join(' | ') : String(resp),
+            evidencia:   ev || '',
+          };
+        });
 
       if (!rows.length) { toast('No hay respuestas para guardar', 'warn'); return; }
 
