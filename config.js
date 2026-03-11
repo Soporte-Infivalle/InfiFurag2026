@@ -1,7 +1,7 @@
 const CONFIG = {
   // URL del Apps Script que recibe y guarda las respuestas en Google Sheets
   // Ver instrucciones en README.md → Paso 3
-  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbxlZL6PWITmjI47D8HJn5qi-DT4qam0eveyGsgJnowzhUVA8a5TVfPULcSl-UiP7evTwQ/exec',
+  WEBHOOK_URL: 'https://script.google.com/macros/s/AKfycbwd8caDYEWE-jbEQCepckCejO8PAcKLxkxLfnErHZ1bw1JIkNo9vE3XzzHquGbautCGtg/exec',
 // Directorio base de datos (ruta absoluta desde la raíz del sitio)
   DATA_DIR: '/InfiFurag2026/data',
 
