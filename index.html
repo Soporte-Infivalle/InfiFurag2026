@@ -45,7 +45,10 @@
       </div>
     </div>
 
-    <div class="section-label">Módulos — en orden FURAG</div>
+    <div class="section-label-row">
+      <span class="section-label">Módulos — en orden FURAG</span>
+      <span class="sync-status" id="sync-status"></span>
+    </div>
     <div class="mod-grid" id="mod-grid"></div>
   </div>
 
@@ -62,22 +65,15 @@
   <script src="js/shared.js"></script>
   <script>
     const MODULE_NAMES = {
-      CCP:'COMPRAS Y CONTRATACIÓN',
-      CIN:'CONTROL INTERNO',
-      DJU:'DEFENSA JURÍDICA',
-      EMI:'TEMAS TRANSVERSALES',
-      FIN:'FINALES',
-      FOR:'FORTALECIMIENTO INSTITUCIONAL',
+      CCP:'COMPRAS Y CONTRATACIÓN',       CIN:'CONTROL INTERNO',
+      DJU:'DEFENSA JURÍDICA',             EMI:'TEMAS TRANSVERSALES',
+      FIN:'FINALES',                       FOR:'FORTALECIMIENTO INSTITUCIONAL',
       GCI:'GESTIÓN DEL CONOCIMIENTO Y LA INNOVACIÓN',
-      GDI:'GOBIERNO DIGITAL',
-      GDO:'GESTIÓN DOCUMENTAL',
+      GDI:'GOBIERNO DIGITAL',             GDO:'GESTIÓN DOCUMENTAL',
       GTH:'GESTIÓN ESTRATÉGICA DEL TALENTO HUMANO',
-      INT:'INTEGRIDAD',
-      PCI:'PARTICIPACIÓN CIUDADANA',
-      PER:'GENERAL',
-      PLA:'PLANEACIÓN INSTITUCIONAL',
-      SDI:'SEGURIDAD DIGITAL',
-      SEC:'SERVICIO AL CIUDADANO',
+      INT:'INTEGRIDAD',                    PCI:'PARTICIPACIÓN CIUDADANA',
+      PER:'GENERAL',                       PLA:'PLANEACIÓN INSTITUCIONAL',
+      SDI:'SEGURIDAD DIGITAL',            SEC:'SERVICIO AL CIUDADANO',
       SYE:'SEGUIMIENTO Y EVALUACIÓN',
       THI:'INF - GESTIÓN ESTRATÉGICA DEL TALENTO HUMANO',
       TRA:'TRANSPARENCIA, ACCESO A LA INFORMACIÓN',
@@ -101,68 +97,118 @@
       CIN: ['Oscar Hernán Rivera Calderon', 'Carlos Horacio Libreros Salamanca', 'Liliana Hinestroza Sinisterra'],
       THI: ['Ingrid Yalile Bolívar Jimenez'],
       EMI: ['Todos - Comité Institucional de Gestión'],
-      FIN: ['Todos - Comité Institucional de Gestión'],
+      FIN: [],
       CCP: ['Luis Enrique Garzón Taquez'],
     };
 
+    // Estado global
+    let moduleIndex   = [];   // [{modulo, total}] — orden FURAG
+    let remoteProgress = {};  // { MOD: {respondidas, total, pct, personas} }
+
+    // ── Boot ─────────────────────────────────────────
     async function boot() {
       try {
-        const index = await fetchJSON(`${CONFIG.DATA_DIR}/index.json`);
-        renderGrid(index);
+        moduleIndex = await fetchJSON(`${CONFIG.DATA_DIR}/index.json`);
+        renderGrid();
         show('s-main');
+        // Cargar progreso remoto si hay webhook configurado
+        await refreshProgress();
       } catch(e) {
         document.getElementById('err-detail').textContent = e.message;
         show('s-error');
       }
     }
 
-    function show(id) {
-      ['s-loading','s-main','s-error'].forEach(s =>
-        document.getElementById(s).style.display = s === id ? (id==='s-main'?'block':'flex') : 'none'
-      );
+    // ── Consulta el progreso al Apps Script (doGet) ───
+    async function refreshProgress() {
+      if (!CONFIG.WEBHOOK_URL) return;
+      try {
+        setSyncStatus('syncing');
+        // doGet usa la misma URL base — reemplazar /exec al final no es necesario,
+        // el mismo deployment responde GET y POST
+        const res  = await fetch(CONFIG.WEBHOOK_URL, { method: 'GET', mode: 'cors' });
+        const json = await res.json();
+        if (json.status === 'ok' && json.progreso) {
+          remoteProgress = json.progreso;
+          updateProgressBadges();
+          setSyncStatus('ok');
+        }
+      } catch(e) {
+        // Sin acceso al sheet — no bloquear la UI, solo mostrar advertencia
+        setSyncStatus('offline');
+      }
     }
 
-    function renderGrid(index) {
-      const saved = getSaved();
-      const grid  = document.getElementById('mod-grid');
-      grid.innerHTML = index.map(({modulo, total}, i) => {
-        const resp     = saved[modulo] || {};
-        // Count answered: respuesta field or direct value
-        const answered = Object.values(resp).filter(v => {
-          const r = v?.respuesta ?? v;
-          return r !== null && r !== undefined && r !== '' && !(Array.isArray(r) && !r.length);
-        }).length;
-        const pct = total ? Math.round(answered / total * 100) : 0;
-        const cls = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
+    // ── Actualiza solo los badges de progreso sin re-renderizar todo ─────────
+    function updateProgressBadges() {
+      moduleIndex.forEach(({ modulo, total }) => {
+        const card = document.getElementById('mc-' + modulo);
+        if (!card) return;
 
-        const progHTML = pct > 0
-          ? `<span class="mod-prog ${pct < 100 ? 'partial' : ''}">${pct}%</span>` : '';
+        const remote = remoteProgress[modulo];
+        if (!remote) return;
 
-        const resps = MODULE_RESPONSABLES[modulo] || [];
+        const pct  = remote.pct || 0;
+        const resp = remote.respondidas || 0;
+
+        // Actualizar barra y clase
+        card.className = 'mod-card' + (pct === 100 ? ' done' : pct > 0 ? ' partial' : '');
+
+        // Badge de progreso remoto
+        const badge = card.querySelector('.mod-prog-remote');
+        if (badge) {
+          badge.textContent  = pct > 0 ? pct + '%' : '';
+          badge.className    = 'mod-prog-remote' + (pct === 100 ? '' : pct > 0 ? ' partial' : ' hidden');
+        }
+
+        // Barra de progreso interna
+        const bar = card.querySelector('.mod-bar-fill');
+        if (bar) bar.style.width = pct + '%';
+
+        // Personas que han respondido
+        const personas = card.querySelector('.mod-personas');
+        if (personas && remote.personas) {
+          personas.textContent = remote.personas
+            ? remote.personas.split(',').map(p => p.trim().split(' ')[0]).filter(Boolean).join(', ')
+            : '';
+          personas.style.display = remote.personas ? 'block' : 'none';
+        }
+      });
+    }
+
+    // ── Renderiza la grilla completa ──────────────────
+    function renderGrid() {
+      const grid = document.getElementById('mod-grid');
+      grid.innerHTML = moduleIndex.map(({ modulo, total }, i) => {
+        const resps   = MODULE_RESPONSABLES[modulo] || [];
         const respHTML = resps.length
-          ? `<div class="mod-responsables">` +
-              resps.map(r => `<span class="mod-resp-tag">${r}</span>`).join('') +
-            `</div>`
+          ? '<div class="mod-responsables">' +
+              resps.map(r => '<span class="mod-resp-tag">' + r + '</span>').join('') +
+            '</div>'
           : '';
 
         return (
-          `<div class="mod-card ${cls}" onclick="goModule('${modulo}',${i+1})" role="button" tabindex="0"` +
-               ` onkeydown="if(event.key==='Enter')goModule('${modulo}',${i+1})">` +
-            `<div class="mod-card-top">` +
-              `<div class="mod-seq">${i+1}</div>` +
-              `<div class="mod-code">${modulo}</div>` +
-            `</div>` +
-            `<div class="mod-name">${MODULE_NAMES[modulo]||modulo}</div>` +
+          '<div class="mod-card" id="mc-' + modulo + '"' +
+               ' onclick="goModule(\'' + modulo + '\')" role="button" tabindex="0"' +
+               ' onkeydown="if(event.key===\'Enter\')goModule(\'' + modulo + '\')">' +
+            '<div class="mod-card-top">' +
+              '<div class="mod-seq">' + (i + 1) + '</div>' +
+              '<div class="mod-code">' + modulo + '</div>' +
+              '<span class="mod-prog-remote hidden"></span>' +
+            '</div>' +
+            '<div class="mod-name">' + (MODULE_NAMES[modulo] || modulo) + '</div>' +
             respHTML +
-            `<div class="mod-footer">` +
-              `<span class="mod-count">${total} preguntas</span>` +
-              progHTML +
-            `</div>` +
-          `</div>`
+            '<div class="mod-bar-track"><div class="mod-bar-fill" style="width:0%"></div></div>' +
+            '<div class="mod-footer">' +
+              '<span class="mod-count">' + total + ' preguntas</span>' +
+              '<span class="mod-personas" style="display:none"></span>' +
+            '</div>' +
+          '</div>'
         );
       }).join('');
     }
 
+    // ── Navegar al módulo ─────────────────────────────
     function goModule(mod) {
       const nombre = document.getElementById('inp-nombre').value.trim();
       if (!nombre) {
@@ -172,16 +218,45 @@
       }
       sessionStorage.setItem('furag_nombre',  nombre);
       sessionStorage.setItem('furag_entidad', document.getElementById('inp-entidad').value.trim());
-      window.location.href = `modulo.html?mod=${mod}`;
+      window.location.href = 'modulo.html?mod=' + mod;
+    }
+
+    // ── Indicador de sincronización ───────────────────
+    function setSyncStatus(state) {
+      const el = document.getElementById('sync-status');
+      if (!el) return;
+      const map = {
+        syncing: { text: '↻ Actualizando…', cls: 'syncing' },
+        ok:      { text: '✓ Progreso actualizado',  cls: 'ok'      },
+        offline: { text: '○ Sin conexión al Sheet', cls: 'offline' },
+      };
+      const s = map[state] || map.offline;
+      el.textContent = s.text;
+      el.className   = 'sync-status ' + s.cls;
+    }
+
+    function show(id) {
+      ['s-loading','s-main','s-error'].forEach(s =>
+        document.getElementById(s).style.display = s === id ? (id === 's-main' ? 'block' : 'flex') : 'none'
+      );
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       const n = sessionStorage.getItem('furag_nombre');
       const e = sessionStorage.getItem('furag_entidad');
-      if (n) document.getElementById('inp-nombre').value  = n;
+      if (n) document.getElementById('inp-nombre').value = n;
       if (e) document.getElementById('inp-entidad').value = e;
+
+      // Si vuelve tras un submit, refrescar el progreso automáticamente
+      const submitted = sessionStorage.getItem('furag_just_submitted');
+      if (submitted) {
+        sessionStorage.removeItem('furag_just_submitted');
+      }
       boot();
     });
+
+    // Exponer para que modulo.html lo llame antes de redirigir
+    window.markSubmitted = () => sessionStorage.setItem('furag_just_submitted', '1');
   </script>
 </body>
 </html>

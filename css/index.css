@@ -120,3 +120,63 @@
   .mod-grid { grid-template-columns: repeat(2, 1fr); }
   .mod-resp-tag { font-size: .6rem; }
 }
+
+/* ── Barra de progreso en tarjeta ── */
+.mod-bar-track {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: .1rem 0;
+}
+.mod-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--blue-lt));
+  border-radius: 2px;
+  transition: width .6s ease;
+}
+.mod-card.done .mod-bar-fill    { background: var(--green); }
+.mod-card.partial .mod-bar-fill { background: var(--accent); }
+
+/* ── Badge % remoto ── */
+.mod-prog-remote {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-lt);
+  border-radius: 20px;
+  padding: 1px 7px;
+  margin-left: auto;
+  transition: opacity .3s;
+}
+.mod-prog-remote.partial { color: #92400e; background: #fef3c7; }
+.mod-prog-remote.hidden  { opacity: 0; pointer-events: none; }
+
+/* ── Personas que respondieron ── */
+.mod-personas {
+  font-size: .62rem;
+  color: var(--muted);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ── Indicador sync ── */
+.section-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.sync-status {
+  font-size: .72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  transition: all .3s;
+}
+.sync-status.syncing { color: var(--muted);    background: var(--bg);       border: 1px solid var(--border); }
+.sync-status.ok      { color: var(--green);    background: var(--green-lt); border: 1px solid #86efac; }
+.sync-status.offline { color: var(--amber);    background: #fef3c7;         border: 1px solid #fde68a; }

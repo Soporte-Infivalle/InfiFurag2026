@@ -346,6 +346,8 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ rows }),
         });
+        // Marcar que hubo submit para que index.html refresque el progreso
+        sessionStorage.setItem('furag_just_submitted', '1');
         show('s-success');
       } catch(e) {
         toast('Error al enviar: ' + e.message, 'error');
