@@ -5,8 +5,11 @@
 const STORAGE_KEY = 'furag25_state';
 
 const State = (() => {
-  // Preguntas cargadas del xlsx
-  let questions = [];
+  // Índice de módulos [{ modulo, total }]
+  let moduleIndex = [];
+
+  // Preguntas del módulo activo (cargadas on-demand)
+  let currentQuestions = [];
 
   // Módulo actualmente abierto
   let currentModule = null;
@@ -18,60 +21,64 @@ const State = (() => {
   let saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 
   return {
-    // ── Questions ────────────────────────────────────
-    setQuestions(qs) { questions = qs; },
-    getQuestions()   { return questions; },
-    getByModule(mod) { return questions.filter(q => q.modulo === mod); },
-    getModules()     { return [...new Set(questions.map(q => q.modulo))].sort(); },
+    // ── Index ─────────────────────────────────────────
+    setIndex(index)  { moduleIndex = index; },
+    getIndex()       { return moduleIndex; },
+    getModules()     { return moduleIndex.map(m => m.modulo); },
+    getModuleTotal(mod) {
+      const entry = moduleIndex.find(m => m.modulo === mod);
+      return entry ? entry.total : 0;
+    },
 
-    // ── Current module ───────────────────────────────
+    // ── Questions (loaded per module) ─────────────────
+    setCurrentQuestions(qs) { currentQuestions = qs; },
+    getCurrentQuestions()   { return currentQuestions; },
+
+    // ── Current module ────────────────────────────────
     openModule(mod) {
       currentModule = mod;
       responses = saved[mod] ? { ...saved[mod] } : {};
     },
     closeModule() {
-      currentModule = null;
-      responses = {};
+      currentModule   = null;
+      currentQuestions = [];
+      responses       = {};
     },
     getCurrentModule() { return currentModule; },
 
-    // ── Responses ────────────────────────────────────
+    // ── Responses ─────────────────────────────────────
     setResponse(qId, value) {
-      if (value === undefined || value === '' ||
-         (Array.isArray(value) && value.length === 0)) {
-        delete responses[qId];
-      } else {
-        responses[qId] = value;
-      }
+      const empty = value === undefined || value === '' ||
+                    (Array.isArray(value) && value.length === 0);
+      if (empty) delete responses[qId];
+      else       responses[qId] = value;
       this.persist();
     },
-    getResponse(qId)    { return responses[qId]; },
-    getAllResponses()    { return { ...responses }; },
+    getResponse(qId)  { return responses[qId]; },
     isAnswered(qId) {
       const v = responses[qId];
       return v !== undefined && v !== '' &&
              !(Array.isArray(v) && v.length === 0);
     },
 
-    // ── Progress ─────────────────────────────────────
+    // ── Progress ──────────────────────────────────────
     getProgress(mod) {
-      const qs = this.getByModule(mod);
-      const src = mod === currentModule ? responses : (saved[mod] || {});
-      const answered = qs.filter(q => {
-        const v = src[q.id];
-        return v !== undefined && v !== '' &&
-               !(Array.isArray(v) && v.length === 0);
-      }).length;
-      return { answered, total: qs.length, pct: qs.length ? Math.round(answered / qs.length * 100) : 0 };
+      const total  = this.getModuleTotal(mod);
+      const src    = mod === currentModule ? responses : (saved[mod] || {});
+      const answered = Object.values(src).filter(v =>
+        v !== undefined && v !== '' &&
+        !(Array.isArray(v) && v.length === 0)
+      ).length;
+      const pct = total ? Math.round(answered / total * 100) : 0;
+      return { answered, total, pct };
     },
 
-    // ── Persist ──────────────────────────────────────
+    // ── Persist ───────────────────────────────────────
     persist() {
       if (!currentModule) return;
       saved[currentModule] = { ...responses };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
     },
-
     markModuleSaved(mod) {
       saved[mod] = { ...responses };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));

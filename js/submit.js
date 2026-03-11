@@ -5,7 +5,7 @@
 const Submitter = (() => {
 
   function buildRows(mod, nombre, entidad) {
-    const qs = State.getByModule(mod);
+    const qs = State.getCurrentQuestions();
 
     return qs
       .filter(q => State.isAnswered(q.id))
@@ -37,7 +37,6 @@ const Submitter = (() => {
       return false;
     }
 
-    // Apps Script requires mode: 'no-cors' — response body won't be readable
     await fetch(CONFIG.WEBHOOK_URL, {
       method:  'POST',
       mode:    'no-cors',
@@ -45,7 +44,6 @@ const Submitter = (() => {
       body:    JSON.stringify({ rows }),
     });
 
-    // Assume success (no-cors can't read response)
     State.markModuleSaved(mod);
     return true;
   }

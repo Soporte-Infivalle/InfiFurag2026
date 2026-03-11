@@ -5,5 +5,6 @@ const CONFIG = {
 
   // Ruta absoluta al JSON de preguntas.
   // Formato: '/NOMBRE_DEL_REPO/data/preguntas.json'
-  DATA_FILE: '/InfiFurag2026/data/preguntas.json',
+  DATA_DIR: '/InfiFurag2026/data',
+  VERSION: '1',
 };

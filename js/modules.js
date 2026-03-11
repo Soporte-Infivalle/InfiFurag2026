@@ -26,8 +26,8 @@ const MODULE_NAMES = {
 
 const ModulesScreen = (() => {
 
-  function buildCard(mod) {
-    const { answered, total, pct } = State.getProgress(mod);
+  function buildCard(mod, total) {
+    const { answered, pct } = State.getProgress(mod);
     const cls = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
     const progHTML = pct > 0
       ? `<span class="mod-prog ${pct < 100 ? 'partial' : ''}">${pct}%</span>`
@@ -46,12 +46,15 @@ const ModulesScreen = (() => {
   }
 
   function render() {
-    const mods = State.getModules();
-    const grid = document.getElementById('mod-grid');
-    grid.innerHTML = mods.map(buildCard).join('');
+    const grid  = document.getElementById('mod-grid');
+    const index = State.getIndex();   // [{ modulo, total }]
 
-    // Event delegation — one listener for all cards
-    grid.addEventListener('click', onCardClick);
+    grid.innerHTML = index.map(({ modulo, total }) =>
+      buildCard(modulo, total)
+    ).join('');
+
+    // Single delegated listener
+    grid.addEventListener('click',   onCardClick);
     grid.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') onCardClick(e);
     });
@@ -60,31 +63,20 @@ const ModulesScreen = (() => {
   function onCardClick(e) {
     const card = e.target.closest('.mod-card');
     if (!card) return;
-    const mod = card.dataset.mod;
-
-    const nombre = document.getElementById('inp-nombre').value.trim();
-    if (!nombre) {
-      UI.toast('Ingresa tu nombre antes de continuar', 'warn');
-      document.getElementById('inp-nombre').focus();
-      return;
-    }
-
-    App.openModule(mod);
+    App.openModule(card.dataset.mod);   // nombre check is inside App.openModule
   }
 
   function refresh() {
-    // Re-render cards to update progress without re-attaching listeners
-    const mods = State.getModules();
-    mods.forEach(mod => {
-      const card = document.querySelector(`.mod-card[data-mod="${mod}"]`);
+    State.getIndex().forEach(({ modulo, total }) => {
+      const card = document.querySelector(`.mod-card[data-mod="${modulo}"]`);
       if (!card) return;
-      const { pct } = State.getProgress(mod);
+      const { pct } = State.getProgress(modulo);
       card.className = `mod-card ${pct === 100 ? 'done' : pct > 0 ? 'partial' : ''}`;
       const prog = card.querySelector('.mod-prog');
       if (pct > 0) {
         if (prog) {
           prog.textContent = pct + '%';
-          prog.className = `mod-prog ${pct < 100 ? 'partial' : ''}`;
+          prog.className   = `mod-prog ${pct < 100 ? 'partial' : ''}`;
         } else {
           card.querySelector('.mod-footer').insertAdjacentHTML(
             'beforeend',
@@ -95,7 +87,6 @@ const ModulesScreen = (() => {
     });
   }
 
-  // Expose identity values for submit
   function getNombre()  { return document.getElementById('inp-nombre').value.trim(); }
   function getEntidad() { return document.getElementById('inp-entidad').value.trim(); }
 
