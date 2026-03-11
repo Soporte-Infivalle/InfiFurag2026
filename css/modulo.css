@@ -165,3 +165,34 @@
   box-shadow: 0 0 0 3px rgba(245,158,11,.15);
 }
 .ev-textarea::placeholder { color: #a16207; opacity: .7; }
+
+/* ── Bloque "Otra ¿Cuál?" ── */
+.otra-block {
+  margin-top: .6rem;
+  padding: .85rem 1rem;
+  background: #f0f4ff;
+  border: 1.5px solid #c7d5f8;
+  border-radius: var(--radius-sm);
+  animation: fadeIn .18s ease;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+
+.otra-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #c7d5f8;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .875rem;
+  color: var(--text);
+  background: #fff;
+  resize: vertical;
+  min-height: 72px;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.otra-textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(34,85,204,.1);
+}
+.otra-textarea::placeholder { color: var(--muted); }

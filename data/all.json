@@ -9,7 +9,7 @@
             "SÍ, explique brevemente su respuesta:",
             "No, explique brevemente su respuesta:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 2,

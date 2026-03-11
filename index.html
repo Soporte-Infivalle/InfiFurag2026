@@ -21,13 +21,11 @@
     </div>
   </header>
 
-  <!-- Loading -->
   <div id="s-loading" class="center-screen">
     <div class="spinner"></div>
     <p style="color:var(--muted);font-size:.9rem">Cargando módulos…</p>
   </div>
 
-  <!-- Main -->
   <div id="s-main" class="page" style="display:none">
     <h1 class="page-title">Selecciona tu módulo</h1>
     <p class="page-sub">
@@ -43,7 +41,7 @@
       <div>
         <label class="field-label" for="inp-entidad">Area / Proceso</label>
         <input id="inp-entidad" class="input-field" type="text"
-               placeholder="Ej: Ministerio de Salud" autocomplete="organization">
+               placeholder="Ej: Planeación" autocomplete="organization">
       </div>
     </div>
 
@@ -51,7 +49,6 @@
     <div class="mod-grid" id="mod-grid"></div>
   </div>
 
-  <!-- Error -->
   <div id="s-error" style="display:none" class="center-screen">
     <div class="err-icon">⚠️</div>
     <div class="err-title">No se pudo cargar</div>
@@ -65,15 +62,47 @@
   <script src="js/shared.js"></script>
   <script>
     const MODULE_NAMES = {
-      CCP:'COMPRAS Y CONTRATACION', CIN:'CONTROL INTERNO',
-      DJU:'DEFENSA JURIDICA', EMI:'TEMAS TRANSVERSALES',
-      FIN:'FINALES', FOR:'FORTALECIMIENTO INSTITUCIONAL',
-      GCI:'GESTIÓN DEL CONOCIMIENTO Y LA INNOVACIÓN', GDI:'GOBIERNO DIGITAL',
-      GDO:'GESTION DOCUMENTAL', GTH:'GESTION ESTRATEGICA DEL TALENTO HUMANO',
-      INT:'INTEGRIDAD', PCI:'PARTICIPACION CIUDADANA',
-      PER:'GENERAL', PLA:'PLANEACION INSTITUCIONAL', SDI:'SEGURIDAD DIGITAL',
-      SEC:'SERVICIO AL CIUDADANO', SYE:'SEGUIMIENTO Y EVALUACION',
-      THI:'INF - GESTION ESTRATEGICA DEL TALENTO HUMANO', TRA:'TRANSPARENCIA, ACCESO A LA INFORMACION ',
+      CCP:'COMPRAS Y CONTRATACIÓN',
+      CIN:'CONTROL INTERNO',
+      DJU:'DEFENSA JURÍDICA',
+      EMI:'TEMAS TRANSVERSALES',
+      FIN:'FINALES',
+      FOR:'FORTALECIMIENTO INSTITUCIONAL',
+      GCI:'GESTIÓN DEL CONOCIMIENTO Y LA INNOVACIÓN',
+      GDI:'GOBIERNO DIGITAL',
+      GDO:'GESTIÓN DOCUMENTAL',
+      GTH:'GESTIÓN ESTRATÉGICA DEL TALENTO HUMANO',
+      INT:'INTEGRIDAD',
+      PCI:'PARTICIPACIÓN CIUDADANA',
+      PER:'GENERAL',
+      PLA:'PLANEACIÓN INSTITUCIONAL',
+      SDI:'SEGURIDAD DIGITAL',
+      SEC:'SERVICIO AL CIUDADANO',
+      SYE:'SEGUIMIENTO Y EVALUACIÓN',
+      THI:'INF - GESTIÓN ESTRATÉGICA DEL TALENTO HUMANO',
+      TRA:'TRANSPARENCIA, ACCESO A LA INFORMACIÓN',
+    };
+
+    const MODULE_RESPONSABLES = {
+      PER: ['Liliana Hinestroza Sinisterra'],
+      PLA: ['Liliana Hinestroza Sinisterra'],
+      GTH: ['Ingrid Yalile Bolívar Jimenez'],
+      INT: ['Ingrid Yalile Bolívar Jimenez'],
+      FOR: ['Liliana Hinestroza Sinisterra', 'Ingrid Yalile Bolívar Jimenez'],
+      GDI: ['Oscar Hernán Rivera Calderon', 'Freddy Alexander Guerrero Vega'],
+      SDI: ['Oscar Hernán Rivera Calderon', 'Freddy Alexander Guerrero Vega'],
+      DJU: ['David Orlando Mina Velasquez'],
+      SEC: ['Claudia Cecilia Herrera Galvez'],
+      PCI: ['Claudia Cecilia Herrera Galvez'],
+      SYE: ['Liliana Hinestroza Sinisterra'],
+      TRA: ['Oscar Hernán Rivera Calderon', 'Claudia Cecilia Herrera Galvez', 'Liliana Hinestroza Sinisterra'],
+      GDO: ['Luis Enrique Garzón Taquez'],
+      GCI: ['Ingrid Yalile Bolívar Jimenez', 'Oscar Hernán Rivera Calderon', 'Claudia Lorena Murillo Velez', 'Holmer Jose Reyes Sotelo'],
+      CIN: ['Oscar Hernán Rivera Calderon', 'Carlos Horacio Libreros Salamanca', 'Liliana Hinestroza Sinisterra'],
+      THI: ['Ingrid Yalile Bolívar Jimenez'],
+      EMI: ['Todos - Comité Institucional de Gestión'],
+      FIN: ['Todos - Comité Institucional de Gestión'],
+      CCP: ['Luis Enrique Garzón Taquez'],
     };
 
     async function boot() {
@@ -97,40 +126,55 @@
       const saved = getSaved();
       const grid  = document.getElementById('mod-grid');
       grid.innerHTML = index.map(({modulo, total}, i) => {
-        const resp    = saved[modulo] || {};
-        const answered= Object.values(resp).filter(v => v !== '' && !(Array.isArray(v) && !v.length)).length;
-        const pct     = total ? Math.round(answered / total * 100) : 0;
-        const cls     = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
-        const progHTML= pct > 0
-          ? `<span class="mod-prog ${pct<100?'partial':''}">${pct}%</span>` : '';
-        return `
-          <div class="mod-card ${cls}" onclick="goModule('${modulo}', ${i+1})" role="button" tabindex="0"
-               onkeydown="if(event.key==='Enter')goModule('${modulo}',${i+1})">
-            <div class="mod-seq">${i+1}</div>
-            <div class="mod-code">${modulo}</div>
-            <div class="mod-name">${MODULE_NAMES[modulo]||modulo}</div>
-            <div class="mod-footer">
-              <span class="mod-count">${total} preguntas</span>
-              ${progHTML}
-            </div>
-          </div>`;
+        const resp     = saved[modulo] || {};
+        // Count answered: respuesta field or direct value
+        const answered = Object.values(resp).filter(v => {
+          const r = v?.respuesta ?? v;
+          return r !== null && r !== undefined && r !== '' && !(Array.isArray(r) && !r.length);
+        }).length;
+        const pct = total ? Math.round(answered / total * 100) : 0;
+        const cls = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
+
+        const progHTML = pct > 0
+          ? `<span class="mod-prog ${pct < 100 ? 'partial' : ''}">${pct}%</span>` : '';
+
+        const resps = MODULE_RESPONSABLES[modulo] || [];
+        const respHTML = resps.length
+          ? `<div class="mod-responsables">` +
+              resps.map(r => `<span class="mod-resp-tag">${r}</span>`).join('') +
+            `</div>`
+          : '';
+
+        return (
+          `<div class="mod-card ${cls}" onclick="goModule('${modulo}',${i+1})" role="button" tabindex="0"` +
+               ` onkeydown="if(event.key==='Enter')goModule('${modulo}',${i+1})">` +
+            `<div class="mod-card-top">` +
+              `<div class="mod-seq">${i+1}</div>` +
+              `<div class="mod-code">${modulo}</div>` +
+            `</div>` +
+            `<div class="mod-name">${MODULE_NAMES[modulo]||modulo}</div>` +
+            respHTML +
+            `<div class="mod-footer">` +
+              `<span class="mod-count">${total} preguntas</span>` +
+              progHTML +
+            `</div>` +
+          `</div>`
+        );
       }).join('');
     }
 
-    function goModule(mod, seq) {
+    function goModule(mod) {
       const nombre = document.getElementById('inp-nombre').value.trim();
       if (!nombre) {
         toast('Ingresa tu nombre antes de continuar', 'warn');
         document.getElementById('inp-nombre').focus();
         return;
       }
-      // Save identity to sessionStorage so modulo.html can read it
       sessionStorage.setItem('furag_nombre',  nombre);
       sessionStorage.setItem('furag_entidad', document.getElementById('inp-entidad').value.trim());
       window.location.href = `modulo.html?mod=${mod}`;
     }
 
-    // Restore identity if returning from a module
     window.addEventListener('DOMContentLoaded', () => {
       const n = sessionStorage.getItem('furag_nombre');
       const e = sessionStorage.getItem('furag_entidad');
