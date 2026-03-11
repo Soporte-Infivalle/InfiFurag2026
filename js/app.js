@@ -2,13 +2,16 @@
 //  APP — Boot, coordinación de pantallas y UI helpers
 // ══════════════════════════════════════════════════════
 
-// ── UI helpers ──────────────────────────────────────────
 const UI = (() => {
   let toastTimer;
 
   function show(screenId) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(screenId).classList.add('active');
+
+    // Lock scroll on form screen so other screens don't peek through
+    document.body.classList.toggle('screen-locked', screenId === 's-form');
+    window.scrollTo(0, 0);
   }
 
   function toast(msg, type = 'error', dur = 3500) {
@@ -34,7 +37,6 @@ const UI = (() => {
 // ── App coordinator ─────────────────────────────────────
 const App = (() => {
 
-  // Boot: solo carga el índice (0.5 KB) → pantalla de módulos instantánea
   async function boot() {
     UI.show('s-loading');
     UI.setLoadingMsg('Cargando módulos…');
@@ -50,7 +52,6 @@ const App = (() => {
     }
   }
 
-  // Abre un módulo: carga sus preguntas on-demand
   async function openModule(mod) {
     const nombre = ModulesScreen.getNombre();
     if (!nombre) {
@@ -68,7 +69,6 @@ const App = (() => {
       State.setCurrentQuestions(questions);
       FormScreen.render(mod);
       UI.show('s-form');
-      window.scrollTo(0, 0);
     } catch (err) {
       console.error('[App] Error cargando módulo:', err);
       UI.toast('Error al cargar el módulo: ' + err.message, 'error');
@@ -81,7 +81,6 @@ const App = (() => {
     State.closeModule();
     ModulesScreen.refresh();
     UI.show('s-modules');
-    window.scrollTo(0, 0);
   }
 
   async function submitAnswers() {

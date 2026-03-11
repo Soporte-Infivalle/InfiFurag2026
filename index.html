@@ -16,8 +16,9 @@
   <link rel="stylesheet" href="css/modules.css">
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/admin.css">
 
-  <!-- Config (edit before deploying) -->
+  <!-- Config -->
   <script src="config.js"></script>
 </head>
 <body>
@@ -25,13 +26,13 @@
   <!-- ══ HEADER ══════════════════════════════════════════ -->
   <header class="app-header">
     <div class="header-logo">FURAG <em>2025</em></div>
-    <div class="header-badge">Formulario de Respuestas</div>
+    <button class="header-admin-btn" onclick="Admin.open()" title="Panel Admin">⚙</button>
   </header>
 
   <!-- ══ SCREEN: LOADING ═════════════════════════════════ -->
   <div id="s-loading" class="screen active center-screen">
     <div class="spinner"></div>
-    <p class="loading-msg" id="loading-msg">Cargando preguntas…</p>
+    <p class="loading-msg" id="loading-msg">Cargando módulos…</p>
   </div>
 
   <!-- ══ SCREEN: MODULES ═════════════════════════════════ -->
@@ -67,7 +68,7 @@
       <div class="form-top">
         <button class="btn btn-ghost" onclick="App.closeModule()">← Volver</button>
         <div class="form-titles">
-          <div class="mod-title"  id="f-title"></div>
+          <div class="mod-title" id="f-title"></div>
           <div class="mod-subtitle" id="f-subtitle"></div>
         </div>
       </div>
@@ -88,8 +89,7 @@
         <strong id="bar-ans">0</strong> respondidas ·
         <strong id="bar-pend">0</strong> pendientes
       </div>
-      <button id="btn-submit" class="btn btn-primary"
-              onclick="App.submitAnswers()">
+      <button id="btn-submit" class="btn btn-primary" onclick="App.submitAnswers()">
         Guardar respuestas ↗
       </button>
     </div>
@@ -108,24 +108,88 @@
   <!-- ══ SCREEN: ERROR ═══════════════════════════════════ -->
   <div id="s-error" class="screen center-screen">
     <div class="err-icon">⚠️</div>
-    <div class="err-title">No se pudo cargar el archivo</div>
+    <div class="err-title">No se pudo cargar</div>
     <p class="err-msg">
-      Verifica que <code>data/preguntas.xlsx</code> existe en el repositorio
+      Verifica que <code>data/index.json</code> existe en el repositorio
       y que <code>config.js</code> tiene los valores correctos.
     </p>
     <div class="err-code" id="err-detail"></div>
     <button class="btn btn-outline" onclick="location.reload()">Reintentar</button>
   </div>
 
+  <!-- ══ ADMIN MODAL ══════════════════════════════════════ -->
+  <div id="admin-overlay" class="admin-overlay" onclick="Admin.onOverlayClick(event)">
+    <div class="admin-modal">
+      <!-- Login -->
+      <div id="admin-login" class="admin-section">
+        <div class="admin-header">
+          <span class="admin-title">⚙ Panel Admin</span>
+          <button class="admin-close" onclick="Admin.close()">✕</button>
+        </div>
+        <p class="admin-desc">Ingresa la contraseña para acceder al panel.</p>
+        <div class="admin-field">
+          <input id="admin-pwd" type="password" class="input-field"
+                 placeholder="Contraseña" onkeydown="if(event.key==='Enter') Admin.login()">
+        </div>
+        <button class="btn btn-primary" style="width:100%" onclick="Admin.login()">
+          Ingresar
+        </button>
+        <p id="admin-pwd-err" class="admin-pwd-err"></p>
+      </div>
+
+      <!-- Panel -->
+      <div id="admin-panel" class="admin-section" style="display:none">
+        <div class="admin-header">
+          <span class="admin-title">⚙ Panel Admin</span>
+          <button class="admin-close" onclick="Admin.close()">✕</button>
+        </div>
+
+        <!-- Config -->
+        <div class="admin-block">
+          <div class="admin-block-title">Configuración</div>
+          <div class="admin-field">
+            <label class="field-label">WEBHOOK_URL (Apps Script)</label>
+            <input id="adm-webhook" type="text" class="input-field"
+                   placeholder="https://script.google.com/macros/s/…/exec">
+          </div>
+          <button class="btn btn-primary" onclick="Admin.saveConfig()">
+            Guardar configuración
+          </button>
+          <p class="admin-note">⚠ Los cambios de config se pierden al recargar. Para hacerlos permanentes, edita <code>config.js</code> en el repo.</p>
+        </div>
+
+        <!-- Respuestas guardadas -->
+        <div class="admin-block">
+          <div class="admin-block-title">Respuestas en este dispositivo</div>
+          <div id="adm-progress-list" class="adm-progress-list"></div>
+          <div class="admin-actions">
+            <button class="btn btn-ghost" onclick="Admin.clearModule()">
+              Borrar módulo activo
+            </button>
+            <button class="btn btn-danger" onclick="Admin.clearAll()">
+              Borrar todo
+            </button>
+          </div>
+        </div>
+
+        <button class="btn btn-ghost" style="width:100%;margin-top:.5rem"
+                onclick="Admin.logout()">
+          Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ TOAST ════════════════════════════════════════════ -->
   <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
-  <!-- ══ SCRIPTS (order matters) ═════════════════════════ -->
+  <!-- ══ SCRIPTS ═════════════════════════════════════════ -->
   <script src="js/state.js"></script>
   <script src="js/data.js"></script>
   <script src="js/modules.js"></script>
   <script src="js/form.js"></script>
   <script src="js/submit.js"></script>
+  <script src="js/admin.js"></script>
   <script src="js/app.js"></script>
 
 </body>
