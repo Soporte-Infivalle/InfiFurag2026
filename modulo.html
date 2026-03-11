@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURAG 2025 — Módulo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/modulo.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <a href="index.html" class="header-logo">FURAG <em>2025</em></a>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <span class="header-badge" id="h-badge">Módulo</span>
+      <a href="admin.html" class="header-admin-btn" title="Panel Admin">⚙</a>
+    </div>
+  </header>
+
+  <!-- Loading -->
+  <div id="s-loading" class="center-screen">
+    <div class="spinner"></div>
+    <p style="color:var(--muted);font-size:.9rem" id="loading-msg">Cargando preguntas…</p>
+  </div>
+
+  <!-- Form -->
+  <div id="s-form" style="display:none">
+    <div class="page-narrow">
+
+      <!-- Back + title -->
+      <div class="form-top">
+        <a href="index.html" class="btn btn-ghost">← Volver</a>
+        <div>
+          <div class="mod-title" id="f-title"></div>
+          <div class="mod-subtitle" id="f-subtitle"></div>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="prog-header">
+        <span id="prog-label">0 de 0 respondidas</span>
+        <span id="prog-pct">0%</span>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="prog-fill" style="width:0%"></div>
+      </div>
+
+      <!-- Questions -->
+      <div id="q-list"></div>
+    </div>
+
+    <!-- Submit bar -->
+    <div class="submit-bar">
+      <div class="bar-info">
+        <strong id="bar-ans">0</strong> respondidas ·
+        <strong id="bar-pend">0</strong> pendientes
+      </div>
+      <button id="btn-submit" class="btn btn-primary" onclick="submitAnswers()">
+        Guardar respuestas ↗
+      </button>
+    </div>
+  </div>
+
+  <!-- Success -->
+  <div id="s-success" style="display:none" class="center-screen">
+    <div class="success-icon">✓</div>
+    <h2 class="success-title">¡Enviado correctamente!</h2>
+    <p class="success-sub">Tus respuestas fueron guardadas en Google Sheets.</p>
+    <a href="index.html" class="btn btn-outline">Responder otro módulo</a>
+  </div>
+
+  <!-- Error -->
+  <div id="s-error" style="display:none" class="center-screen">
+    <div class="err-icon">⚠️</div>
+    <div class="err-title">No se pudo cargar el módulo</div>
+    <div class="err-code" id="err-detail"></div>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center">
+      <button class="btn btn-outline" onclick="location.reload()">Reintentar</button>
+      <a href="index.html" class="btn btn-ghost">Volver al inicio</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="alert"></div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    const MODULE_NAMES = {
+      CCP:'Control de Corrupción y Protección', CIN:'Control Interno',
+      DJU:'Defensa Jurídica', EMI:'Emisiones y Medio Ambiente',
+      FIN:'Financiero', FOR:'Fortalecimiento Organizacional',
+      GCI:'Gestión Ciudadana', GDI:'Gestión de la Información',
+      GDO:'Gestión Documental', GTH:'Gestión del Talento Humano',
+      INT:'Integridad', PCI:'Participación Ciudadana',
+      PER:'Percepción', PLA:'Planeación', SDI:'Seguridad Digital',
+      SEC:'Servicio al Ciudadano', SYE:'Seguimiento y Evaluación',
+      THI:'Tecnologías de la Información', TRA:'Transparencia',
+    };
+
+    // ── Parse URL params ─────────────────────────────
+    const params  = new URLSearchParams(location.search);
+    const MOD     = (params.get('mod') || '').toUpperCase();
+    const NOMBRE  = sessionStorage.getItem('furag_nombre')  || '';
+    const ENTIDAD = sessionStorage.getItem('furag_entidad') || '';
+
+    let questions = [];
+    let responses = {};   // { [id]: value }
+
+    // ── Boot ─────────────────────────────────────────
+    async function boot() {
+      if (!MOD) { location.href = 'index.html'; return; }
+
+      document.getElementById('loading-msg').textContent = `Cargando módulo ${MOD}…`;
+      document.getElementById('h-badge').textContent = `Módulo ${MOD}`;
+      document.title = `FURAG 2025 — ${MOD}`;
+
+      try {
+        questions = await fetchJSON(`${CONFIG.DATA_DIR}/modulos/${MOD}.json`);
+        // Restore saved responses for this module
+        const saved = getSaved();
+        responses = saved[MOD] ? { ...saved[MOD] } : {};
+        renderForm();
+        show('s-form');
+      } catch(e) {
+        document.getElementById('err-detail').textContent = e.message;
+        show('s-error');
+      }
+    }
+
+    function show(id) {
+      ['s-loading','s-form','s-success','s-error'].forEach(s => {
+        const el = document.getElementById(s);
+        el.style.display = s === id ? (s === 's-form' ? 'block' : 'flex') : 'none';
+      });
+    }
+
+    // ── Render ────────────────────────────────────────
+    function esc(s) {
+      return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function buildCard(q) {
+      const answered = isAnswered(q.id);
+      let input = '';
+
+      if (q.tipo === 'Selección única') {
+        const sel = responses[q.id] || '';
+        input = `<div class="opts">${q.opciones.map(op => `
+          <label class="opt${sel===op?' sel':''}">
+            <input type="radio" name="q${q.id}" value="${esc(op)}"${sel===op?' checked':''}>
+            <span class="opt-lbl">${esc(op)}</span>
+          </label>`).join('')}</div>`;
+
+      } else if (q.tipo === 'Selección múltiple' || q.tipo === 'Selección múltiple numérica') {
+        const sel = Array.isArray(responses[q.id]) ? responses[q.id] : [];
+        input = `<div class="opts">${q.opciones.map(op => `
+          <label class="opt${sel.includes(op)?' sel':''}">
+            <input type="checkbox" name="q${q.id}" value="${esc(op)}"${sel.includes(op)?' checked':''}>
+            <span class="opt-lbl">${esc(op)}</span>
+          </label>`).join('')}</div>`;
+
+      } else if (q.tipo === 'Abierta numérica') {
+        input = `<input type="number" class="q-number" data-qid="${q.id}"
+          value="${esc(String(responses[q.id]||''))}" placeholder="Ingresa un número">`;
+
+      } else {
+        input = `<textarea class="q-textarea" data-qid="${q.id}"
+          placeholder="Escribe tu respuesta…">${esc(responses[q.id]||'')}</textarea>`;
+      }
+
+      return `
+        <div class="q-card${answered?' answered':''}" id="qc${q.id}">
+          <div class="q-top">
+            <span class="q-badge">${esc(q.codigo)}</span>
+            <span class="q-text">${esc(q.texto)}</span>
+          </div>
+          <div class="q-type-label">${esc(q.tipo)}</div>
+          ${input}
+        </div>`;
+    }
+
+    function renderForm() {
+      document.getElementById('f-title').textContent   = `Módulo ${MOD} — ${MODULE_NAMES[MOD]||''}`;
+      document.getElementById('f-subtitle').textContent = `${questions.length} preguntas · orden oficial FURAG`;
+
+      const list = document.getElementById('q-list');
+      list.innerHTML = questions.map(buildCard).join('');
+
+      // Single delegated listeners
+      list.addEventListener('change', onInteraction);
+      list.addEventListener('input',  onTextInput);
+
+      updateProgress();
+    }
+
+    // ── Interaction ───────────────────────────────────
+    function onInteraction(e) {
+      const t = e.target;
+      if (!t.matches('input[type="checkbox"],input[type="radio"]')) return;
+      const qId = parseInt(t.name.slice(1));
+
+      if (t.type === 'checkbox') {
+        const vals = [...document.querySelectorAll(`input[name="${t.name}"]:checked`)].map(i => i.value);
+        responses[qId] = vals;
+        t.closest('.opt').classList.toggle('sel', t.checked);
+      } else {
+        responses[qId] = t.value;
+        document.querySelectorAll(`input[name="${t.name}"]`).forEach(r =>
+          r.closest('.opt').classList.toggle('sel', r.checked));
+      }
+      persist();
+      refreshCard(qId);
+      updateProgress();
+    }
+
+    function onTextInput(e) {
+      const t = e.target;
+      if (!t.dataset.qid) return;
+      const qId = parseInt(t.dataset.qid);
+      responses[qId] = t.value.trim();
+      persist();
+      refreshCard(qId);
+      updateProgress();
+    }
+
+    function isAnswered(qId) {
+      const v = responses[qId];
+      return v !== undefined && v !== '' && !(Array.isArray(v) && !v.length);
+    }
+
+    function refreshCard(qId) {
+      const c = document.getElementById('qc'+qId);
+      if (c) c.classList.toggle('answered', isAnswered(qId));
+    }
+
+    // ── Progress ──────────────────────────────────────
+    function updateProgress() {
+      const answered = questions.filter(q => isAnswered(q.id)).length;
+      const total    = questions.length;
+      const pct      = total ? Math.round(answered/total*100) : 0;
+      document.getElementById('prog-fill').style.width  = pct+'%';
+      document.getElementById('prog-label').textContent = `${answered} de ${total} respondidas`;
+      document.getElementById('prog-pct').textContent   = pct+'%';
+      document.getElementById('bar-ans').textContent    = answered;
+      document.getElementById('bar-pend').textContent   = total - answered;
+    }
+
+    // ── Persist ───────────────────────────────────────
+    function persist() {
+      const all = getSaved();
+      all[MOD]  = { ...responses };
+      localStorage.setItem('furag25_state', JSON.stringify(all));
+    }
+
+    // ── Submit ────────────────────────────────────────
+    async function submitAnswers() {
+      if (!NOMBRE) { toast('Vuelve al inicio e ingresa tu nombre', 'warn'); return; }
+      if (!CONFIG.WEBHOOK_URL) { toast('Configura WEBHOOK_URL en config.js', 'warn'); return; }
+
+      const rows = questions
+        .filter(q => isAnswered(q.id))
+        .map(q => ({
+          timestamp:   new Date().toISOString(),
+          nombre:      NOMBRE,
+          entidad:     ENTIDAD,
+          modulo:      MOD,
+          id_pregunta: q.id,
+          codigo:      q.codigo,
+          pregunta:    q.texto,
+          tipo:        q.tipo,
+          respuesta:   Array.isArray(responses[q.id]) ? responses[q.id].join(' | ') : String(responses[q.id]),
+        }));
+
+      if (!rows.length) { toast('No hay respuestas para guardar', 'warn'); return; }
+
+      const btn = document.getElementById('btn-submit');
+      btn.disabled = true; btn.textContent = 'Guardando…';
+
+      try {
+        await fetch(CONFIG.WEBHOOK_URL, {
+          method:'POST', mode:'no-cors',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({rows}),
+        });
+        show('s-success');
+      } catch(e) {
+        toast('Error al enviar: '+e.message, 'error');
+      } finally {
+        btn.disabled = false; btn.textContent = 'Guardar respuestas ↗';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', boot);
+  </script>
+</body>
+</html>

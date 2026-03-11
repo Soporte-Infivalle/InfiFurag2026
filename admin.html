@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURAG 2025 — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <a href="index.html" class="header-logo">FURAG <em>2025</em></a>
+    <span class="header-badge">Panel Admin</span>
+  </header>
+
+  <!-- Login -->
+  <div id="s-login" class="center-screen">
+    <div class="login-card">
+      <div class="login-icon">⚙</div>
+      <h2 class="login-title">Panel Admin</h2>
+      <p class="login-sub">Acceso restringido</p>
+      <div class="admin-field">
+        <label class="field-label" for="pwd-input">Contraseña</label>
+        <input id="pwd-input" type="password" class="input-field"
+               placeholder="Contraseña" onkeydown="if(event.key==='Enter')login()">
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="login()">Ingresar</button>
+      <p id="pwd-err" class="pwd-err"></p>
+      <a href="index.html" class="btn btn-ghost" style="width:100%;margin-top:.5rem;text-align:center">← Volver al inicio</a>
+    </div>
+  </div>
+
+  <!-- Panel -->
+  <div id="s-panel" style="display:none">
+    <div class="page" style="max-width:680px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem">
+        <h1 class="page-title" style="margin:0">Panel Admin</h1>
+        <a href="index.html" class="btn btn-ghost">← Inicio</a>
+      </div>
+
+      <!-- Config -->
+      <div class="admin-block">
+        <div class="admin-block-title">⚙ Configuración</div>
+        <div class="admin-field">
+          <label class="field-label">WEBHOOK_URL (Apps Script)</label>
+          <input id="adm-webhook" type="text" class="input-field"
+                 placeholder="https://script.google.com/macros/s/…/exec">
+        </div>
+        <div class="admin-field">
+          <label class="field-label">Contraseña Admin</label>
+          <input id="adm-pwd" type="text" class="input-field" placeholder="furag2025">
+        </div>
+        <div class="admin-note">
+          ⚠ Los cambios solo aplican en este dispositivo mientras la pestaña esté abierta.
+          Para hacerlos permanentes, edita <code>config.js</code> en el repositorio.
+        </div>
+        <button class="btn btn-primary" onclick="saveConfig()">Aplicar en esta sesión</button>
+      </div>
+
+      <!-- Respuestas -->
+      <div class="admin-block">
+        <div class="admin-block-title">📋 Respuestas guardadas en este dispositivo</div>
+        <div id="adm-progress-list" class="adm-progress-list"></div>
+        <div class="admin-actions">
+          <button class="btn btn-ghost" onclick="clearModule()">Borrar módulo seleccionado</button>
+          <button class="btn btn-danger" onclick="clearAll()">Borrar todo</button>
+        </div>
+      </div>
+
+      <!-- Module selector for clear -->
+      <div class="admin-block">
+        <div class="admin-block-title">🗑 Borrar módulo específico</div>
+        <div class="admin-field">
+          <label class="field-label">Módulo</label>
+          <select id="adm-mod-select" class="input-field">
+            <option value="">— Selecciona un módulo —</option>
+          </select>
+        </div>
+        <button class="btn btn-danger" onclick="clearSelectedModule()">Borrar respuestas de este módulo</button>
+      </div>
+
+      <button class="btn btn-ghost" style="width:100%" onclick="logout()">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="alert"></div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    const MODULE_NAMES = {
+      CCP:'Control de Corrupción y Protección', CIN:'Control Interno',
+      DJU:'Defensa Jurídica', EMI:'Emisiones y Medio Ambiente',
+      FIN:'Financiero', FOR:'Fortalecimiento Organizacional',
+      GCI:'Gestión Ciudadana', GDI:'Gestión de la Información',
+      GDO:'Gestión Documental', GTH:'Gestión del Talento Humano',
+      INT:'Integridad', PCI:'Participación Ciudadana',
+      PER:'Percepción', PLA:'Planeación', SDI:'Seguridad Digital',
+      SEC:'Servicio al Ciudadano', SYE:'Seguimiento y Evaluación',
+      THI:'Tecnologías de la Información', TRA:'Transparencia',
+    };
+
+    function show(id) {
+      document.getElementById('s-login').style.display = id==='s-login' ? 'flex' : 'none';
+      document.getElementById('s-panel').style.display = id==='s-panel' ? 'block' : 'none';
+    }
+
+    function login() {
+      const val = document.getElementById('pwd-input').value;
+      if (val === (CONFIG.ADMIN_PWD || 'furag2025')) {
+        sessionStorage.setItem('furag_admin', '1');
+        document.getElementById('pwd-err').textContent = '';
+        openPanel();
+      } else {
+        document.getElementById('pwd-err').textContent = 'Contraseña incorrecta';
+        document.getElementById('pwd-input').select();
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('furag_admin');
+      show('s-login');
+    }
+
+    function openPanel() {
+      show('s-panel');
+      document.getElementById('adm-webhook').value = CONFIG.WEBHOOK_URL || '';
+      document.getElementById('adm-pwd').value     = CONFIG.ADMIN_PWD   || '';
+      renderProgressList();
+      renderModSelect();
+    }
+
+    function saveConfig() {
+      CONFIG.WEBHOOK_URL = document.getElementById('adm-webhook').value.trim();
+      CONFIG.ADMIN_PWD   = document.getElementById('adm-pwd').value.trim();
+      toast('Configuración aplicada en esta sesión', 'success');
+    }
+
+    function renderProgressList() {
+      const saved = getSaved();
+      const mods  = Object.keys(MODULE_NAMES);
+      const list  = document.getElementById('adm-progress-list');
+
+      const rows = mods.map(mod => {
+        const resp     = saved[mod] || {};
+        const answered = Object.values(resp).filter(v => v !== '' && !(Array.isArray(v) && !v.length)).length;
+        if (!answered) return null;
+        return `<div class="adm-mod-row">
+          <span class="adm-mod-name">${mod} <span style="font-weight:400;color:var(--muted)">${MODULE_NAMES[mod]}</span></span>
+          <span class="adm-mod-pct">${answered} resp.</span>
+        </div>`;
+      }).filter(Boolean);
+
+      list.innerHTML = rows.length
+        ? rows.join('')
+        : '<p style="font-size:.82rem;color:var(--muted)">Sin respuestas guardadas en este dispositivo.</p>';
+    }
+
+    function renderModSelect() {
+      const saved  = getSaved();
+      const select = document.getElementById('adm-mod-select');
+      const filled = Object.keys(saved).filter(m => Object.keys(saved[m]).length);
+      select.innerHTML = '<option value="">— Selecciona un módulo —</option>' +
+        filled.map(m => `<option value="${m}">${m} — ${MODULE_NAMES[m]||m}</option>`).join('');
+    }
+
+    function clearSelectedModule() {
+      const mod = document.getElementById('adm-mod-select').value;
+      if (!mod) { toast('Selecciona un módulo primero', 'warn'); return; }
+      if (!confirm(`¿Borrar todas las respuestas del módulo ${mod}?`)) return;
+      const saved = getSaved();
+      delete saved[mod];
+      localStorage.setItem('furag25_state', JSON.stringify(saved));
+      toast(`Respuestas de ${mod} borradas`, 'success');
+      renderProgressList();
+      renderModSelect();
+    }
+
+    function clearModule() { clearSelectedModule(); }
+
+    function clearAll() {
+      if (!confirm('¿Borrar TODAS las respuestas de todos los módulos en este dispositivo?')) return;
+      localStorage.removeItem('furag25_state');
+      toast('Todas las respuestas borradas', 'success');
+      renderProgressList();
+      renderModSelect();
+    }
+
+    // Auto-login if session active
+    window.addEventListener('DOMContentLoaded', () => {
+      if (sessionStorage.getItem('furag_admin') === '1') openPanel();
+      else show('s-login');
+    });
+  </script>
+</body>
+</html>

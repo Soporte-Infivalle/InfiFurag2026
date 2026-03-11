@@ -3,194 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FURAG 2025 — Formulario de Respuestas</title>
-
-  <!-- Fonts -->
+  <title>FURAG 2025 — Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/modules.css">
-  <link rel="stylesheet" href="css/form.css">
-  <link rel="stylesheet" href="css/ui.css">
-  <link rel="stylesheet" href="css/admin.css">
-
-  <!-- Config -->
+  <link rel="stylesheet" href="css/index.css">
   <script src="config.js"></script>
 </head>
 <body>
 
-  <!-- ══ HEADER ══════════════════════════════════════════ -->
   <header class="app-header">
-    <div class="header-logo">FURAG <em>2025</em></div>
-    <button class="header-admin-btn" onclick="Admin.open()" title="Panel Admin">⚙</button>
+    <a href="index.html" class="header-logo">FURAG <em>2025</em></a>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <span class="header-badge">Formulario de Respuestas</span>
+      <a href="admin.html" class="header-admin-btn" title="Panel Admin">⚙</a>
+    </div>
   </header>
 
-  <!-- ══ SCREEN: LOADING ═════════════════════════════════ -->
-  <div id="s-loading" class="screen active center-screen">
+  <!-- Loading -->
+  <div id="s-loading" class="center-screen">
     <div class="spinner"></div>
-    <p class="loading-msg" id="loading-msg">Cargando módulos…</p>
+    <p style="color:var(--muted);font-size:.9rem">Cargando módulos…</p>
   </div>
 
-  <!-- ══ SCREEN: MODULES ═════════════════════════════════ -->
-  <div id="s-modules" class="screen">
-    <div class="page">
-      <h1 class="page-title">Selecciona tu módulo</h1>
-      <p class="page-sub">
-        Ingresa tu nombre y entidad, luego elige el módulo que te corresponde.<br>
-        Las respuestas se guardan automáticamente en Google Sheets.
-      </p>
+  <!-- Main -->
+  <div id="s-main" class="page" style="display:none">
+    <h1 class="page-title">Selecciona tu módulo</h1>
+    <p class="page-sub">
+      Elige el módulo que te corresponde. Las preguntas se muestran en el orden oficial del formulario FURAG.
+    </p>
 
-      <div class="id-row">
-        <div>
-          <label class="field-label" for="inp-nombre">Tu nombre completo</label>
-          <input id="inp-nombre" class="input-field" type="text"
-                 placeholder="Ej: María García" autocomplete="name">
-        </div>
-        <div>
-          <label class="field-label" for="inp-entidad">Entidad / Dependencia</label>
-          <input id="inp-entidad" class="input-field" type="text"
-                 placeholder="Ej: Ministerio de Salud" autocomplete="organization">
-        </div>
+    <div class="id-row">
+      <div>
+        <label class="field-label" for="inp-nombre">Tu nombre completo</label>
+        <input id="inp-nombre" class="input-field" type="text"
+               placeholder="Ej: María García" autocomplete="name">
       </div>
-
-      <div class="section-label">Módulos disponibles</div>
-      <div class="mod-grid" id="mod-grid"></div>
-    </div>
-  </div>
-
-  <!-- ══ SCREEN: FORM ════════════════════════════════════ -->
-  <div id="s-form" class="screen">
-    <div class="page-narrow">
-      <div class="form-top">
-        <button class="btn btn-ghost" onclick="App.closeModule()">← Volver</button>
-        <div class="form-titles">
-          <div class="mod-title" id="f-title"></div>
-          <div class="mod-subtitle" id="f-subtitle"></div>
-        </div>
+      <div>
+        <label class="field-label" for="inp-entidad">Entidad / Dependencia</label>
+        <input id="inp-entidad" class="input-field" type="text"
+               placeholder="Ej: Ministerio de Salud" autocomplete="organization">
       </div>
-
-      <div class="prog-header">
-        <span id="prog-label">0 de 0 respondidas</span>
-        <span id="prog-pct">0%</span>
-      </div>
-      <div class="prog-track">
-        <div class="prog-fill" id="prog-fill" style="width: 0%"></div>
-      </div>
-
-      <div id="q-list"></div>
     </div>
 
-    <div class="submit-bar">
-      <div class="bar-info">
-        <strong id="bar-ans">0</strong> respondidas ·
-        <strong id="bar-pend">0</strong> pendientes
-      </div>
-      <button id="btn-submit" class="btn btn-primary" onclick="App.submitAnswers()">
-        Guardar respuestas ↗
-      </button>
-    </div>
+    <div class="section-label">Módulos — en orden FURAG</div>
+    <div class="mod-grid" id="mod-grid"></div>
   </div>
 
-  <!-- ══ SCREEN: SUCCESS ═════════════════════════════════ -->
-  <div id="s-success" class="screen center-screen">
-    <div class="success-icon">✓</div>
-    <h2 class="success-title">¡Enviado correctamente!</h2>
-    <p class="success-sub">Tus respuestas fueron guardadas en Google Sheets.</p>
-    <button class="btn btn-outline" onclick="App.closeModule()">
-      Responder otro módulo
-    </button>
-  </div>
-
-  <!-- ══ SCREEN: ERROR ═══════════════════════════════════ -->
-  <div id="s-error" class="screen center-screen">
+  <!-- Error -->
+  <div id="s-error" style="display:none" class="center-screen">
     <div class="err-icon">⚠️</div>
     <div class="err-title">No se pudo cargar</div>
-    <p class="err-msg">
-      Verifica que <code>data/index.json</code> existe en el repositorio
-      y que <code>config.js</code> tiene los valores correctos.
-    </p>
+    <p class="err-msg">Verifica que <code>data/index.json</code> existe en el repositorio.</p>
     <div class="err-code" id="err-detail"></div>
     <button class="btn btn-outline" onclick="location.reload()">Reintentar</button>
   </div>
 
-  <!-- ══ ADMIN MODAL ══════════════════════════════════════ -->
-  <div id="admin-overlay" class="admin-overlay" onclick="Admin.onOverlayClick(event)">
-    <div class="admin-modal">
-      <!-- Login -->
-      <div id="admin-login" class="admin-section">
-        <div class="admin-header">
-          <span class="admin-title">⚙ Panel Admin</span>
-          <button class="admin-close" onclick="Admin.close()">✕</button>
-        </div>
-        <p class="admin-desc">Ingresa la contraseña para acceder al panel.</p>
-        <div class="admin-field">
-          <input id="admin-pwd" type="password" class="input-field"
-                 placeholder="Contraseña" onkeydown="if(event.key==='Enter') Admin.login()">
-        </div>
-        <button class="btn btn-primary" style="width:100%" onclick="Admin.login()">
-          Ingresar
-        </button>
-        <p id="admin-pwd-err" class="admin-pwd-err"></p>
-      </div>
+  <div class="toast" id="toast" role="alert"></div>
 
-      <!-- Panel -->
-      <div id="admin-panel" class="admin-section" style="display:none">
-        <div class="admin-header">
-          <span class="admin-title">⚙ Panel Admin</span>
-          <button class="admin-close" onclick="Admin.close()">✕</button>
-        </div>
+  <script src="js/shared.js"></script>
+  <script>
+    const MODULE_NAMES = {
+      CCP:'Control de Corrupción y Protección', CIN:'Control Interno',
+      DJU:'Defensa Jurídica', EMI:'Emisiones y Medio Ambiente',
+      FIN:'Financiero', FOR:'Fortalecimiento Organizacional',
+      GCI:'Gestión Ciudadana', GDI:'Gestión de la Información',
+      GDO:'Gestión Documental', GTH:'Gestión del Talento Humano',
+      INT:'Integridad', PCI:'Participación Ciudadana',
+      PER:'Percepción', PLA:'Planeación', SDI:'Seguridad Digital',
+      SEC:'Servicio al Ciudadano', SYE:'Seguimiento y Evaluación',
+      THI:'Tecnologías de la Información', TRA:'Transparencia',
+    };
 
-        <!-- Config -->
-        <div class="admin-block">
-          <div class="admin-block-title">Configuración</div>
-          <div class="admin-field">
-            <label class="field-label">WEBHOOK_URL (Apps Script)</label>
-            <input id="adm-webhook" type="text" class="input-field"
-                   placeholder="https://script.google.com/macros/s/…/exec">
-          </div>
-          <button class="btn btn-primary" onclick="Admin.saveConfig()">
-            Guardar configuración
-          </button>
-          <p class="admin-note">⚠ Los cambios de config se pierden al recargar. Para hacerlos permanentes, edita <code>config.js</code> en el repo.</p>
-        </div>
+    async function boot() {
+      try {
+        const index = await fetchJSON(`${CONFIG.DATA_DIR}/index.json`);
+        renderGrid(index);
+        show('s-main');
+      } catch(e) {
+        document.getElementById('err-detail').textContent = e.message;
+        show('s-error');
+      }
+    }
 
-        <!-- Respuestas guardadas -->
-        <div class="admin-block">
-          <div class="admin-block-title">Respuestas en este dispositivo</div>
-          <div id="adm-progress-list" class="adm-progress-list"></div>
-          <div class="admin-actions">
-            <button class="btn btn-ghost" onclick="Admin.clearModule()">
-              Borrar módulo activo
-            </button>
-            <button class="btn btn-danger" onclick="Admin.clearAll()">
-              Borrar todo
-            </button>
-          </div>
-        </div>
+    function show(id) {
+      ['s-loading','s-main','s-error'].forEach(s =>
+        document.getElementById(s).style.display = s === id ? (id==='s-main'?'block':'flex') : 'none'
+      );
+    }
 
-        <button class="btn btn-ghost" style="width:100%;margin-top:.5rem"
-                onclick="Admin.logout()">
-          Cerrar sesión
-        </button>
-      </div>
-    </div>
-  </div>
+    function renderGrid(index) {
+      const saved = getSaved();
+      const grid  = document.getElementById('mod-grid');
+      grid.innerHTML = index.map(({modulo, total}, i) => {
+        const resp    = saved[modulo] || {};
+        const answered= Object.values(resp).filter(v => v !== '' && !(Array.isArray(v) && !v.length)).length;
+        const pct     = total ? Math.round(answered / total * 100) : 0;
+        const cls     = pct === 100 ? 'done' : pct > 0 ? 'partial' : '';
+        const progHTML= pct > 0
+          ? `<span class="mod-prog ${pct<100?'partial':''}">${pct}%</span>` : '';
+        return `
+          <div class="mod-card ${cls}" onclick="goModule('${modulo}', ${i+1})" role="button" tabindex="0"
+               onkeydown="if(event.key==='Enter')goModule('${modulo}',${i+1})">
+            <div class="mod-seq">${i+1}</div>
+            <div class="mod-code">${modulo}</div>
+            <div class="mod-name">${MODULE_NAMES[modulo]||modulo}</div>
+            <div class="mod-footer">
+              <span class="mod-count">${total} preguntas</span>
+              ${progHTML}
+            </div>
+          </div>`;
+      }).join('');
+    }
 
-  <!-- ══ TOAST ════════════════════════════════════════════ -->
-  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+    function goModule(mod, seq) {
+      const nombre = document.getElementById('inp-nombre').value.trim();
+      if (!nombre) {
+        toast('Ingresa tu nombre antes de continuar', 'warn');
+        document.getElementById('inp-nombre').focus();
+        return;
+      }
+      // Save identity to sessionStorage so modulo.html can read it
+      sessionStorage.setItem('furag_nombre',  nombre);
+      sessionStorage.setItem('furag_entidad', document.getElementById('inp-entidad').value.trim());
+      window.location.href = `modulo.html?mod=${mod}`;
+    }
 
-  <!-- ══ SCRIPTS ═════════════════════════════════════════ -->
-  <script src="js/state.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/modules.js"></script>
-  <script src="js/form.js"></script>
-  <script src="js/submit.js"></script>
-  <script src="js/admin.js"></script>
-  <script src="js/app.js"></script>
-
+    // Restore identity if returning from a module
+    window.addEventListener('DOMContentLoaded', () => {
+      const n = sessionStorage.getItem('furag_nombre');
+      const e = sessionStorage.getItem('furag_entidad');
+      if (n) document.getElementById('inp-nombre').value  = n;
+      if (e) document.getElementById('inp-entidad').value = e;
+      boot();
+    });
+  </script>
 </body>
 </html>
