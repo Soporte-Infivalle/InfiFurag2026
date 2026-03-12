@@ -192,6 +192,8 @@
     let responses = {};
     // prev2024[codigo] = { respuesta, evidencia, otra } — indexado por código ("GTH201", etc.)
     let prev2024 = {};
+    // sim2024[codigo] = { cod24, sim, razon } — similitud textual vs pregunta 2024
+    let sim2024  = {};
 
     // ── Boot ─────────────────────────────────────────
     async function boot() {
@@ -254,15 +256,20 @@
         const url  = CONFIG.WEBHOOK_URL + '?a%C3%B1o=2024&mod=' + MOD;
         const res  = await fetch(url, { method: 'GET', mode: 'cors' });
         const json = await res.json();
-        if (json.status !== 'ok' || !json.respuestas) return;
-        const remoteMod = json.respuestas[MOD] || {};
-        // Guardar indexado por Código
+        if (json.status !== 'ok') return;
+        // Respuestas 2024 indexadas por Código
+        const remoteMod = (json.respuestas && json.respuestas[MOD]) || {};
         Object.entries(remoteMod).forEach(([cod, val]) => {
           prev2024[cod] = {
             respuesta: val.respuesta ?? null,
             evidencia: val.evidencia ?? '',
             otra:      val.otra      ?? '',
           };
+        });
+        // Similitud indexada por Cód.2025
+        const simData = json.similitud || {};
+        Object.entries(simData).forEach(([cod25, val]) => {
+          sim2024[cod25] = val;
         });
         // Insertar botón en cada tarjeta ya pintada
         questions.forEach(q => insertPrev24Btn(q));
@@ -307,12 +314,38 @@
         '</svg>';
       const header = '<div class="prev24-header">' + ICON + ' Respuesta FURAG 2024</div>';
 
+      // ── Bloque de similitud ──────────────────────────────────────────────
+      const sim = sim2024[q.codigo] || null;
+      let simHTML = '';
+      if (sim && sim.sim && sim.sim !== '—') {
+        const pct  = parseFloat(sim.sim);
+        const color = pct >= 90 ? 'red' : (pct >= 50 ? 'yellow' : 'gray');
+        const styles = {
+          red:    { bg:'#FDECEA', border:'#F09595', text:'#A32D2D', dot:'#E24B4A' },
+          yellow: { bg:'#FFF9C4', border:'#EF9F27', text:'#854F0B', dot:'#BA7517' },
+          gray:   { bg:'#F1EFE8', border:'#B4B2A9', text:'#5F5E5A', dot:'#888780' },
+        };
+        const s = styles[color];
+        const cod24txt = sim.cod24 ? ' (referencia: <strong>' + esc(sim.cod24) + '</strong>)' : '';
+        simHTML =
+          '<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;' +
+          'background:' + s.bg + ';border:0.5px solid ' + s.border + ';border-radius:8px;padding:8px 10px;">' +
+            '<span style="width:8px;height:8px;border-radius:50%;background:' + s.dot + ';flex-shrink:0;margin-top:3px;"></span>' +
+            '<span style="font-size:12px;color:' + s.text + ';line-height:1.45;">' +
+              'La pregunta del 2025 tiene una similitud del <strong>' + esc(sim.sim) + '</strong> ' +
+              'con respecto a la del 2024' + cod24txt + ' — ' + esc(sim.razon || '') +
+            '</span>' +
+          '</div>';
+      }
+
+      // ── Respuesta 2024 ───────────────────────────────────────────────────
       const data = prev2024[q.codigo] || null;
       const resp = data ? data.respuesta : null;
       const empty = !resp || resp === '' || (Array.isArray(resp) && !resp.length);
 
       if (!data || empty) {
-        return header + '<p class="prev24-empty">Esta pregunta no fue respondida en 2024 o no existía en ese formulario.</p>';
+        return header + simHTML +
+          '<p class="prev24-empty">Esta pregunta no fue respondida en 2024 o no existía en ese formulario.</p>';
       }
 
       let respHTML;
@@ -328,7 +361,7 @@
         ? '<div class="prev24-ev"><strong>Evidencia:</strong> ' + esc(data.evidencia) + '</div>'
         : '';
 
-      return header + '<div class="prev24-resp">' + respHTML + '</div>' + evHTML;
+      return header + simHTML + '<div class="prev24-resp">' + respHTML + '</div>' + evHTML;
     }
 
     function show(id) {
