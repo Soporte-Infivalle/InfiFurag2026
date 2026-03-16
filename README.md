@@ -107,37 +107,9 @@ const CONFIG = {
 
 ## Arquitectura
 
-```
-Navegador (GitHub Pages)
-│
-│  1. Boot → carga index.json (0.5 KB)
-│  2. Abre módulo → carga MOD.json (~13 KB)
-│  3. Respuestas se guardan en localStorage
-│  4. Al enviar → POST al webhook
-│
-▼
-Apps Script v6 (doPost)
-│
-│  5. Inserta filas en hoja "Respuestas"
-│  6. Recalcula hoja "_progreso"
-│  7. Actualiza columnas 2025 en "Comparativo Respuestas"
-│
-▼
-Google Sheets
-│
-├── Respuestas              ← datos crudos
-├── _progreso               ← % avance por módulo (oculta)
-├── Respuestas 2024         ← histórico 2024
-├── Similitud               ← similitud textual 2024↔2025
-├── Preguntas 2025          ← base de preguntas con opciones
-├── Comparativo Respuestas  ← marcadas vs posibles por año
-└── Avance Preguntas        ← resumen global para Looker Studio
-│
-▼
-Looker Studio (Dashboard)
-│
-└── Se actualiza en tiempo real con cada envío del formulario
-```
+![Flujograma InfiFURAG 2025](Media/Flujograma%20InfiFURAG2025.png)
+
+El sistema opera en cuatro capas: el **Navegador** (GitHub Pages) carga los módulos de forma lazy y persiste respuestas en `localStorage`; al enviar hace un POST al **Apps Script** (v6) que inserta filas, recalcula el progreso y actualiza el Comparativo en tiempo real; todo se almacena en **Google Sheets** (10 hojas); y el **Dashboard de Looker Studio** consume esas hojas y se refresca automáticamente con cada envío.
 
 ---
 
