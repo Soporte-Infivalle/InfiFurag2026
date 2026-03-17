@@ -55,7 +55,7 @@
             "¿Cuántos ejercicios de consulta o toma de decisiones realizó la entidad con sus grupos de interés?",
             "¿Cuántos de los ejercicios de consulta o toma de decisiones se realizaron usando medios digitales?"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 75,
@@ -74,7 +74,7 @@
             "Otras. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 76,
@@ -87,7 +87,7 @@
             "Sí, pero esos proyectos con enfoque experimental no se han integrado al Plan de Acción Anual de la entidad",
             "No se ha adoptado un enfoque experimental en los proyectos de la entidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 77,
@@ -103,7 +103,7 @@
             "Desarrollo de prototipos o productos mínimos viables",
             "No se realizaron actividades de innovación pública digital"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 78,
@@ -199,7 +199,7 @@
             "Compra Pública para incentivar la Innovación (convocatorias de laboratorios de innovación)",
             "Otro. ¿Cuál?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 84,
@@ -215,7 +215,7 @@
             "Falta de una cultura de la innovación",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 85,
@@ -229,7 +229,7 @@
             "Modelo de Gestión de Proyectos de TI (MGPTI)",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 86,
@@ -244,7 +244,7 @@
             "Lo actualizó y publicó en la sede electrónica de la entidad el PETI de la vigencia 2025",
             "No se formuló el PETI de la vigencia 2025"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 87,
@@ -261,7 +261,7 @@
             "Ejecutó el proceso de Arquitectura Empresarial en la Entidad durante la vigencia 2025",
             "La entidad no ha realizado ejercicios de Arquitectura Empresarial"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 88,
@@ -279,7 +279,7 @@
             "Documentó las lecciones aprendidas de los proyectos gestionados",
             "Ninguna de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 89,
@@ -295,7 +295,7 @@
             "Consolidó el conocimiento y las lecciones aprendidas del área de TI",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 90,
@@ -309,7 +309,7 @@
             "Fase 3: De pruebas de funcionalidad",
             "En la entidad no se ha desarrollado el modelo de adopción de IPV6"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 91,
@@ -324,7 +324,7 @@
             "Diseño detallado de red",
             "Plan de contingencias para IPv6"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 92,
@@ -337,7 +337,7 @@
             "Informe de pruebas piloto y de implementación de IPv6 (Fase 2 y 3)",
             "Acta de cumplimiento a satisfacción sobre el funcionamiento e implementación de los elementos que fueron intervenidos con IPv6"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 93,
@@ -349,7 +349,7 @@
             "Si. Ingrese las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 94,
@@ -362,7 +362,7 @@
             "No",
             "No aplica. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 95,
@@ -377,7 +377,7 @@
             "Utilizó otras modalidades de adquisición. Especifique cuáles:",
             "La entidad no adquirió productos, bienes o servicios de TI"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 96,
@@ -389,7 +389,7 @@
             "Sí. Indique cuáles:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 97,
@@ -403,7 +403,7 @@
             "Grupos de valor e interés (ciudadanía, sector privado, sociedad civil, academia, otras entidades públicas)",
             "La entidad no implementó estrategias de capacitación sobre la Política de Gobierno Digital"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 98,
@@ -480,7 +480,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 103,
@@ -493,7 +493,7 @@
             "Se elaboró, pero no se aprobó por parte del Comité de Gestión y Desempeño Institucional",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 104,
@@ -508,7 +508,7 @@
             "Está formulada pero no ha sido aprobada por el Comité de Gestión y Desempeño Institucional",
             "La entidad no cuenta con una política de seguridad y privacidad de la información"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 105,
@@ -523,7 +523,7 @@
             "Contó con procedimientos definidos y documentados, pero no han sido aprobados por el Comité de Gestión y Desempeño Institucional",
             "No cuenta con procedimientos de seguridad y privacidad de la información o están en proceso de construcción"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 106,
@@ -538,7 +538,7 @@
             "Se contó con el inventario, pero no ha sido aprobado por el Comité de Gestión y Desempeño Institucional",
             "No cuenta con el inventario de activos de seguridad y privacidad de la información o está en proceso de construcción"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 107,
@@ -553,7 +553,7 @@
             "Los identificó, pero no han sido aprobados por el Comité de Gestión y Desempeño Institucional",
             "No se han identificado los riesgos de seguridad y privacidad de la información"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 108,
@@ -566,7 +566,7 @@
             "Está en proceso de implementarlo. Ingrese las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 109,
@@ -581,7 +581,7 @@
             "Se contó con un plan, pero no ha sido aprobado",
             "No se cuenta con un plan operacional de seguridad y privacidad de la información"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 110,
@@ -596,7 +596,7 @@
             "Los definió, pero no han sido aprobados por el Comité de Gestión y Desempeño Institucional",
             "No se han definido indicadores para medir la eficiencia y eficacia de la implementación del MSPI en la entidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 111,
@@ -611,7 +611,7 @@
             "La entidad no priorizó este tema en su plan anual de auditorías (universo de unidades auditables)",
             "La entidad no realizó auditorías"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 112,
@@ -623,7 +623,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 113,
@@ -638,7 +638,7 @@
             "Según las mediciones adelantadas por la entidad, el servicio de Interoperabilidad no le ha generado beneficios. Ingrese las evidencias:",
             "La entidad no ha desarrollado mediciones para evaluar los beneficios de utilizar el servicio de Interoperabilidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 114,
@@ -647,7 +647,7 @@
         "texto": "Indique el promedio mensual de transacciones proyectadas a realizar por la entidad en la vigencia 2026 a través de la plataforma de interoperabilidad X-ROAD:",
         "tipo": "Abierta numérica",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 115,
@@ -660,7 +660,7 @@
             "Utilizó datos externos a la entidad. Especifique cuáles:",
             "La entidad no toma decisiones basadas en datos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 116,
@@ -673,7 +673,7 @@
             "Táctico: es el nivel en el que se elaboran los planes, programas, iniciativas, proyectos, procesos y procedimientos para alcanzar los objetivos definidos por el nivel estratégico. Efectúa el control de la gestión realizada por el nivel operacional y soporta las decisiones que se toman y que afectan a las múltiples partes interesadas",
             "Operacional: es el nivel en el que se implementan y llevan a cabo los lineamientos, actividades y tareas definidas en los planes, iniciativas, proyectos y procedimientos acordados por el nivel táctico"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 117,
@@ -690,7 +690,7 @@
             "Archivo y preservación",
             "La entidad no gestionó ninguna fase del ciclo de vida del dato"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 118,
@@ -722,7 +722,7 @@
             "Análisis prescriptivo, es decir, incorpora algoritmos de optimización, análisis de decisión multicriterio y reglas de negocio, con el propósito de establecer cuál es la mejor acción (actual o futura) a tomar bajo un contexto especifico",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 120,
@@ -737,7 +737,7 @@
             "Evaluó la implementación de lineamientos en materia de datos",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 121,
@@ -752,7 +752,7 @@
             "Contó con un proceso para la gestión de datos maestros",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 122,
@@ -767,7 +767,7 @@
             "La gestión y el gobierno de los datos son insuficientes para tener datos que permitan tomar decisiones",
             "Otras. ¿Cuáles?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 123,
@@ -792,7 +792,7 @@
             "CC14. Orden adecuado de los contenidos si es significativo",
             "CC15. Advertencias bien ubicadas"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 124,
@@ -805,7 +805,7 @@
             "No",
             "No tienen conocimiento al respecto"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 125,
@@ -818,7 +818,7 @@
             "Aprobó y publicó la licencia de datos abiertos, mediante la cual se determina el alcance, uso y aprovechamiento que los particulares o terceros interesados puedan efectuar sobre los mismos",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 126,
@@ -831,7 +831,7 @@
             "Sí, pero no se encuentra federado al Portal de Datos Abiertos (www.datos.gov.co). Ingrese la URL del portal propio de datos abiertos:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 127,
@@ -845,7 +845,7 @@
             "¿Cuántos de los conjuntos de datos abiertos estratégicos fueron publicados, están actualizados y fueron difundidos?",
             "¿Cuántos de los conjuntos de datos abiertos estratégicos de la entidad fueron utilizados en procesos de cocreación o consulta pública?"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 128,
@@ -858,7 +858,7 @@
             "Número total de usuarios contactados y satisfechos con el uso de los datos abiertos de la entidad durante 2025:",
             "La entidad no mide la satisfacción de los usuarios con el uso de los datos abiertos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 129,
@@ -884,7 +884,7 @@
             "Fueron aprobados por el Comité de Gestión y Desempeño Institucional, pero no se incluyeron en el PETI",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 131,
@@ -968,6 +968,6 @@
             "Si. Ingrese las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]
