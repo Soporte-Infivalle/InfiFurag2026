@@ -11,6 +11,58 @@
   <link rel="stylesheet" href="css/modulo.css">
   <script src="config.js"></script>
   <style>
+    /* ── Checkboxes de validación en submit-bar ── */
+    .val-checks {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .val-check-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted, #6b7280);
+      white-space: nowrap;
+    }
+    .val-check-label input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+    .val-check-box {
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--border, #d1d5db);
+      border-radius: 5px;
+      background: var(--surface, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .15s, border-color .15s;
+    }
+    .val-check-label input:checked + .val-check-box {
+      background: #185FA5;
+      border-color: #185FA5;
+    }
+    .val-check-label input:checked + .val-check-box::after {
+      content: '';
+      display: block;
+      width: 5px; height: 9px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+    .val-check-label input:checked ~ .val-check-text {
+      color: #185FA5;
+    }
+  </style>
+  <style>
     .prev24-btn {
       display: inline-flex;
       align-items: center;
@@ -143,6 +195,18 @@
         <strong id="bar-ans">0</strong> respondidas ·
         <strong id="bar-pend">0</strong> pendientes
       </div>
+      <div class="val-checks">
+        <label class="val-check-label" title="Marcar cuando Planeación haya revisado este módulo">
+          <input type="checkbox" id="chk-planeacion">
+          <span class="val-check-box"></span>
+          <span class="val-check-text">Validado Planeación</span>
+        </label>
+        <label class="val-check-label" title="Marcar cuando Gerencia haya aprobado este módulo">
+          <input type="checkbox" id="chk-gerencia">
+          <span class="val-check-box"></span>
+          <span class="val-check-text">Validado Gerencia</span>
+        </label>
+      </div>
       <button id="btn-submit" class="btn btn-primary" onclick="submitAnswers()">
         Guardar respuestas ↗
       </button>
@@ -226,6 +290,12 @@
               // Actualizar también el progreso global en index si está cacheado
               if (json.progreso) {
                 sessionStorage.setItem('furag_remote_progress', JSON.stringify(json.progreso));
+              }
+              // Cargar estado de validación en los checkboxes
+              if (json.progreso && json.progreso[MOD]) {
+                const p = json.progreso[MOD];
+                document.getElementById('chk-planeacion').checked = !!p.validado_planeacion;
+                document.getElementById('chk-gerencia').checked   = !!p.validado_gerencia;
               }
             }
             // Persistir en localStorage para disponibilidad offline
@@ -598,11 +668,15 @@
       const btn = document.getElementById('btn-submit');
       btn.disabled = true; btn.textContent = 'Guardando…';
 
+      // Leer estado de validación
+      const validado_planeacion = document.getElementById('chk-planeacion').checked;
+      const validado_gerencia   = document.getElementById('chk-gerencia').checked;
+
       try {
         await fetch(CONFIG.WEBHOOK_URL, {
           method: 'POST', mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ rows }),
+          body: JSON.stringify({ rows, validado_planeacion, validado_gerencia, modulo: MOD }),
         });
         // Marcar que hubo submit para que index.html refresque el progreso
         sessionStorage.setItem('furag_just_submitted', '1');

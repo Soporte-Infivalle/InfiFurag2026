@@ -10,6 +10,48 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
   <script src="config.js"></script>
+  <style>
+    /* ── Badges de validación en cards de módulo ── */
+    .mod-val-row {
+      display: flex;
+      gap: 6px;
+      margin: 5px 0 2px;
+      flex-wrap: wrap;
+    }
+    .mod-val-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid currentColor;
+      opacity: .45;
+      transition: opacity .2s;
+    }
+    .mod-val-badge.activo { opacity: 1; }
+    .mod-val-badge.plan { color: #185FA5; background: #E6F1FB; }
+    .mod-val-badge.ger  { color: #145A32; background: #D5F5E3; }
+    .mod-val-badge .chk {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      border: 1.5px solid currentColor;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mod-val-badge.activo .chk::after {
+      content: '';
+      display: block;
+      width: 3px; height: 6px;
+      border: 1.5px solid currentColor;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translate(-1px,-1px);
+    }
+  </style>
 </head>
 <body>
 
@@ -173,6 +215,12 @@
             : '';
           personas.style.display = remote.personas ? 'block' : 'none';
         }
+
+        // Badges de validación
+        const vp = document.getElementById('vp-' + modulo);
+        const vg = document.getElementById('vg-' + modulo);
+        if (vp) vp.classList.toggle('activo', !!remote.validado_planeacion);
+        if (vg) vg.classList.toggle('activo', !!remote.validado_gerencia);
       });
     }
 
@@ -198,6 +246,10 @@
             '</div>' +
             '<div class="mod-name">' + (MODULE_NAMES[modulo] || modulo) + '</div>' +
             respHTML +
+            '<div class="mod-val-row">' +
+              '<span class="mod-val-badge plan" id="vp-' + modulo + '"><span class="chk"></span>Planeación</span>' +
+              '<span class="mod-val-badge ger"  id="vg-' + modulo + '"><span class="chk"></span>Gerencia</span>' +
+            '</div>' +
             '<div class="mod-bar-track"><div class="mod-bar-fill" style="width:0%"></div></div>' +
             '<div class="mod-footer">' +
               '<span class="mod-count">' + total + ' preguntas</span>' +
