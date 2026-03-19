@@ -1,1 +1,349 @@
-[{"id":381,"codigo":"EMI08","modulo":"EMI","texto":"Indique qué acciones ha implementado la entidad para avanzar en la construcción de paz (Cumplimiento del Plan Marco de Implementación, Seguimiento recomendaciones Comisión de la Verdad, Planes Nacionales sectoriales para el desarrollo rural integral, política de paz, reconciliación, convivencia y no estigmatización, entre otras)","tipo":"Selección múltiple","opciones":["Ha incorporado en su planeación institucional acciones orientadas a la construcción de paz y cuenta con las evidencias:","Ha conformado grupos de trabajo interno orientados a la construcción de paz y cuenta con las evidencias:","Ha desarrollado procesos de capacitación o formación internos en temas relacionados con la Cultura de Paz","Brindar asistencias técnicas territoriales","Acompañamiento a formulación de proyectos","Desarrollo de eventos conmemorativos del Día de las víctimas o de la Semana por la Paz","Espacios de participación ciudadana alrededor de la paz","Otro. ¿Cuál?:","Ninguna de las anteriores","No aplica. Explique la razón:"],"evidencia":false},{"id":382,"codigo":"EMI09","modulo":"EMI","texto":"¿La entidad ha identificado acciones para avanzar en el conocimiento, desarrollo y seguimiento a las recomendaciones de la Comisión de la Verdad?","tipo":"Selección única","opciones":["Si y cuenta con las evidencias:","No ha implementado estrategias. Explique la razón:"],"evidencia":false},{"id":383,"codigo":"EMI10","modulo":"EMI","texto":"En la entidad durante la vigencia 2025 se presentaron:","tipo":"Selección múltiple","opciones":["Quejas por  violencia o discriminación en contra de las mujeres y basadas en género en el ámbito laboral. Indique cuántas:","Quejas por  violencia o discriminación contra las mujeres y basadas en género, en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:","Quejas por violencia y discriminación basadas en género contra personas de los sectores LGBTIQ+ en el ámbito laboral. Indique cuántas:","Quejas por violencia y discriminación basadas en género contra personas de los sectores LGBTIQ+ en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:","Quejas por discriminación por temas de raza, etnia, religión, nacionalidad, ideología política o filosófica, sexo u orientación sexual, discapacidad u otras razones de discriminación en el ámbito laboral.  Indique cuántas:","Quejas por discriminación por razón de raza, etnia, religión, nacionalidad, ideología política o filosófica, sexo u orientación sexual, discapacidad u otras razones de discriminación en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:","Quejas relacionadas con la violación a los derechos humanos. Indique cuántas:","En la entidad no se han presentado actos de violencia o discriminación"],"evidencia":false},{"id":384,"codigo":"EMI11","modulo":"EMI","texto":"En la entidad, los actos de violencia y discriminación contra las mujeres y basadas en género, en el ámbito laboral o en la prestación de servicios a los grupos de valor:","tipo":"Selección única","opciones":["Fueron denunciados ante las autoridades competentes y se iniciaron acciones de intervención para tratarlos","Fueron denunciados ante las autoridades competentes, pero no se iniciaron acciones de intervención para tratarlos","No fueron denunciados ante las autoridades competentes"],"evidencia":false},{"id":385,"codigo":"EMI12","modulo":"EMI","texto":"Los actos de violencia y discriminación contra las mujeres y basadas en género estuvieron relacionadas con las siguientes situaciones:","tipo":"Selección múltiple","opciones":["Acoso laboral en razón de género","Violencia sexual","Acoso sexual","Violencia física","Violencia psicológica","Otros tipos de violencia basadas en género ¿cuáles?:"],"evidencia":false},{"id":386,"codigo":"EMI13","modulo":"EMI","texto":"¿La entidad ha impulsado acciones, estrategias, espacios de sensibilización u otras actividades relacionadas con la memoria colectiva y la memoria histórica con servidoras y servidores públicos?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No ha implementado acciones. Explique la razón:"],"evidencia":false},{"id":387,"codigo":"EMI14","modulo":"EMI","texto":"¿La entidad ha implementado estrategias pedagógicas o de sensibilización en torno a la NO estigmatización de los sujetos de especial protección constitucional (víctimas del conflicto, líderes sociales, firmantes de paz, personas en proceso de reincorporación, entre otros) con servidores y servidoras públicas?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No ha implementado estrategias. Explique la razón:"],"evidencia":false},{"id":388,"codigo":"EMI15","modulo":"EMI","texto":"¿La entidad ha promovido o implementado acciones para reconocer y dignificar a los servidores y servidoras que han sido víctimas del conflicto armado?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No. Explique la razón:"],"evidencia":false},{"id":389,"codigo":"EMI16","modulo":"EMI","texto":"¿La entidad en cumplimiento de la Circular Conjunta de Función Pública - Ministerio de Trabajo No. 100-004 de 2024 cuenta con un plan de capacitación y sensibilización sobre las violencias de género y discriminación en el ámbito laboral?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","Sí, pero no cuenta con las evidencias","No"],"evidencia":false},{"id":390,"codigo":"EMI17","modulo":"EMI","texto":"¿La entidad cuenta con un protocolo de atención, prevención y protección de las violencias basadas en género y discriminación?","tipo":"Selección única","opciones":["Sí y está formalizado mediante acto administrativo","Sí, pero no está formalizado mediante acto administrativo","No cuenta con protocolo de atención, prevención y protección de las violencias basadas en género y discriminación"],"evidencia":false},{"id":391,"codigo":"EMI18","modulo":"EMI","texto":"¿La entidad ha diseñado e implementado estrategias para promover la confianza cívica, la confianza institucional, la reintegración social, la reconstrucción del tejido social y/o la recomposición de vínculos sociales o comunitarios que han sido afectados por fenómenos de violencia y/o victimización en los territorios?","tipo":"Selección única","opciones":["Sí, se han diseñado e implementado estrategias con enfoque territorial y diferencial","Sí, se han diseñado estrategias, pero aún no se han implementado","No se han diseñado ni implementado estrategias en este componente","No aplica. Explique la razón:"],"evidencia":false},{"id":392,"codigo":"EMI19","modulo":"EMI","texto":"¿La entidad ha implementado acciones orientadas a la inclusión social, económica y/o política de grupos poblacionales afectados por fenómenos de violencia y/o victimización, como parte de los procesos de reconciliación y reconstrucción del tejido social en los territorios?","tipo":"Selección única","opciones":["Sí, se han implementado acciones con enfoque diferencial, interseccional y territorial","Sí, se han diseñado acciones, pero aún no se han implementado","No se han desarrollado acciones en este componente","No aplica. Explique la razón:"],"evidencia":false},{"id":393,"codigo":"EMI20","modulo":"EMI","texto":"¿La entidad ha implementado acciones orientadas a promover la transformación pacífica de los conflictos, la participación ciudadana y/o a prevenir la estigmatización, la cultura de la violencia o la exclusión social en los territorios?","tipo":"Selección única","opciones":["Sí, se han implementado acciones con enfoque territorial, diferencial y restaurativo","Sí, se han diseñado acciones, pero aún no se han implementado","No se han desarrollado acciones en este componente","No aplica. Explique la razón:"],"evidencia":false},{"id":394,"codigo":"EMI21","modulo":"EMI","texto":"Respecto a la política ambiental en la entidad:","tipo":"Selección única","opciones":["Se encuentra documentada","Está documentada y aprobada por el Comité Institucional de Gestión y Desempeño","Está documentada, aprobada por el Comité Institucional de Gestión y Desempeño y ha sido socializada con sus servidores y contratistas","No se cuenta con política ambiental institucional"],"evidencia":false},{"id":395,"codigo":"EMI22","modulo":"EMI","texto":"¿La entidad definió los objetivos ambientales institucionales?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":396,"codigo":"EMI23","modulo":"EMI","texto":"La entidad ha identificado y documentado:","tipo":"Selección múltiple","opciones":["Responsables claramente definidos en el marco de la gestión ambiental institucional","Matriz de identificación de requisitos legales ambientales aplicables y valoración de cumplimiento normativo","Aspectos e impactos ambientales de los procesos institucionales con su respectiva valoración de significancia sobre los impactos ambientales positivos o negativos","Ninguna de las anteriores"],"evidencia":false},{"id":397,"codigo":"EMI24","modulo":"EMI","texto":"La entidad cuenta con programas, acciones, iniciativas, estrategias o proyectos ambientales encaminados a la ecoeficiencia y reducción de costos ambientales relacionados con:","tipo":"Selección múltiple","opciones":["Energía eléctrica. Incluya la evidencia:","Agua. Incluya la evidencia:","Papel. Incluya la evidencia:","Residuos. Incluya la evidencia:","Movilidad sostenible. Incluya la evidencia:","Compras púbicas sostenibles. Incluya la evidencia:","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":398,"codigo":"EMI25","modulo":"EMI","texto":"La entidad cuenta con indicadores de desempeño ambiental en el marco de la eficiencia en relación con:","tipo":"Selección múltiple","opciones":["Consumo de energía eléctrica. Indique consumos totales o per cápita:","Consumo de agua.  Indique consumos anuales totales o per cápita de la vigencia evaluada:","Consumo de papel.  Indique consumos anuales totales o per cápita de la vigencia evaluada:","Aprovechamiento de residuos.  Indique consumos anuales totales o per cápita de la vigencia evaluada:","Consumo de combustibles fósiles.  Indique consumos anuales:","Compras sostenibles o criterios ambientales en la contratación","La entidad no cuenta con indicadores de desempeño ambiental"],"evidencia":false},{"id":399,"codigo":"EMI26","modulo":"EMI","texto":"¿La entidad para consulta de las partes interesadas, publica información sobre el desempeño y gestión ambiental institucional?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":400,"codigo":"EMI27","modulo":"EMI","texto":"¿Se han implementado acciones de mejora ambiental en los últimos cuatro años y están documentadas?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":401,"codigo":"EMI28","modulo":"EMI","texto":"¿La entidad cuenta con un plan de gestión integral de residuos sólidos y peligrosos institucional / programas, acciones, iniciativas, estrategias, proyectos o su equivalente?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":402,"codigo":"EMI29","modulo":"EMI","texto":"¿La entidad lleva un registro de la gestión y disposición final de residuos, respaldado por manifiestos, certificaciones o contratos?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":403,"codigo":"EMI30","modulo":"EMI","texto":"¿Cómo involucra la entidad a las partes interesadas  en su gestión ambiental?","tipo":"Selección múltiple","opciones":["Socializaciones o capacitaciones internas (presenciales o virtuales)","Rendición de cuentas","Campañas o medios de comunicación interna o externa","Convenios, contratos, acuerdos interadministrativos, entre otros","Otros. ¿Cuáles?:","No se involucra a las partes interesadas en la gestión ambiental"],"evidencia":true},{"id":404,"codigo":"EMI31","modulo":"EMI","texto":"¿Cuáles de las siguientes acciones ha adelantado la entidad en los cuatro últimos años en cumplimiento de lo establecido en el artículo 237 de la Ley 2294 de 2023 y sus normas reglamentarias, en relación con eficiencia energética?","tipo":"Selección múltiple","opciones":["Auditoria energética","Plan de gestión eficiente de la energía (PGEE)","Reporte ante la UPME del informe de auditoría energética y de las medidas de eficiencia energética","Ninguna de las anteriores"],"evidencia":false},{"id":405,"codigo":"EMI32","modulo":"EMI","texto":"En el marco del cumplimiento de la Ley 2169 de 2021 articulo 5 numeral 5, ¿cuáles de las siguientes acciones ha adelantado la entidad?","tipo":"Selección múltiple","opciones":["Cuantificación de inventario de Gases de Efecto Invernadero – GEI","Plan de acción para alcanzar el carbono neutralidad a más tardar en 2030","Ninguna de las anteriores"],"evidencia":false},{"id":406,"codigo":"EMI33","modulo":"EMI","texto":"¿En cumplimiento de la Resolución 839 de 2023, la entidad realizó el Registro Único Ambiental (RUA)?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":407,"codigo":"EMI34","modulo":"EMI","texto":"Con respecto a los riesgos de la gestión ambiental institucional relacionados con los aspectos ambientales, requisitos legales y demás requisitos, la entidad:","tipo":"Selección múltiple","opciones":["Los identificó","Los aprobó","Implementó un proceso para valorarlos y  gestionarlos de manera preventiva","Los actualiza mediante un proceso de mejora continua","Ninguna de las anteriores"],"evidencia":true}]
+[
+    {
+        "id": 381,
+        "codigo": "EMI08",
+        "modulo": "EMI",
+        "texto": "Indique qué acciones ha implementado la entidad para avanzar en la construcción de paz (Cumplimiento del Plan Marco de Implementación, Seguimiento recomendaciones Comisión de la Verdad, Planes Nacionales sectoriales para el desarrollo rural integral, política de paz, reconciliación, convivencia y no estigmatización, entre otras)",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Ha incorporado en su planeación institucional acciones orientadas a la construcción de paz y cuenta con las evidencias:",
+            "Ha conformado grupos de trabajo interno orientados a la construcción de paz y cuenta con las evidencias:",
+            "Ha desarrollado procesos de capacitación o formación internos en temas relacionados con la Cultura de Paz",
+            "Brindar asistencias técnicas territoriales",
+            "Acompañamiento a formulación de proyectos",
+            "Desarrollo de eventos conmemorativos del Día de las víctimas o de la Semana por la Paz",
+            "Espacios de participación ciudadana alrededor de la paz",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores",
+            "No aplica. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 382,
+        "codigo": "EMI09",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha identificado acciones para avanzar en el conocimiento, desarrollo y seguimiento a las recomendaciones de la Comisión de la Verdad?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Si y cuenta con las evidencias:",
+            "No ha implementado estrategias. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 383,
+        "codigo": "EMI10",
+        "modulo": "EMI",
+        "texto": "En la entidad durante la vigencia 2025 se presentaron:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Quejas por  violencia o discriminación en contra de las mujeres y basadas en género en el ámbito laboral. Indique cuántas:",
+            "Quejas por  violencia o discriminación contra las mujeres y basadas en género, en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:",
+            "Quejas por violencia y discriminación basadas en género contra personas de los sectores LGBTIQ+ en el ámbito laboral. Indique cuántas:",
+            "Quejas por violencia y discriminación basadas en género contra personas de los sectores LGBTIQ+ en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:",
+            "Quejas por discriminación por temas de raza, etnia, religión, nacionalidad, ideología política o filosófica, sexo u orientación sexual, discapacidad u otras razones de discriminación en el ámbito laboral.  Indique cuántas:",
+            "Quejas por discriminación por razón de raza, etnia, religión, nacionalidad, ideología política o filosófica, sexo u orientación sexual, discapacidad u otras razones de discriminación en la prestación de servicios o atención a los grupos de valor.  Indique cuántas:",
+            "Quejas relacionadas con la violación a los derechos humanos. Indique cuántas:",
+            "En la entidad no se han presentado actos de violencia o discriminación"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 386,
+        "codigo": "EMI13",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha impulsado acciones, estrategias, espacios de sensibilización u otras actividades relacionadas con la memoria colectiva y la memoria histórica con servidoras y servidores públicos?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No ha implementado acciones. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 387,
+        "codigo": "EMI14",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha implementado estrategias pedagógicas o de sensibilización en torno a la NO estigmatización de los sujetos de especial protección constitucional (víctimas del conflicto, líderes sociales, firmantes de paz, personas en proceso de reincorporación, entre otros) con servidores y servidoras públicas?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No ha implementado estrategias. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 388,
+        "codigo": "EMI15",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha promovido o implementado acciones para reconocer y dignificar a los servidores y servidoras que han sido víctimas del conflicto armado?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 389,
+        "codigo": "EMI16",
+        "modulo": "EMI",
+        "texto": "¿La entidad en cumplimiento de la Circular Conjunta de Función Pública - Ministerio de Trabajo No. 100-004 de 2024 cuenta con un plan de capacitación y sensibilización sobre las violencias de género y discriminación en el ámbito laboral?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "Sí, pero no cuenta con las evidencias",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 390,
+        "codigo": "EMI17",
+        "modulo": "EMI",
+        "texto": "¿La entidad cuenta con un protocolo de atención, prevención y protección de las violencias basadas en género y discriminación?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí y está formalizado mediante acto administrativo",
+            "Sí, pero no está formalizado mediante acto administrativo",
+            "No cuenta con protocolo de atención, prevención y protección de las violencias basadas en género y discriminación"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 391,
+        "codigo": "EMI18",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha diseñado e implementado estrategias para promover la confianza cívica, la confianza institucional, la reintegración social, la reconstrucción del tejido social y/o la recomposición de vínculos sociales o comunitarios que han sido afectados por fenómenos de violencia y/o victimización en los territorios?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, se han diseñado e implementado estrategias con enfoque territorial y diferencial",
+            "Sí, se han diseñado estrategias, pero aún no se han implementado",
+            "No se han diseñado ni implementado estrategias en este componente",
+            "No aplica. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 392,
+        "codigo": "EMI19",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha implementado acciones orientadas a la inclusión social, económica y/o política de grupos poblacionales afectados por fenómenos de violencia y/o victimización, como parte de los procesos de reconciliación y reconstrucción del tejido social en los territorios?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, se han implementado acciones con enfoque diferencial, interseccional y territorial",
+            "Sí, se han diseñado acciones, pero aún no se han implementado",
+            "No se han desarrollado acciones en este componente",
+            "No aplica. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 393,
+        "codigo": "EMI20",
+        "modulo": "EMI",
+        "texto": "¿La entidad ha implementado acciones orientadas a promover la transformación pacífica de los conflictos, la participación ciudadana y/o a prevenir la estigmatización, la cultura de la violencia o la exclusión social en los territorios?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, se han implementado acciones con enfoque territorial, diferencial y restaurativo",
+            "Sí, se han diseñado acciones, pero aún no se han implementado",
+            "No se han desarrollado acciones en este componente",
+            "No aplica. Explique la razón:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 394,
+        "codigo": "EMI21",
+        "modulo": "EMI",
+        "texto": "Respecto a la política ambiental en la entidad:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Se encuentra documentada",
+            "Está documentada y aprobada por el Comité Institucional de Gestión y Desempeño",
+            "Está documentada, aprobada por el Comité Institucional de Gestión y Desempeño y ha sido socializada con sus servidores y contratistas:",
+            "No se cuenta con política ambiental institucional"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 395,
+        "codigo": "EMI22",
+        "modulo": "EMI",
+        "texto": "¿La entidad definió los objetivos ambientales institucionales?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 396,
+        "codigo": "EMI23",
+        "modulo": "EMI",
+        "texto": "La entidad ha identificado y documentado:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Responsables claramente definidos en el marco de la gestión ambiental institucional",
+            "Matriz de identificación de requisitos legales ambientales aplicables y valoración de cumplimiento normativo",
+            "Aspectos e impactos ambientales de los procesos institucionales con su respectiva valoración de significancia sobre los impactos ambientales positivos o negativos",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 397,
+        "codigo": "EMI24",
+        "modulo": "EMI",
+        "texto": "La entidad cuenta con programas, acciones, iniciativas, estrategias o proyectos ambientales encaminados a la ecoeficiencia y reducción de costos ambientales relacionados con:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Energía eléctrica. Incluya la evidencia:",
+            "Agua. Incluya la evidencia:",
+            "Papel. Incluya la evidencia:",
+            "Residuos. Incluya la evidencia:",
+            "Movilidad sostenible. Incluya la evidencia:",
+            "Compras púbicas sostenibles. Incluya la evidencia:",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 398,
+        "codigo": "EMI25",
+        "modulo": "EMI",
+        "texto": "La entidad cuenta con indicadores de desempeño ambiental en el marco de la eficiencia en relación con:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Consumo de energía eléctrica. Indique consumos totales o per cápita:",
+            "Consumo de agua.  Indique consumos anuales totales o per cápita de la vigencia evaluada:",
+            "Consumo de papel.  Indique consumos anuales totales o per cápita de la vigencia evaluada:",
+            "Aprovechamiento de residuos.  Indique consumos anuales totales o per cápita de la vigencia evaluada:",
+            "Consumo de combustibles fósiles.  Indique consumos anuales:",
+            "Compras sostenibles o criterios ambientales en la contratación",
+            "La entidad no cuenta con indicadores de desempeño ambiental"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 399,
+        "codigo": "EMI26",
+        "modulo": "EMI",
+        "texto": "¿La entidad para consulta de las partes interesadas, publica información sobre el desempeño y gestión ambiental institucional?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 400,
+        "codigo": "EMI27",
+        "modulo": "EMI",
+        "texto": "¿Se han implementado acciones de mejora ambiental en los últimos cuatro años y están documentadas?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 401,
+        "codigo": "EMI28",
+        "modulo": "EMI",
+        "texto": "¿La entidad cuenta con un plan de gestión integral de residuos sólidos y peligrosos institucional / programas, acciones, iniciativas, estrategias, proyectos o su equivalente?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 402,
+        "codigo": "EMI29",
+        "modulo": "EMI",
+        "texto": "¿La entidad lleva un registro de la gestión y disposición final de residuos, respaldado por manifiestos, certificaciones o contratos?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 403,
+        "codigo": "EMI30",
+        "modulo": "EMI",
+        "texto": "¿Cómo involucra la entidad a las partes interesadas  en su gestión ambiental?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Socializaciones o capacitaciones internas (presenciales o virtuales)",
+            "Rendición de cuentas",
+            "Campañas o medios de comunicación interna o externa",
+            "Convenios, contratos, acuerdos interadministrativos, entre otros",
+            "Otros. ¿Cuáles?:",
+            "No se involucra a las partes interesadas en la gestión ambiental"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 404,
+        "codigo": "EMI31",
+        "modulo": "EMI",
+        "texto": "¿Cuáles de las siguientes acciones ha adelantado la entidad en los cuatro últimos años en cumplimiento de lo establecido en el artículo 237 de la Ley 2294 de 2023 y sus normas reglamentarias, en relación con eficiencia energética?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Auditoria energética",
+            "Plan de gestión eficiente de la energía (PGEE)",
+            "Reporte ante la UPME del informe de auditoría energética y de las medidas de eficiencia energética",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 405,
+        "codigo": "EMI32",
+        "modulo": "EMI",
+        "texto": "En el marco del cumplimiento de la Ley 2169 de 2021 articulo 5 numeral 5, ¿cuáles de las siguientes acciones ha adelantado la entidad?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Cuantificación de inventario de Gases de Efecto Invernadero – GEI",
+            "Plan de acción para alcanzar el carbono neutralidad a más tardar en 2030",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 406,
+        "codigo": "EMI33",
+        "modulo": "EMI",
+        "texto": "¿En cumplimiento de la Resolución 839 de 2023, la entidad realizó el Registro Único Ambiental (RUA)?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 407,
+        "codigo": "EMI34",
+        "modulo": "EMI",
+        "texto": "Con respecto a los riesgos de la gestión ambiental institucional relacionados con los aspectos ambientales, requisitos legales y demás requisitos, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Los identificó",
+            "Los aprobó",
+            "Implementó un proceso para valorarlos y  gestionarlos de manera preventiva",
+            "Los actualiza mediante un proceso de mejora continua",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    }
+]
