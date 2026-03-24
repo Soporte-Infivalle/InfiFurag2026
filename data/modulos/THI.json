@@ -1,1 +1,389 @@
-[{"id":354,"codigo":"THI200","modulo":"THI","texto":"Con base en el autorreconocimiento registrado en SIGEP II y/o las autoidentificaciones declaradas, indique el número de servidores públicos pertenecientes a los siguientes grupos étnicos, conforme a la clasificación oficial de DANE con corte al 31 de diciembre de 2025 (marque cero cuando no aplique):","tipo":"Selección múltiple","opciones":["Afrocolombiano:","Pueblos indígenas:","Minorías:","Pueblos negros:","Palenquero:","Raizal:","Pueblo Rom (gitano):","Ninguno de los anteriores"],"evidencia":false},{"id":355,"codigo":"THI201","modulo":"THI","texto":"¿En la entidad hay servidores con discapacidad?","tipo":"Selección única","opciones":["Sí","No"],"evidencia":false},{"id":356,"codigo":"THI202","modulo":"THI","texto":"Relacione el número de servidores públicos con discapacidad vinculados a la planta global de acuerdo con lo estipulado en el Decreto 2011 de 2017:","tipo":"Selección múltiple numérica","opciones":["Directivo:","Asesor:","Profesional:","Técnico:","Asistencial:","Otro nivel:"],"evidencia":false},{"id":357,"codigo":"THI204","modulo":"THI","texto":"Indique el número de personas con discapacidad vinculadas a la entidad según la categoría de discapacidad (Resolución 1197 de 2024 expedida por el Ministerio de Salud y Protección Social):","tipo":"Selección múltiple numérica","opciones":["Auditiva:","Visual:","Física:","Intelectual:","Sordoceguera:","Psicosocial (mental):","Múltiple:"],"evidencia":false},{"id":358,"codigo":"THI213","modulo":"THI","texto":"Indique cuántos recursos  tiene la entidad para adelantar concursos de méritos con la Comisión Nacional del Servicio Civil","tipo":"Selección única","opciones":["Total de recursos:","No le aplica"],"evidencia":false},{"id":359,"codigo":"THI215","modulo":"THI","texto":"Con corte al 31 de diciembre de 2025, indique el número de servidores únicos que participaron al menos en una actividad de formación o capacitación durante la vigencia, desagregados por nivel jerárquico. Señale únicamente actividades de formación registradas en el Plan Institucional de Capacitación o en el Plan de Bienestar, con soporte de asistencia:","tipo":"Selección múltiple numérica","opciones":["Directivo:","Asesor:","Profesional:","Técnico:","Asistencial:"],"evidencia":false},{"id":360,"codigo":"THI216","modulo":"THI","texto":"¿La entidad cuenta con algún instrumento para medir el impacto de los procesos de formación y capacitación de sus servidores?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":361,"codigo":"THI217","modulo":"THI","texto":"Indique el número total de servidores públicos y familiares beneficiados por los programas de bienestar:","tipo":"Abierta numérica","opciones":[],"evidencia":false},{"id":362,"codigo":"THI218","modulo":"THI","texto":"Respecto a la implementación en la entidad de los siguientes programas o estrategias indique:","tipo":"Selección múltiple numérica","opciones":["¿Cuántos servidores se beneficiaron del programa 'Servimos' en la vigencia evaluada?","¿Cuántos servidores participaron del programa de Bilingüismo en la vigencia evaluada?","¿Cuántas servidoras (mujeres) se beneficiaron de la estrategia de horarios flexibles en la vigencia evaluada?","¿Cuántos servidores (hombres) se beneficiaron de la estrategia de horarios flexibles en la vigencia evaluada?","¿Cuántas servidoras (mujeres) se beneficiaron de la estrategia de teletrabajo en la vigencia evaluada? NOTA: No relacionar trabajo en casa que es una modalidad diferente","¿Cuántos servidores (hombres) se beneficiaron de la estrategia de teletrabajo en la vigencia evaluada? NOTA: No relacionar trabajo en casa que es una modalidad diferente"],"evidencia":false},{"id":363,"codigo":"THI220","modulo":"THI","texto":"Indique el número de servidores públicos de carrera administrativa y de libre nombramiento y remoción desvinculados como resultado de la evaluación de desempeño","tipo":"Selección múltiple numérica","opciones":["Asesor:","Profesional:","Técnico:","Asistencial:"],"evidencia":false},{"id":364,"codigo":"THI221","modulo":"THI","texto":"¿Cuántos servidores de carrera en periodo de prueba se han desvinculado por evaluación del desempeño?","tipo":"Selección múltiple numérica","opciones":["Asesor:","Profesional:","Técnico:","Asistencial:"],"evidencia":false},{"id":365,"codigo":"THI224","modulo":"THI","texto":"Respecto a la relación de los cargos de planta total vs contratistas indique para la vigencia evaluada:","tipo":"Selección múltiple numérica","opciones":["Total cargos de planta (de acuerdo con actos administrativos de creación o modificación de planta):","Total contratistas:","Contratistas con más de un contrato de apoyo a la gestión y prestación de servicios profesionales:"],"evidencia":false},{"id":366,"codigo":"THI225","modulo":"THI","texto":"¿La entidad cuenta con planta temporal?","tipo":"Selección única","opciones":["Sí, indique el total cargos de planta al 31 de diciembre (de acuerdo con actos administrativos de creación de planta temporal):","No"],"evidencia":false},{"id":367,"codigo":"THI227","modulo":"THI","texto":"En materia de equidad de género, la entidad:","tipo":"Selección múltiple","opciones":["Dio cumplimiento de los porcentajes mínimos de participación de mujeres en cargos de nivel directivo según la Ley 581 de 2000 modificada por la Ley 2424 de 2024","Cuenta con una política o lineamientos en materia de equidad de género","Ha capacitado o sensibilizado a sus servidores públicos y contratistas en esta materia","Cuenta con mecanismos para la atención a violencias contra las mujeres","Cuenta con mecanismos para coordinar políticas de género y derechos de las mujeres. Especifique el tipo de mecanismo:","Ninguno de los anteriores"],"evidencia":false},{"id":368,"codigo":"THI230","modulo":"THI","texto":"¿En la entidad existen organizaciones sindicales formalmente?","tipo":"Selección única","opciones":["Sí. Indique cuántas organizaciones sindicales base tiene la entidad:","No"],"evidencia":false},{"id":369,"codigo":"THI231","modulo":"THI","texto":"A continuación, indique por cada organización sindical base el número de afiliados. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos a 31 de diciembre de 2025:","tipo":"Abierta texto","opciones":[],"evidencia":false},{"id":370,"codigo":"THI232","modulo":"THI","texto":"A continuación, por cada organización sindical indique el número de afiliados que pagaron cuota con corte a 31 de diciembre de 2025. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos que pagaron la cuota:","tipo":"Abierta texto","opciones":[],"evidencia":false},{"id":371,"codigo":"THI233","modulo":"THI","texto":"¿La entidad ha realizado negociación sindical singular y ha implementado mecanismos para dar cumplimiento a los acuerdos en el marco de esta?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":372,"codigo":"THI234","modulo":"THI","texto":"Para el ejercicio de las funciones relacionadas con la gestión del talento humano, la entidad:","tipo":"Selección única","opciones":["Contó con una oficina de talento humano (dependencia, jefe y equipo de trabajo)","Contó con un grupo interno de trabajo coordinado por un servidor público del nivel asesor o profesional","No contó con un área responsable, pero la función está asignada a un servidor público profesional (sin equipo de trabajo)","Se contratan algunas actividades por orden de prestación de servicios"],"evidencia":false},{"id":373,"codigo":"THI235","modulo":"THI","texto":"El jefe o coordinador de talento humano:","tipo":"Selección única","opciones":["Es de libre nombramiento y remoción","Es de carrera administrativa","Nombramiento provisional","Nombramiento en planta temporal","Otro. ¿Cuál?"],"evidencia":false},{"id":374,"codigo":"THI236","modulo":"THI","texto":"Indique el nivel jerárquico del jefe o coordinador de Talento Humano o quien hace sus veces:","tipo":"Selección única","opciones":["Directivo","Asesor","Profesional","Técnico","Asistencial"],"evidencia":false},{"id":375,"codigo":"THI237","modulo":"THI","texto":"El máximo nivel de formación académica del jefe o coordinador de talento humano es:","tipo":"Selección única","opciones":["Posgrado - Maestría","Posgrado - Especialización","Pregrado","Formación técnica o tecnológica","Formación media (bachiller)","Formación básica (noveno grado)"],"evidencia":false},{"id":376,"codigo":"THI238","modulo":"THI","texto":"¿Cuál es la formación profesional del jefe o coordinador de talento humano o quien hace sus veces?","tipo":"Selección única","opciones":["Derecho","Economía","Contaduría","Administración de Empresas","Administración Pública","Administración Financiera","Ingeniería Industrial","Ingeniería de Sistemas","Otro. ¿Cuál?"],"evidencia":false},{"id":377,"codigo":"THI239","modulo":"THI","texto":"¿Cuál es el tiempo de experiencia específica en temas de talento humano del jefe o coordinador de talento humano?","tipo":"Selección única","opciones":["Menor a 1 año","Entre 1 - 3 años","Entre 4 - 6 años","Entre 7 - 10 años","Entre 11 - 20 años","Más de 21 años"],"evidencia":false},{"id":378,"codigo":"THI240","modulo":"THI","texto":"Indique el número total de trabajadores del área o grupo interno de talento humano, desagregado por:","tipo":"Selección múltiple numérica","opciones":["Empleados vinculados a la planta de personal:","Contratistas de prestación de servicios:"],"evidencia":false},{"id":379,"codigo":"THI241","modulo":"THI","texto":"El servidor público que tiene asignadas las funciones de talento humano, cuál es su cargo principal o de base:","tipo":"Selección única","opciones":["Secretario (a) de Despacho (General o de Gobierno) (para orden territorial)","Secretario (a) General (para orden nacional)","Director (a) administrativo (a)","Profesional adscrito a un área de apoyo","Técnico adscrito a un área de apoyo","Asistencial adscrito a un área de apoyo","Otro. ¿Cuál?"],"evidencia":false},{"id":380,"codigo":"THI242","modulo":"THI","texto":"Para la vigencia 2025 indique:","tipo":"Matricial","opciones":["Entre cincuenta (50) y cien (100) millones","Entre quinientos (500) y mil (1000) millones","Entre un (1) millón y cincuenta (50) millones","Más de mil (1000) millones","Menos de un (1) millón","Entre cien (100) y quinientos (500) millones","Entre un (1) millón y cincuenta (50) millones","Entre cien (100) y quinientos (500) millones","Menos de un (1) millón","Entre cincuenta (50) y cien (100) millones","Más de mil (1000) millones","Entre quinientos (500) y mil (1000) millones","Entre un (1) millón y cincuenta (50) millones","Menos de un (1) millón","Entre cincuenta (50) y cien (100) millones"],"evidencia":false}]
+[
+    {
+        "id": 354,
+        "codigo": "THI200",
+        "modulo": "THI",
+        "texto": "Con base en el autorreconocimiento registrado en SIGEP II y/o las autoidentificaciones declaradas, indique el número de servidores públicos pertenecientes a los siguientes grupos étnicos, conforme a la clasificación oficial de DANE con corte al 31 de diciembre de 2025 (marque cero cuando no aplique):",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Afrocolombiano:",
+            "Pueblos indígenas:",
+            "Minorías:",
+            "Pueblos negros:",
+            "Palenquero:",
+            "Raizal:",
+            "Pueblo Rom (gitano):",
+            "Ninguno de los anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 355,
+        "codigo": "THI201",
+        "modulo": "THI",
+        "texto": "¿En la entidad hay servidores con discapacidad?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 356,
+        "codigo": "THI202",
+        "modulo": "THI",
+        "texto": "Relacione el número de servidores públicos con discapacidad vinculados a la planta global de acuerdo con lo estipulado en el Decreto 2011 de 2017:",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Directivo:",
+            "Asesor:",
+            "Profesional:",
+            "Técnico:",
+            "Asistencial:",
+            "Otro nivel:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 357,
+        "codigo": "THI204",
+        "modulo": "THI",
+        "texto": "Indique el número de personas con discapacidad vinculadas a la entidad según la categoría de discapacidad (Resolución 1197 de 2024 expedida por el Ministerio de Salud y Protección Social):",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Auditiva:",
+            "Visual:",
+            "Física:",
+            "Intelectual:",
+            "Sordoceguera:",
+            "Psicosocial (mental):",
+            "Múltiple:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 358,
+        "codigo": "THI213",
+        "modulo": "THI",
+        "texto": "Indique cuántos recursos  tiene la entidad para adelantar concursos de méritos con la Comisión Nacional del Servicio Civil",
+        "tipo": "Selección única",
+        "opciones": [
+            "Total de recursos:",
+            "No le aplica"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 359,
+        "codigo": "THI215",
+        "modulo": "THI",
+        "texto": "Con corte al 31 de diciembre de 2025, indique el número de servidores únicos que participaron al menos en una actividad de formación o capacitación durante la vigencia, desagregados por nivel jerárquico. Señale únicamente actividades de formación registradas en el Plan Institucional de Capacitación o en el Plan de Bienestar, con soporte de asistencia:",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Directivo:",
+            "Asesor:",
+            "Profesional:",
+            "Técnico:",
+            "Asistencial:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 360,
+        "codigo": "THI216",
+        "modulo": "THI",
+        "texto": "¿La entidad cuenta con algún instrumento para medir el impacto de los procesos de formación y capacitación de sus servidores?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 361,
+        "codigo": "THI217",
+        "modulo": "THI",
+        "texto": "Indique el número total de servidores públicos y familiares beneficiados por los programas de bienestar:",
+        "tipo": "Abierta numérica",
+        "opciones": [],
+        "evidencia": false
+    },
+    {
+        "id": 362,
+        "codigo": "THI218",
+        "modulo": "THI",
+        "texto": "Respecto a la implementación en la entidad de los siguientes programas o estrategias indique:",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "¿Cuántos servidores se beneficiaron del programa 'Servimos' en la vigencia evaluada?",
+            "¿Cuántos servidores participaron del programa de Bilingüismo en la vigencia evaluada?",
+            "¿Cuántas servidoras (mujeres) se beneficiaron de la estrategia de horarios flexibles en la vigencia evaluada?",
+            "¿Cuántos servidores (hombres) se beneficiaron de la estrategia de horarios flexibles en la vigencia evaluada?",
+            "¿Cuántas servidoras (mujeres) se beneficiaron de la estrategia de teletrabajo en la vigencia evaluada? NOTA: No relacionar trabajo en casa que es una modalidad diferente",
+            "¿Cuántos servidores (hombres) se beneficiaron de la estrategia de teletrabajo en la vigencia evaluada? NOTA: No relacionar trabajo en casa que es una modalidad diferente"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 363,
+        "codigo": "THI220",
+        "modulo": "THI",
+        "texto": "Indique el número de servidores públicos de carrera administrativa y de libre nombramiento y remoción desvinculados como resultado de la evaluación de desempeño",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Asesor:",
+            "Profesional:",
+            "Técnico:",
+            "Asistencial:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 364,
+        "codigo": "THI221",
+        "modulo": "THI",
+        "texto": "¿Cuántos servidores de carrera en periodo de prueba se han desvinculado por evaluación del desempeño?",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Asesor:",
+            "Profesional:",
+            "Técnico:",
+            "Asistencial:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 365,
+        "codigo": "THI224",
+        "modulo": "THI",
+        "texto": "Respecto a la relación de los cargos de planta total vs contratistas indique para la vigencia evaluada:",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Total cargos de planta (de acuerdo con actos administrativos de creación o modificación de planta):",
+            "Total contratistas:",
+            "Contratistas con más de un contrato de apoyo a la gestión y prestación de servicios profesionales:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 366,
+        "codigo": "THI225",
+        "modulo": "THI",
+        "texto": "¿La entidad cuenta con planta temporal?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, indique el total cargos de planta al 31 de diciembre (de acuerdo con actos administrativos de creación de planta temporal):",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 367,
+        "codigo": "THI227",
+        "modulo": "THI",
+        "texto": "En materia de equidad de género, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Dio cumplimiento de los porcentajes mínimos de participación de mujeres en cargos de nivel directivo según la Ley 581 de 2000 modificada por la Ley 2424 de 2024",
+            "Cuenta con una política o lineamientos en materia de equidad de género",
+            "Ha capacitado o sensibilizado a sus servidores públicos y contratistas en esta materia",
+            "Cuenta con mecanismos para la atención a violencias contra las mujeres",
+            "Cuenta con mecanismos para coordinar políticas de género y derechos de las mujeres. Especifique el tipo de mecanismo:",
+            "Ninguno de los anteriores"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 368,
+        "codigo": "THI230",
+        "modulo": "THI",
+        "texto": "¿En la entidad existen organizaciones sindicales formalmente?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí. Indique cuántas organizaciones sindicales base tiene la entidad:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 369,
+        "codigo": "THI231",
+        "modulo": "THI",
+        "texto": "A continuación, indique por cada organización sindical base el número de afiliados. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos a 31 de diciembre de 2025:",
+        "tipo": "Abierta texto",
+        "opciones": [],
+        "evidencia": false
+    },
+    {
+        "id": 370,
+        "codigo": "THI232",
+        "modulo": "THI",
+        "texto": "A continuación, por cada organización sindical indique el número de afiliados que pagaron cuota con corte a 31 de diciembre de 2025. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos que pagaron la cuota:",
+        "tipo": "Abierta texto",
+        "opciones": [],
+        "evidencia": false
+    },
+    {
+        "id": 371,
+        "codigo": "THI233",
+        "modulo": "THI",
+        "texto": "¿La entidad ha realizado negociación sindical singular y ha implementado mecanismos para dar cumplimiento a los acuerdos en el marco de esta?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 372,
+        "codigo": "THI234",
+        "modulo": "THI",
+        "texto": "Para el ejercicio de las funciones relacionadas con la gestión del talento humano, la entidad:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Contó con una oficina de talento humano (dependencia, jefe y equipo de trabajo)",
+            "Contó con un grupo interno de trabajo coordinado por un servidor público del nivel asesor o profesional",
+            "No contó con un área responsable, pero la función está asignada a un servidor público profesional (sin equipo de trabajo)",
+            "Se contratan algunas actividades por orden de prestación de servicios"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 373,
+        "codigo": "THI235",
+        "modulo": "THI",
+        "texto": "El jefe o coordinador de talento humano:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Es de libre nombramiento y remoción",
+            "Es de carrera administrativa",
+            "Nombramiento provisional",
+            "Nombramiento en planta temporal",
+            "Otro. ¿Cuál?"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 374,
+        "codigo": "THI236",
+        "modulo": "THI",
+        "texto": "Indique el nivel jerárquico del jefe o coordinador de Talento Humano o quien hace sus veces:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Directivo",
+            "Asesor",
+            "Profesional",
+            "Técnico",
+            "Asistencial"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 375,
+        "codigo": "THI237",
+        "modulo": "THI",
+        "texto": "El máximo nivel de formación académica del jefe o coordinador de talento humano es:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Posgrado - Maestría",
+            "Posgrado - Especialización",
+            "Pregrado",
+            "Formación técnica o tecnológica",
+            "Formación media (bachiller)",
+            "Formación básica (noveno grado)"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 376,
+        "codigo": "THI238",
+        "modulo": "THI",
+        "texto": "¿Cuál es la formación profesional del jefe o coordinador de talento humano o quien hace sus veces?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Derecho",
+            "Economía",
+            "Contaduría",
+            "Administración de Empresas",
+            "Administración Pública",
+            "Administración Financiera",
+            "Ingeniería Industrial",
+            "Ingeniería de Sistemas",
+            "Otro. ¿Cuál?"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 377,
+        "codigo": "THI239",
+        "modulo": "THI",
+        "texto": "¿Cuál es el tiempo de experiencia específica en temas de talento humano del jefe o coordinador de talento humano?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Menor a 1 año",
+            "Entre 1 - 3 años",
+            "Entre 4 - 6 años",
+            "Entre 7 - 10 años",
+            "Entre 11 - 20 años",
+            "Más de 21 años"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 378,
+        "codigo": "THI240",
+        "modulo": "THI",
+        "texto": "Indique el número total de trabajadores del área o grupo interno de talento humano, desagregado por:",
+        "tipo": "Selección múltiple numérica",
+        "opciones": [
+            "Empleados vinculados a la planta de personal:",
+            "Contratistas de prestación de servicios:"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 379,
+        "codigo": "THI241",
+        "modulo": "THI",
+        "texto": "El servidor público que tiene asignadas las funciones de talento humano, cuál es su cargo principal o de base:",
+        "tipo": "Selección única",
+        "opciones": [
+            "Secretario (a) de Despacho (General o de Gobierno) (para orden territorial)",
+            "Secretario (a) General (para orden nacional)",
+            "Director (a) administrativo (a)",
+            "Profesional adscrito a un área de apoyo",
+            "Técnico adscrito a un área de apoyo",
+            "Asistencial adscrito a un área de apoyo",
+            "Otro. ¿Cuál?"
+        ],
+        "evidencia": false
+    },
+    {
+        "id": 380,
+        "codigo": "THI242",
+        "modulo": "THI",
+        "texto": "Para la vigencia 2025 indique:",
+        "tipo": "Matricial",
+        "opciones": [
+            "Entre cincuenta (50) y cien (100) millones",
+            "Entre quinientos (500) y mil (1000) millones",
+            "Entre un (1) millón y cincuenta (50) millones",
+            "Más de mil (1000) millones",
+            "Menos de un (1) millón",
+            "Entre cien (100) y quinientos (500) millones",
+            "Entre un (1) millón y cincuenta (50) millones",
+            "Entre cien (100) y quinientos (500) millones",
+            "Menos de un (1) millón",
+            "Entre cincuenta (50) y cien (100) millones",
+            "Más de mil (1000) millones",
+            "Entre quinientos (500) y mil (1000) millones",
+            "Entre un (1) millón y cincuenta (50) millones",
+            "Menos de un (1) millón",
+            "Entre cincuenta (50) y cien (100) millones"
+        ],
+        "evidencia": false
+    }
+]
