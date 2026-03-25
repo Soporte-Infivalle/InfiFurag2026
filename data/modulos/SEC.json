@@ -71,7 +71,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 190,
@@ -89,7 +89,7 @@
             "Incorporación de lenguaje claro, comprensible e incluyente en la estrategia de comunicaciones (acciones de comunicación)",
             "Diseño de formatos, plantillas y respuestas tipo a PQRSDF de las ciudadanías en lenguaje claro, comprensible e incluyente"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 191,
@@ -111,7 +111,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguno de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 192,
@@ -126,7 +126,7 @@
             "Otra. ¿Cuál?:",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 193,
@@ -170,7 +170,7 @@
             "Proponer mejoras a la oferta institucional y de los escenarios de relacionamiento a partir de los resultados del seguimiento, medición y evaluación de la experiencia ciudadana",
             "Promover y desarrollar acciones para facilitar el acceso de personas con discapacidad a la oferta institucional, la información pública, control social y la participación"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 195,
@@ -186,7 +186,7 @@
             "Centros integrados de servicios",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 196,
@@ -201,7 +201,7 @@
             "Desarrolló acciones para garantizar el acceso a derechos, bienes, y servicios de las ciudadanías en condiciones de igualdad",
             "Estableció mecanismos de medición y seguimiento sobre el desarrollo de estas jornadas itinerantes o alternativas de relacionamiento con las ciudadanías"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 197,
@@ -243,7 +243,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 199,
@@ -258,7 +258,7 @@
             "Documentó las buenas prácticas de relacionamiento con la ciudadanía",
             "No desarrolló acciones evaluación del servicio y medición de la experiencia ciudadana"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 200,
@@ -275,7 +275,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 201,
@@ -295,7 +295,7 @@
             "Dispositivos tecnológicos para facilitar la movilidad de las personas con discapacidad en la entidad",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 202,
@@ -309,7 +309,7 @@
             "No",
             "A la entidad no le aplica el cumplimiento del artículo 17 de la Ley 2052 de 2020"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 203,
@@ -327,6 +327,6 @@
             "Hacer seguimiento, medición y evaluación de la experiencia ciudadana en los diferentes escenarios de relacionamiento con la entidad",
             "La entidad no cuenta con un líder de la implementación de la política de Servicio a la ciudadanía dependencia, área o grupo"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]
