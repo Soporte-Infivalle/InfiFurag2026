@@ -11,7 +11,7 @@
             "Acciones para promover y facilitar el control social",
             "La entidad no formuló las estrategias para el fortalecimiento de la relación con la ciudadanía y grupos de valor"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 205,
@@ -28,7 +28,7 @@
             "Control social a la gestión pública",
             "La entidad no implementó actividades con la participación de los grupos de valor"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 206,
@@ -44,7 +44,7 @@
             "Organizaciones de la sociedad civil",
             "Otro. ¿Cuál?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 207,
@@ -62,7 +62,7 @@
             "Otro. ¿Cuál?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 208,
@@ -74,7 +74,7 @@
             "¿Cuántos ejercicios de diálogo para la rendición de cuentas realizó la entidad?:",
             "¿Cuántos de los ejercicios de diálogo para la rendición de cuentas realizados por la entidad, utilizaron medios digitales?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 209,
@@ -90,7 +90,7 @@
             "Acciones para evaluar la satisfacción de la ciudadanía en los espacios de diálogo",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 210,
@@ -108,7 +108,7 @@
             "Otro. ¿Cuál?:",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 211,
@@ -128,7 +128,7 @@
             "Otro. ¿Cuál?:",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 212,
@@ -146,7 +146,7 @@
             "Asambleas comunitarias",
             "Otra. ¿Cuál?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 213,
@@ -162,7 +162,7 @@
             "Dialogar con grupos motor, veedurías, o representantes pueblos étnicos, espacios comunitarios o de grupos poblacionales con intereses en el acuerdo de paz",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 214,
@@ -182,7 +182,7 @@
             "Veedurías ciudadanas y grupos de control social",
             "Organizaciones de la sociedad civil"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 215,
@@ -215,7 +215,7 @@
             "Implementó acciones de mejora institucional como resultado de la documentación y sistematización de experiencias, buenas prácticas, y lecciones aprendidas",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 217,
@@ -231,7 +231,7 @@
             "La ciudadanía vigiló la gestión pública y sus resultados, así como la como garantía de sus derechos",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 218,
@@ -247,7 +247,7 @@
             "Definió los métodos y técnicas para el diálogo, adecuados a las características de los grupos de valor o interés",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 219,
@@ -259,6 +259,6 @@
             "Sí",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]
