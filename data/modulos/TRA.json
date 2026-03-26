@@ -80,15 +80,6 @@
         "evidencia": true
     },
     {
-        "id": 241,
-        "codigo": "TRA212",
-        "modulo": "TRA",
-        "texto": "Según su Política Institucional de Gestión del Riesgo, durante la vigencia evaluada, ¿Cuántos riesgos de corrupción se materializaron?",
-        "tipo": "Abierta numérica",
-        "opciones": [],
-        "evidencia": true
-    },
-    {
         "id": 242,
         "codigo": "TRA213",
         "modulo": "TRA",
