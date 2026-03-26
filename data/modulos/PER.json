@@ -18,7 +18,7 @@
         "texto": "¿Cuál ha sido la utilidad para la entidad de los resultados y recomendaciones obtenidas en la Medición del Desempeño Institucional?",
         "tipo": "Abierta texto",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "texto": "¿Cuál es la política que considera ha generado mayor valor a la gestión institucional en su entidad? Explique brevemente su respuesta:",
         "tipo": "Abierta texto",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 4,
@@ -36,6 +36,6 @@
         "texto": "¿Cuál es la política que más dificultades ha presentado para la implementación en su entidad?  Explique brevemente su respuesta:",
         "tipo": "Abierta texto",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     }
 ]

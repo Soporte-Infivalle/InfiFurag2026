@@ -50,7 +50,7 @@
             "Otro. ¿Cuál?",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 8,
@@ -110,6 +110,6 @@
             "Otro. ¿Cuál?:",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

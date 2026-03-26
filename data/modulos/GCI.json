@@ -1,1 +1,387 @@
-[{"id":295,"codigo":"GCI200","modulo":"GCI","texto":"¿Qué acciones ha realizado la entidad para implementar la política de gestión del conocimiento y la innovación?","tipo":"Selección múltiple","opciones":["Identificó y analizó el estado de la implementación de la política a través de herramientas e instrumentos","Analizó el contexto organizacional teniendo en cuenta las condiciones para la implementación de la política: personas, procesos y tecnologías con las que cuenta la entidad","Formuló una planeación estratégica basada en el análisis del estado de implementación de la política y del contexto organizacional","Ejecutó la planeación estratégica establecida para fortalecer o implementar la política y documentó los resultados obtenidos","Realizó seguimiento y evaluación a los resultados obtenidos a través de la ejecución en la planeación estratégica definida para la vigencia","Otras. ¿Cuáles?:","No ha llevado a cabo acciones para implementar la política"],"evidencia":false},{"id":296,"codigo":"GCI201","modulo":"GCI","texto":"¿Qué recursos dispuso la entidad para llevar a cabo la implementación de la Política de Gestión del Conocimiento y la Innovación?","tipo":"Selección múltiple","opciones":["Definió una persona para liderar la implementación de la política de gestión del conocimiento y la innovación","Conformó un equipo de trabajo para liderar la implementación de la política","Contaba con espacios físicos destinados al desarrollo de acciones para la gestión del conocimiento y la innovación publica","Dispuso recursos económicos destinados específicamente para llevar a cabo la implementación de la política","Dispuso de infraestructura tecnológica para desarrollar la gestión del conocimiento y la innovación: repositorios, micrositio, software para analítica institucional, conectividad, entre otros","Definió procesos y procedimientos que permitan el desarrollo de la política","Contaba con instrumentos y herramientas diligenciados, actualizados, sistematizados y/o socializados para llevar a cabo el desarrollo del plan de acción de la política","Ninguna de las anteriores"],"evidencia":false},{"id":297,"codigo":"GCI204","modulo":"GCI","texto":"¿Cuáles de los siguientes elementos describen la cultura organizacional de la gestión del conocimiento y la innovación en la entidad?","tipo":"Selección múltiple","opciones":["La capacitación continua de los servidores para fortalecer sus capacidades de gestión innovadora","La mutua colaboración y el aprendizaje permanente entre los sus equipos de trabajo","El desarrollo de mesas, talleres o espacios de análisis, ideación, co-creación o prototipado de soluciones","La documentación, sistematización o evaluación de las experiencias de gestión e innovación en la entidad","Otra. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":298,"codigo":"GCI205","modulo":"GCI","texto":"Respecto al desarrollo de actividades de investigación durante la vigencia evaluada, la entidad:","tipo":"Selección múltiple","opciones":["Incorporó elementos asociados a la investigación en su planeación estratégica","Identificó sus necesidades de investigación","Gestionó investigaciones a través de equipos internos y/o alianzas estratégicas con otras organizaciones","Generó documentos técnicos, guías, protocolos, manuales, instructivos, artículos, propuestas de cambio normativo, entre otros como resultado de sus investigaciones","Contó con un repositorio donde organiza, clasifica y conserva la documentación generada por sus investigaciones","Socializó los resultados de sus investigaciones a nivel interno y/o externo","Utilizó los resultados de las investigaciones que realiza para desarrollar productos, servicios o tomar decisiones","Involucró tanto a actores internos como externos","Otro. ¿Cuál?:","La entidad no desarrolló actividades de investigación"],"evidencia":false},{"id":299,"codigo":"GCI206","modulo":"GCI","texto":"¿La entidad contó con mecanismos para identificar y priorizar las necesidades de investigación relacionadas con temas estratégicos o misionales?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":300,"codigo":"GCI207","modulo":"GCI","texto":"En relación con los procesos de ideación, creación o validación en el marco de la innovación, la entidad ha incluido a:","tipo":"Selección múltiple","opciones":["Sus servidores","A los tomadores de decisión","A los grupos de valor o de interés","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":true},{"id":301,"codigo":"GCI208","modulo":"GCI","texto":"¿La entidad llevó a cabo procesos de innovación?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false},{"id":302,"codigo":"GCI209","modulo":"GCI","texto":"¿Qué actividades de innovación se han aplicado en la entidad?","tipo":"Selección múltiple","opciones":["Se han implementado prácticas innovadoras de otras entidades","Participación en conferencias o eventos de innovación","Se han realizado pruebas y validaciones de alternativas de solución (prototipos), antes de lanzarse e implementar como “solución final”","Ninguna de las anteriores"],"evidencia":true},{"id":303,"codigo":"GCI211","modulo":"GCI","texto":"Con respecto a las herramientas de uso y apropiación para la gestión del conocimiento y la innovación, la entidad:","tipo":"Selección múltiple","opciones":["Adoptó o diseñó y aplicó herramientas tomando en cuenta los ejes de la política de gestión del conocimiento y la innovación","Validó la calidad y aplicación al interior de la entidad de las herramientas de uso y apropiación","Organizó sus datos, información y conocimiento respecto a prácticas de innovación en diferentes herramientas, para que puedan ser usados de manera constante y organizada por los servidores de la entidad","Estableció necesidades para incorporar nuevas herramientas de uso y apropiación","Hizo un diagnóstico del conocimiento que se encuentra en la entidad y el requerido para el óptimo desempeño de sus funciones en las diferentes áreas","Identificó, clasificó y gestionó el conocimiento tácito y explícito para establecer necesidades de nuevo conocimiento o actualizar el existente","Contó con repositorios de conocimiento, bibliotecas virtuales o alguna base de datos para alojar información","Gestionó y actualizó inventarios para registrar la ubicación de instrumentos con conocimiento estratégico para la entidad","Contó con una página web actualizada para disponer documentos y productos realizados por la entidad de interés para las ciudadanías","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":304,"codigo":"GCI212","modulo":"GCI","texto":"¿Cuáles son las fortalezas para innovar dentro de la entidad?","tipo":"Selección múltiple","opciones":["Existe un liderazgo directivo que promueve y reconoce las iniciativas innovadoras","Se disponen acciones, tiempos y recursos para implementar procesos de innovación","La cultura organizacional promueve la innovación como práctica entre los colaboradores","Se desarrollan capacitaciones orientadas a la gestión y al fortalecimiento del proceso de la innovación","La gestión de la innovación está incluida en la planeación estratégica o en el mapa de procesos de la entidad","Se cuenta con recursos (humanos, infraestructura o económicos) para desarrollar o implementar soluciones innovadoras","Se cuenta con una estrategia de articulación para trabajar temas de innovación con otras entidades","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":305,"codigo":"GCI213","modulo":"GCI","texto":"Durante la vigencia evaluada, ¿Qué factores o barreras incidieron en los esfuerzos para desarrollar innovación en la entidad?","tipo":"Selección múltiple","opciones":["Resistencia al cambio entre líderes, servidores o sus equipos de trabajo","Talento humano insuficiente","Infraestructura física inadecuada","Recursos financieros insuficientes","Regulación vigente","Incentivos y reconocimientos para el personal insuficientes","Liderazgos poco o nada flexibles","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":306,"codigo":"GCI214","modulo":"GCI","texto":"¿Qué acciones desarrolló la entidad para preservar y compartir el conocimiento de los servidores públicos?","tipo":"Selección múltiple","opciones":["Clasificó el conocimiento asociado a la formación, capacitación y experiencia del recurso humano para proponer acciones de formación de acuerdo con su análisis","Diseñó mecanismos, procedimientos o procesos para socializar o transferir (adoptar y adaptar) el conocimiento","Implementó acciones para que los servidores compartan y transfieran el conocimiento","Aplicó herramientas para preservar el conocimiento tácito de los servidores","Identificó y gestionó los riesgos relacionados con la fuga de conocimiento a través del establecimiento planes de mitigación y preservación del conocimiento","Identificó, documentó y socializó buenas prácticas, lecciones aprendidas y casos de éxito","Favoreció la colaboración y aprendizaje entre sus servidores y sus equipos de trabajo a través de canales formales e informales de comunicación efectiva y por medio de espacios (tiempo y lugar) claramente definidos","Realizó procesos de divulgación y transferencia para facilitar el intercambio de conocimiento entre las personas de la entidad, otras entidades y ciudadanías","Otras acciones. ¿Cuáles?:","No ha desarrollado acciones para preservar y compartir el conocimiento"],"evidencia":false},{"id":307,"codigo":"GCI215","modulo":"GCI","texto":"Para mitigar el riesgo de fuga de conocimiento, la entidad desarrollo las siguientes acciones:","tipo":"Selección múltiple","opciones":["Documentó, a manera de un inventario o esquema similar, el conocimiento de los servidores, de carácter estratégico para la entidad","Realizó procesos de socialización y difusión del conocimiento al interior y exterior","Estableció procedimientos de entrega de cargo o de terminación de contrato y mecanismos de transferencia de conocimiento","Documentó el conocimiento explícito a partir del conocimiento tácito de sus servidores","Actualizó sus Tablas de Retención Documental - TRD de acuerdo con el quehacer de la entidad","Otro. ¿Cuál?:","No realizó ninguna actividad para mitigar la fuga de conocimiento"],"evidencia":false},{"id":308,"codigo":"GCI216","modulo":"GCI","texto":"La entidad realizó las siguientes acciones de enseñanza-aprendizaje durante la vigencia evaluada:","tipo":"Selección múltiple","opciones":["Promovió iniciativas para la transferencia, socialización y apropiación del conocimiento entre sus servidores","Generó proyectos de aprendizaje en equipo o aprendizaje interinstitucional","Ejecutó procesos de capacitación para sus servidores e implementó mecanismos de socialización de dichos aprendizajes","Desarrolló herramientas o instrumentos para compartir el conocimiento y mejorar su apropiación en la entidad","Estableció convenios, acuerdos o esquemas de trabajo colaborativo para fortalecer el conocimiento de los servidores de la entidad","Otra. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":309,"codigo":"GCI217","modulo":"GCI","texto":"¿Mediante qué acciones la entidad colaboró con otras entidades para la producción y generación de datos, información, investigaciones, desarrollos tecnológicos y documentos?","tipo":"Selección múltiple","opciones":["Generó proyectos y metas compartidas de fortalecimiento institucional","Colaboró en la gestión de proyectos de investigación o innovación relacionados con su misión institucional","Participó en redes de conocimiento","Participó en comunidades de saberes y prácticas","Otra. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":310,"codigo":"GCI218","modulo":"GCI","texto":"Respecto a sus buenas prácticas y lecciones aprendidas, la entidad:","tipo":"Selección múltiple","opciones":["Identificó sus buenas prácticas (experiencias significativas) y lecciones aprendidas","Documentó sus buenas prácticas (experiencias significativas) y lecciones aprendidas","Dispuso y organizó repositorios de buenas prácticas (experiencias significativas) y lecciones aprendidas","Socializó sus buenas prácticas (experiencias significativas) y lecciones aprendidas al interior de la entidad y/o con grupos interesados externos","No identificó buenas prácticas (experiencias significativas) ni lecciones aprendidas"],"evidencia":true},{"id":311,"codigo":"GCI219","modulo":"GCI","texto":"Indique los datos de contacto institucionales del líder de la política en la entidad:","tipo":"Selección múltiple","opciones":["Nombre de la persona:","Correo electrónico:","Cargo:","Área o dependencia:"],"evidencia":false},{"id":312,"codigo":"GCI220","modulo":"GCI","texto":"¿En cuál o cuáles temáticas de la gestión de la innovación se promovieron formaciones o capacitaciones?","tipo":"Selección múltiple","opciones":["En metodologías para identificar problemas","En generación y diseño de soluciones innovadoras","En aplicación y/o implementación de soluciones innovadoras","En sistematización de experiencias significativas o análisis de resultados en innovación","En evaluación y control de los resultados de innovaciones","Otro. ¿Cuál?:","No, ninguna de las anteriores"],"evidencia":false},{"id":313,"codigo":"GCI222","modulo":"GCI","texto":"Respecto a los procesos de innovación pública la entidad cuenta con:","tipo":"Selección múltiple","opciones":["Instancias/equipos de colaboración interna","Áreas que promuevan el desarrollo de iniciativas de innovación pública","Objetivos estratégicos relacionados con innovación pública","Otro. ¿Cuál?:","Ninguna de las anteriores"],"evidencia":false},{"id":314,"codigo":"GCI223","modulo":"GCI","texto":"Durante el último año, la entidad ha propiciado la participación activa de servidores y ciudadanías en alguna de las siguientes fases de la innovación:","tipo":"Selección múltiple","opciones":["Identificación de problemas, retos u oportunidades","Creación conjunta de soluciones","Validación o experimentación de prototipos de solución","En sistematización de experiencias significativas o análisis de resultados en innovación","Ninguna de las anteriores"],"evidencia":false},{"id":315,"codigo":"GCI224","modulo":"GCI","texto":"Respecto a la analítica de datos, la entidad:","tipo":"Selección múltiple","opciones":["Conoce conceptos básicos y herramientas de aplicación de analítica institucional","Existe un liderazgo directivo que promueve y reconoce las iniciativas de analítica institucional","Se disponen acciones, tiempos y recursos para implementar procesos de analítica institucional","Se desarrollan capacitaciones orientadas al fortalecimiento del proceso de analítica institucional","Ninguna de las anteriores"],"evidencia":false},{"id":316,"codigo":"GCI225","modulo":"GCI","texto":"Respecto a la gestión de la innovación, durante la vigencia evaluada, la entidad:","tipo":"Selección múltiple","opciones":["Tenía algún objetivo estratégico relacionado con innovación","Contaba con un entorno normativo vigente que reglamente y favorezca el desarrollo de la innovación","Disponía de instancias de colaboración interna para el desarrollo de iniciativas de innovación","Promovió el trabajo interinstitucional","Contaba con una estructura que apoye el trabajo entre las diferentes áreas (trabajo colaborativo al interior de la entidad)","Ninguna de las anteriores"],"evidencia":true},{"id":317,"codigo":"GCI226","modulo":"GCI","texto":"¿En cuáles de las siguientes fases de la innovación, la entidad contó con la participación activa de las personas usuarias / beneficiarias?","tipo":"Selección múltiple","opciones":["Identificación de problemas u oportunidades","Creación conjunta de soluciones","Validación de prototipos de solución"],"evidencia":true},{"id":318,"codigo":"GCI227","modulo":"GCI","texto":"¿Durante el último año la entidad llevó a cabo capacitaciones para promover las habilidades y capacidades de sus servidores relacionadas a la gestión de la innovación?","tipo":"Selección única","opciones":["Sí, y cuenta con las evidencias:","No"],"evidencia":false}]
+[
+    {
+        "id": 295,
+        "codigo": "GCI200",
+        "modulo": "GCI",
+        "texto": "¿Qué acciones ha realizado la entidad para implementar la política de gestión del conocimiento y la innovación?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Identificó y analizó el estado de la implementación de la política a través de herramientas e instrumentos",
+            "Analizó el contexto organizacional teniendo en cuenta las condiciones para la implementación de la política: personas, procesos y tecnologías con las que cuenta la entidad",
+            "Formuló una planeación estratégica basada en el análisis del estado de implementación de la política y del contexto organizacional",
+            "Ejecutó la planeación estratégica establecida para fortalecer o implementar la política y documentó los resultados obtenidos",
+            "Realizó seguimiento y evaluación a los resultados obtenidos a través de la ejecución en la planeación estratégica definida para la vigencia",
+            "Otras. ¿Cuáles?:",
+            "No ha llevado a cabo acciones para implementar la política"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 296,
+        "codigo": "GCI201",
+        "modulo": "GCI",
+        "texto": "¿Qué recursos dispuso la entidad para llevar a cabo la implementación de la Política de Gestión del Conocimiento y la Innovación?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Definió una persona para liderar la implementación de la política de gestión del conocimiento y la innovación",
+            "Conformó un equipo de trabajo para liderar la implementación de la política",
+            "Contaba con espacios físicos destinados al desarrollo de acciones para la gestión del conocimiento y la innovación publica",
+            "Dispuso recursos económicos destinados específicamente para llevar a cabo la implementación de la política",
+            "Dispuso de infraestructura tecnológica para desarrollar la gestión del conocimiento y la innovación: repositorios, micrositio, software para analítica institucional, conectividad, entre otros",
+            "Definió procesos y procedimientos que permitan el desarrollo de la política",
+            "Contaba con instrumentos y herramientas diligenciados, actualizados, sistematizados y/o socializados para llevar a cabo el desarrollo del plan de acción de la política",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 297,
+        "codigo": "GCI204",
+        "modulo": "GCI",
+        "texto": "¿Cuáles de los siguientes elementos describen la cultura organizacional de la gestión del conocimiento y la innovación en la entidad?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "La capacitación continua de los servidores para fortalecer sus capacidades de gestión innovadora",
+            "La mutua colaboración y el aprendizaje permanente entre los sus equipos de trabajo",
+            "El desarrollo de mesas, talleres o espacios de análisis, ideación, co-creación o prototipado de soluciones",
+            "La documentación, sistematización o evaluación de las experiencias de gestión e innovación en la entidad",
+            "Otra. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 298,
+        "codigo": "GCI205",
+        "modulo": "GCI",
+        "texto": "Respecto al desarrollo de actividades de investigación durante la vigencia evaluada, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Incorporó elementos asociados a la investigación en su planeación estratégica",
+            "Identificó sus necesidades de investigación",
+            "Gestionó investigaciones a través de equipos internos y/o alianzas estratégicas con otras organizaciones",
+            "Generó documentos técnicos, guías, protocolos, manuales, instructivos, artículos, propuestas de cambio normativo, entre otros como resultado de sus investigaciones",
+            "Contó con un repositorio donde organiza, clasifica y conserva la documentación generada por sus investigaciones",
+            "Socializó los resultados de sus investigaciones a nivel interno y/o externo",
+            "Utilizó los resultados de las investigaciones que realiza para desarrollar productos, servicios o tomar decisiones",
+            "Involucró tanto a actores internos como externos",
+            "Otro. ¿Cuál?:",
+            "La entidad no desarrolló actividades de investigación"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 299,
+        "codigo": "GCI206",
+        "modulo": "GCI",
+        "texto": "¿La entidad contó con mecanismos para identificar y priorizar las necesidades de investigación relacionadas con temas estratégicos o misionales?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 300,
+        "codigo": "GCI207",
+        "modulo": "GCI",
+        "texto": "En relación con los procesos de ideación, creación o validación en el marco de la innovación, la entidad ha incluido a:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Sus servidores",
+            "A los tomadores de decisión",
+            "A los grupos de valor o de interés",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 301,
+        "codigo": "GCI208",
+        "modulo": "GCI",
+        "texto": "¿La entidad llevó a cabo procesos de innovación?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 302,
+        "codigo": "GCI209",
+        "modulo": "GCI",
+        "texto": "¿Qué actividades de innovación se han aplicado en la entidad?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Se han implementado prácticas innovadoras de otras entidades",
+            "Participación en conferencias o eventos de innovación",
+            "Se han realizado pruebas y validaciones de alternativas de solución (prototipos), antes de lanzarse e implementar como “solución final”",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 303,
+        "codigo": "GCI211",
+        "modulo": "GCI",
+        "texto": "Con respecto a las herramientas de uso y apropiación para la gestión del conocimiento y la innovación, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Adoptó o diseñó y aplicó herramientas tomando en cuenta los ejes de la política de gestión del conocimiento y la innovación",
+            "Validó la calidad y aplicación al interior de la entidad de las herramientas de uso y apropiación",
+            "Organizó sus datos, información y conocimiento respecto a prácticas de innovación en diferentes herramientas, para que puedan ser usados de manera constante y organizada por los servidores de la entidad",
+            "Estableció necesidades para incorporar nuevas herramientas de uso y apropiación",
+            "Hizo un diagnóstico del conocimiento que se encuentra en la entidad y el requerido para el óptimo desempeño de sus funciones en las diferentes áreas",
+            "Identificó, clasificó y gestionó el conocimiento tácito y explícito para establecer necesidades de nuevo conocimiento o actualizar el existente",
+            "Contó con repositorios de conocimiento, bibliotecas virtuales o alguna base de datos para alojar información",
+            "Gestionó y actualizó inventarios para registrar la ubicación de instrumentos con conocimiento estratégico para la entidad",
+            "Contó con una página web actualizada para disponer documentos y productos realizados por la entidad de interés para las ciudadanías",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 304,
+        "codigo": "GCI212",
+        "modulo": "GCI",
+        "texto": "¿Cuáles son las fortalezas para innovar dentro de la entidad?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Existe un liderazgo directivo que promueve y reconoce las iniciativas innovadoras",
+            "Se disponen acciones, tiempos y recursos para implementar procesos de innovación",
+            "La cultura organizacional promueve la innovación como práctica entre los colaboradores",
+            "Se desarrollan capacitaciones orientadas a la gestión y al fortalecimiento del proceso de la innovación",
+            "La gestión de la innovación está incluida en la planeación estratégica o en el mapa de procesos de la entidad",
+            "Se cuenta con recursos (humanos, infraestructura o económicos) para desarrollar o implementar soluciones innovadoras",
+            "Se cuenta con una estrategia de articulación para trabajar temas de innovación con otras entidades",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 305,
+        "codigo": "GCI213",
+        "modulo": "GCI",
+        "texto": "Durante la vigencia evaluada, ¿Qué factores o barreras incidieron en los esfuerzos para desarrollar innovación en la entidad?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Resistencia al cambio entre líderes, servidores o sus equipos de trabajo",
+            "Talento humano insuficiente",
+            "Infraestructura física inadecuada",
+            "Recursos financieros insuficientes",
+            "Regulación vigente",
+            "Incentivos y reconocimientos para el personal insuficientes",
+            "Liderazgos poco o nada flexibles",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 306,
+        "codigo": "GCI214",
+        "modulo": "GCI",
+        "texto": "¿Qué acciones desarrolló la entidad para preservar y compartir el conocimiento de los servidores públicos?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Clasificó el conocimiento asociado a la formación, capacitación y experiencia del recurso humano para proponer acciones de formación de acuerdo con su análisis",
+            "Diseñó mecanismos, procedimientos o procesos para socializar o transferir (adoptar y adaptar) el conocimiento",
+            "Implementó acciones para que los servidores compartan y transfieran el conocimiento",
+            "Aplicó herramientas para preservar el conocimiento tácito de los servidores",
+            "Identificó y gestionó los riesgos relacionados con la fuga de conocimiento a través del establecimiento planes de mitigación y preservación del conocimiento",
+            "Identificó, documentó y socializó buenas prácticas, lecciones aprendidas y casos de éxito",
+            "Favoreció la colaboración y aprendizaje entre sus servidores y sus equipos de trabajo a través de canales formales e informales de comunicación efectiva y por medio de espacios (tiempo y lugar) claramente definidos",
+            "Realizó procesos de divulgación y transferencia para facilitar el intercambio de conocimiento entre las personas de la entidad, otras entidades y ciudadanías",
+            "Otras acciones. ¿Cuáles?:",
+            "No ha desarrollado acciones para preservar y compartir el conocimiento"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 307,
+        "codigo": "GCI215",
+        "modulo": "GCI",
+        "texto": "Para mitigar el riesgo de fuga de conocimiento, la entidad desarrollo las siguientes acciones:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Documentó, a manera de un inventario o esquema similar, el conocimiento de los servidores, de carácter estratégico para la entidad",
+            "Realizó procesos de socialización y difusión del conocimiento al interior y exterior",
+            "Estableció procedimientos de entrega de cargo o de terminación de contrato y mecanismos de transferencia de conocimiento",
+            "Documentó el conocimiento explícito a partir del conocimiento tácito de sus servidores",
+            "Actualizó sus Tablas de Retención Documental - TRD de acuerdo con el quehacer de la entidad",
+            "Otro. ¿Cuál?:",
+            "No realizó ninguna actividad para mitigar la fuga de conocimiento"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 308,
+        "codigo": "GCI216",
+        "modulo": "GCI",
+        "texto": "La entidad realizó las siguientes acciones de enseñanza-aprendizaje durante la vigencia evaluada:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Promovió iniciativas para la transferencia, socialización y apropiación del conocimiento entre sus servidores",
+            "Generó proyectos de aprendizaje en equipo o aprendizaje interinstitucional",
+            "Ejecutó procesos de capacitación para sus servidores e implementó mecanismos de socialización de dichos aprendizajes",
+            "Desarrolló herramientas o instrumentos para compartir el conocimiento y mejorar su apropiación en la entidad",
+            "Estableció convenios, acuerdos o esquemas de trabajo colaborativo para fortalecer el conocimiento de los servidores de la entidad",
+            "Otra. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 309,
+        "codigo": "GCI217",
+        "modulo": "GCI",
+        "texto": "¿Mediante qué acciones la entidad colaboró con otras entidades para la producción y generación de datos, información, investigaciones, desarrollos tecnológicos y documentos?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Generó proyectos y metas compartidas de fortalecimiento institucional",
+            "Colaboró en la gestión de proyectos de investigación o innovación relacionados con su misión institucional",
+            "Participó en redes de conocimiento",
+            "Participó en comunidades de saberes y prácticas",
+            "Otra. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 310,
+        "codigo": "GCI218",
+        "modulo": "GCI",
+        "texto": "Respecto a sus buenas prácticas y lecciones aprendidas, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Identificó sus buenas prácticas (experiencias significativas) y lecciones aprendidas",
+            "Documentó sus buenas prácticas (experiencias significativas) y lecciones aprendidas",
+            "Dispuso y organizó repositorios de buenas prácticas (experiencias significativas) y lecciones aprendidas",
+            "Socializó sus buenas prácticas (experiencias significativas) y lecciones aprendidas al interior de la entidad y/o con grupos interesados externos",
+            "No identificó buenas prácticas (experiencias significativas) ni lecciones aprendidas"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 311,
+        "codigo": "GCI219",
+        "modulo": "GCI",
+        "texto": "Indique los datos de contacto institucionales del líder de la política en la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Nombre de la persona:",
+            "Correo electrónico:",
+            "Cargo:",
+            "Área o dependencia:"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 312,
+        "codigo": "GCI220",
+        "modulo": "GCI",
+        "texto": "¿En cuál o cuáles temáticas de la gestión de la innovación se promovieron formaciones o capacitaciones?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "En metodologías para identificar problemas",
+            "En generación y diseño de soluciones innovadoras",
+            "En aplicación y/o implementación de soluciones innovadoras",
+            "En sistematización de experiencias significativas o análisis de resultados en innovación",
+            "En evaluación y control de los resultados de innovaciones",
+            "Otro. ¿Cuál?:",
+            "No, ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 313,
+        "codigo": "GCI222",
+        "modulo": "GCI",
+        "texto": "Respecto a los procesos de innovación pública la entidad cuenta con:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Instancias/equipos de colaboración interna",
+            "Áreas que promuevan el desarrollo de iniciativas de innovación pública",
+            "Objetivos estratégicos relacionados con innovación pública",
+            "Otro. ¿Cuál?:",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 314,
+        "codigo": "GCI223",
+        "modulo": "GCI",
+        "texto": "Durante el último año, la entidad ha propiciado la participación activa de servidores y ciudadanías en alguna de las siguientes fases de la innovación:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Identificación de problemas, retos u oportunidades",
+            "Creación conjunta de soluciones",
+            "Validación o experimentación de prototipos de solución",
+            "En sistematización de experiencias significativas o análisis de resultados en innovación",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 315,
+        "codigo": "GCI224",
+        "modulo": "GCI",
+        "texto": "Respecto a la analítica de datos, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Conoce conceptos básicos y herramientas de aplicación de analítica institucional",
+            "Existe un liderazgo directivo que promueve y reconoce las iniciativas de analítica institucional",
+            "Se disponen acciones, tiempos y recursos para implementar procesos de analítica institucional",
+            "Se desarrollan capacitaciones orientadas al fortalecimiento del proceso de analítica institucional",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 316,
+        "codigo": "GCI225",
+        "modulo": "GCI",
+        "texto": "Respecto a la gestión de la innovación, durante la vigencia evaluada, la entidad:",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Tenía algún objetivo estratégico relacionado con innovación",
+            "Contaba con un entorno normativo vigente que reglamente y favorezca el desarrollo de la innovación",
+            "Disponía de instancias de colaboración interna para el desarrollo de iniciativas de innovación",
+            "Promovió el trabajo interinstitucional",
+            "Contaba con una estructura que apoye el trabajo entre las diferentes áreas (trabajo colaborativo al interior de la entidad)",
+            "Ninguna de las anteriores"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 317,
+        "codigo": "GCI226",
+        "modulo": "GCI",
+        "texto": "¿En cuáles de las siguientes fases de la innovación, la entidad contó con la participación activa de las personas usuarias / beneficiarias?",
+        "tipo": "Selección múltiple",
+        "opciones": [
+            "Identificación de problemas u oportunidades",
+            "Creación conjunta de soluciones",
+            "Validación de prototipos de solución"
+        ],
+        "evidencia": true
+    },
+    {
+        "id": 318,
+        "codigo": "GCI227",
+        "modulo": "GCI",
+        "texto": "¿Durante el último año la entidad llevó a cabo capacitaciones para promover las habilidades y capacidades de sus servidores relacionadas a la gestión de la innovación?",
+        "tipo": "Selección única",
+        "opciones": [
+            "Sí, y cuenta con las evidencias:",
+            "No"
+        ],
+        "evidencia": true
+    }
+]

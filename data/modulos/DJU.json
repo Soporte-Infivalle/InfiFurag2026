@@ -9,7 +9,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 159,
@@ -22,7 +22,7 @@
             "No",
             "No aplica porque la entidad no tiene litigiosidad y la política fue formulada teniendo como insumo factores relevantes que la entidad considera pueden ser fuente futura de litigiosidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 160,
@@ -34,7 +34,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 161,
@@ -46,7 +46,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 162,
@@ -58,7 +58,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 163,
@@ -71,7 +71,7 @@
             "Número de tutelas que invocaron la no garantía del derecho fundamental de petición:",
             "Número de procesos que tengan relación con violencia de género en los que la entidad es parte:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 164,
@@ -84,7 +84,7 @@
             "No",
             "No aplica porque no tienen trámites prejudiciales y extrajudiciales en los que son parte"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 165,
@@ -99,7 +99,7 @@
             "No, la entidad no tiene Comité de Conciliación, aunque tiene la obligación legal",
             "No aplica porque la entidad no tiene la obligación de constituir un comité de conciliación"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 166,
@@ -112,7 +112,7 @@
             "No",
             "No aplica. La entidad no tuvo procesos ni conciliaciones durante el año evaluado"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 167,
@@ -126,7 +126,7 @@
             "No",
             "No aplica porque no tenían solicitudes de conciliación"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 168,
@@ -139,7 +139,7 @@
             "No",
             "No aplica porque la entidad no tiene conflictos con entidades públicas"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 169,
@@ -152,7 +152,7 @@
             "No",
             "No aplica porque no tiene procesos judiciales en los que es parte"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 170,
@@ -164,7 +164,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 171,
@@ -181,7 +181,7 @@
             "Ninguna de las anteriores",
             "No aplica porque la entidad no tiene ni ha tenido procesos en contra"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 172,
@@ -195,7 +195,7 @@
             "No",
             "No aplica porque durante el periodo evaluado, no se admitieron demandas en contra de la entidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 173,
@@ -208,7 +208,7 @@
             "No",
             "No aplica porque la entidad no tiene apoderados externos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 174,
@@ -220,7 +220,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 175,
@@ -234,7 +234,7 @@
             "No",
             "No aplica porque no tiene trámites de cumplimiento y/o pago de sentencias, conciliaciones o laudos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 176,
@@ -248,7 +248,7 @@
             "No",
             "No aplica. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 177,
@@ -260,7 +260,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 178,
@@ -273,7 +273,7 @@
             "No",
             "No aplica por la ausencia de pagos por créditos judiciales"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 179,
@@ -287,7 +287,7 @@
             "No",
             "No aplica por la ausencia de estudios de procedencia de la acción de repetición"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 180,
@@ -313,7 +313,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 182,
@@ -327,7 +327,7 @@
             "Se mantuvo igual / constante",
             "No aplica porque no ha tenido sentencias en contra"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 183,
@@ -339,7 +339,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 184,
@@ -352,7 +352,7 @@
             "Aumentó",
             "Se mantuvo igual / constante"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 185,
@@ -365,6 +365,6 @@
             "Aumentó",
             "Se mantuvo igual / constante"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

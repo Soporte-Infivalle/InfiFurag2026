@@ -17,7 +17,7 @@
             "Ninguna de las anteriores",
             "No aplica. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 382,
@@ -29,7 +29,7 @@
             "Si y cuenta con las evidencias:",
             "No ha implementado estrategias. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 383,
@@ -47,7 +47,7 @@
             "Quejas relacionadas con la violación a los derechos humanos. Indique cuántas:",
             "En la entidad no se han presentado actos de violencia o discriminación"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 386,
@@ -59,7 +59,7 @@
             "Sí, y cuenta con las evidencias:",
             "No ha implementado acciones. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 387,
@@ -71,7 +71,7 @@
             "Sí, y cuenta con las evidencias:",
             "No ha implementado estrategias. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 388,
@@ -83,7 +83,7 @@
             "Sí, y cuenta con las evidencias:",
             "No. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 389,
@@ -96,7 +96,7 @@
             "Sí, pero no cuenta con las evidencias",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 390,
@@ -109,7 +109,7 @@
             "Sí, pero no está formalizado mediante acto administrativo",
             "No cuenta con protocolo de atención, prevención y protección de las violencias basadas en género y discriminación"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 391,
@@ -123,7 +123,7 @@
             "No se han diseñado ni implementado estrategias en este componente",
             "No aplica. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 392,
@@ -137,7 +137,7 @@
             "No se han desarrollado acciones en este componente",
             "No aplica. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 393,
@@ -151,7 +151,7 @@
             "No se han desarrollado acciones en este componente",
             "No aplica. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 394,
@@ -165,7 +165,7 @@
             "Está documentada, aprobada por el Comité Institucional de Gestión y Desempeño y ha sido socializada con sus servidores y contratistas:",
             "No se cuenta con política ambiental institucional"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 395,
@@ -177,7 +177,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 396,
@@ -209,7 +209,7 @@
             "Otro. ¿Cuál?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 398,
@@ -226,7 +226,7 @@
             "Compras sostenibles o criterios ambientales en la contratación",
             "La entidad no cuenta con indicadores de desempeño ambiental"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 399,
@@ -238,7 +238,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 400,
@@ -250,7 +250,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 401,
@@ -262,7 +262,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 402,
@@ -274,7 +274,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 403,
@@ -304,7 +304,7 @@
             "Reporte ante la UPME del informe de auditoría energética y de las medidas de eficiencia energética",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 405,
@@ -317,7 +317,7 @@
             "Plan de acción para alcanzar el carbono neutralidad a más tardar en 2030",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 406,
@@ -329,7 +329,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 407,

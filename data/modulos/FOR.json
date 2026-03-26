@@ -41,7 +41,7 @@
             "Está en proceso de ajuste y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 55,
@@ -56,7 +56,7 @@
             "Trabajadores oficiales",
             "Otros. ¿Cuáles?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 56,
@@ -72,7 +72,7 @@
             "Recursos provenientes de Organismos de Cooperación",
             "Otra. ¿Cuál?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 57,
@@ -88,7 +88,7 @@
             "Adaptación al cambio, permitiendo que la entidad responda a nuevos desafíos",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 58,
@@ -101,7 +101,7 @@
             "Parcialmente, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 59,
@@ -115,7 +115,7 @@
             "En implementación, pero sin formalizar",
             "En diseño inicial sin implementar"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 60,
@@ -168,7 +168,7 @@
             "Se revisan periódicamente para identificar posibles mejoras",
             "Se definen tiempos de ejecución de las actividades (cargas)"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 63,
@@ -181,7 +181,7 @@
             "Parcialmente, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 64,
@@ -199,7 +199,7 @@
             "Implementación y monitoreo de los controles a los riesgos",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 65,
@@ -211,7 +211,7 @@
             "Sí. Indique el  año del último rediseño y si se contrató con un tercero la realización del estudio o se desarrolló internamente (In house):",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 66,
@@ -223,7 +223,7 @@
             "Sí, y cuenta con las evidencias. Indique en que porcentaje se disminuyó para la vigencia evaluada:",
             "No se ha reducido. Indique cuál es la razón principal para recurrir a la contratación por prestación de servicios en actividades misionales o recurrentes:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 67,
@@ -237,7 +237,7 @@
             "No aplica por no tener organización sindical",
             "No aplica porque no se ha modificado la estructura de planta"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 69,
@@ -249,7 +249,7 @@
             "Fecha de la última actualización de la estructura organizacional:",
             "Cuántos niveles jerárquicos (decisorios) tiene:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 70,
@@ -262,6 +262,6 @@
             "Parcialmente. Está en proceso de análisis actualmente",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

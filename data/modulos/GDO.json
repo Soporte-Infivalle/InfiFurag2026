@@ -9,7 +9,7 @@
             "Elaboró, actualizó o realizó acciones conforme al diagnóstico integral de la gestión documental y administración de archivos durante la vigencia evaluada y cuenta con las evidencias:",
             "No cuenta con el diagnóstico integral de la Gestión Documental y Administración de Archivos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 267,
@@ -26,7 +26,7 @@
             "La identificación, medición y control de los riesgos asociados a la gestión documental",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 268,
@@ -41,7 +41,7 @@
             "Tomó decisiones desde la alta dirección e instancias competentes (Comité de archivo o Comité Institucional de Gestión y Desempeño) a partir de los resultados del seguimiento y control al PINAR y se adelantaron acciones de mejora continua que garantizaron el cumplimiento de los planes y proyectos del PINAR y cuenta con las evidencias:",
             "No cuenta con Plan Institucional de Archivos - PINAR"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 269,
@@ -56,7 +56,7 @@
             "Si, a través de las decisiones adoptadas por el Comité Institucional de Gestión y Desempeño o Comité de Archivo, y se adelantaron acciones de mejora continua que garantizaron los recursos necesarios para su implementación, y cuenta con evidencias:",
             "No se cuenta con el Programa de Gestión Documental -PGD"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 270,
@@ -71,7 +71,7 @@
             "Tomó decisiones desde la alta dirección e instancias competentes (Comité de archivo o Comité Institucional de Gestión y Desempeño) a partir de los resultados del seguimiento y control y se adelantaron acciones de mejora continua que garantizaron el cumplimiento de la política y cuenta con las evidencias:",
             "No cuenta con Política de Gestión Documental"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 271,
@@ -99,7 +99,7 @@
             "Servicios de custodia:",
             "No ejecutó presupuesto para ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 272,
@@ -111,7 +111,7 @@
             "Sí, se ha vinculado personal de planta con las competencias en Archivos y Gestión Documental",
             "No tiene personal de planta conforme a las competencias definidas en la resolución. Explique las razones:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 273,
@@ -126,7 +126,7 @@
             "Obtener retroalimentación sobre la efectividad de los temas impartidos en gestión documental",
             "No se han incluido temas de gestión documental en el Plan de Capacitación Institucional"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 274,
@@ -145,7 +145,7 @@
             "Cuenta con las TRD, pero no se aplican",
             "No tiene TRD. Explique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 275,
@@ -160,7 +160,7 @@
             "El 90% o más de la documentación",
             "No tiene inventario de la documentación. Explique las razones:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 276,
@@ -175,7 +175,7 @@
             "El 90% o más",
             "No tiene inventario de la documentación. Explique las razones:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 277,
@@ -187,7 +187,7 @@
             "Sí, y cuenta con las evidencias:",
             "No se efectuó ningún proceso de descripción conforme a la ISAD-G"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 278,
@@ -206,7 +206,7 @@
             "Ninguna, no se destinaron recursos para la intervención del fondo acumulado",
             "No tiene Fondos Documentales Acumulados -FDA"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 279,
@@ -221,7 +221,7 @@
             "Si, a través del seguimiento y control de los riegos asociados a la conservación de los documentos y archivos, en el Programa de Prevención de Emergencias y Atención de Desastres, y cuenta con las evidencias:",
             "No, no se cuenta con el Plan de Conservación Documental"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 280,
@@ -240,7 +240,7 @@
             "Detectó que los documentos presentan situación de riesgo ocasionada por fenómenos naturales",
             "Detectó que los documentos presentan situación de riesgo ocasionada por otras razones. Especifique cuáles:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 281,
@@ -256,7 +256,7 @@
             "Elaboró el Modelo de Requisitos para la Gestión de Documentos Electrónicos",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 282,
@@ -271,7 +271,7 @@
             "Generó o tramitó documentos electrónicos, pero carece de un Sistema de Gestión de Documentos electrónicos de archivo - SGDEA",
             "La entidad no generó o tramitó documentos electrónicos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 283,
@@ -285,7 +285,7 @@
             "Contó con procedimientos básicos como alistamiento, escaneo y control de calidad, documentados para el desarrollo de actividades de digitalización",
             "Registró en el Programa de Reprografía del Programa de Gestión Documental, los procesos de digitalización conforme a la disposición final de los documentos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 284,
@@ -297,7 +297,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 285,
@@ -313,7 +313,7 @@
             "Ninguna de las anteriores",
             "No aplica porque no cuenta con documentación de carácter histórico"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 286,
@@ -326,7 +326,7 @@
             "Especificar cuántos tecnólogos:",
             "Especificar cuantos técnicos:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 287,
@@ -341,7 +341,7 @@
             "Identificar las unidades documentales objeto de eliminación conforme a las TRD o TVD",
             "Ninguna de las anteriores. Explique las razones"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 288,
@@ -353,7 +353,7 @@
             "Sí",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 289,
@@ -368,7 +368,7 @@
             "Si, a través del seguimiento y control de los riegos asociados a la preservación digital a largo plazo de los documentos, identificados en el diagnóstico, y cuenta con las evidencias:",
             "No, no se cuenta con el Plan de Preservación Digital a Largo Plazo. Explique las razones:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 290,
@@ -380,7 +380,7 @@
             "No, no se usan formatos electrónicos para la preservación digital a largo plazo de los documentos de archivo",
             "Si, los documentos electrónicos de archivo tienen en cuenta los formatos de preservación digital a largo plazo"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 291,
@@ -392,7 +392,7 @@
             "Sí, y cuenta con las evidencias:",
             "No, no se encuentra articulada la política de archivos y gestión documental con la política de Seguridad Digital"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 292,
@@ -407,7 +407,7 @@
             "Sí, tomó decisiones desde la alta dirección e instancias competentes (Comité de archivo o Comité Institucional de Gestión y Desempeño) a partir de los resultados del seguimiento y control y se adelantaron acciones de mejora continua que garantizaron la infraestructura adecuada, y cuenta con las evidencias:",
             "No, dadas las capacidades institucionales"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 293,
@@ -421,7 +421,7 @@
             "A través de las decisiones adoptadas por el Comité Institucional de Gestión y Desempeño o Comité de Archivo, se adelantaron acciones de mejora continua que garantizaron las condiciones de seguridad y salud en el trabajo del personal a cargo de los archivos",
             "No se implementaron acciones para mitigar riesgos laborales del personal a cargo de los archivos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 294,

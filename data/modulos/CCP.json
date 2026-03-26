@@ -28,7 +28,7 @@
             "Publicó el Plan Anual de Adquisiciones en fecha posterior al 31 de enero de la vigencia evaluada",
             "No publicó el Plan Anual de Adquisiciones"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 411,
@@ -40,7 +40,7 @@
             "SECOP I. Ingrese el enlace de publicación:",
             "SECOP II. Ingrese el enlace de publicación:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 412,
@@ -54,7 +54,7 @@
             "Excluir obras, bienes y/o servicios",
             "Modificar el presupuesto anual de adquisiciones"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 413,
@@ -86,7 +86,7 @@
             "No, la entidad cuenta con un régimen de contratación exceptuado del Estatuto General de Contratación de la Administración Pública, por lo que no está obligada a aplicar los documentos tipo",
             "No. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 415,
@@ -98,7 +98,7 @@
             "Sí, y cuenta con las evidencias. Ingrese el enlace de procesos de contratación:",
             "No. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 416,
@@ -120,7 +120,7 @@
             "Plan de pagos",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 417,
@@ -133,7 +133,7 @@
             "No",
             "No aplica. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 418,
@@ -145,7 +145,7 @@
             "Sí, y cuenta con las evidencias. Ingrese enlace con los procesos cerrados:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 419,
@@ -157,7 +157,7 @@
             "¿Cuántos contratos gestionó en total a través del SECOP II?:",
             "¿En cuántos contratos la entidad hizo el respectivo cierre en el SECOP II?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 420,
@@ -170,7 +170,7 @@
             "No",
             "No aplica. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 421,
@@ -185,7 +185,7 @@
             "Ninguna de las anteriores",
             "No aplica. Justifique la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 422,
@@ -194,7 +194,7 @@
         "texto": "¿Qué porcentaje del presupuesto total para la vigencia 2025 (incluidos recursos de funcionamiento e inversión) gestionó la entidad a través de la Tienda Virtual del Estado Colombiano?",
         "tipo": "Abierta numérica",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 423,
@@ -206,6 +206,6 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

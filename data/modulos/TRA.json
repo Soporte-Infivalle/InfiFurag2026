@@ -6,7 +6,7 @@
         "texto": "Según su Política Institucional de Gestión del Riesgo, ¿cuántos riesgos de corrupción tiene identificados la entidad?",
         "tipo": "Abierta numérica",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 237,
@@ -62,7 +62,7 @@
             "Ausencia de publicación de los procesos precontractuales, contractuales o postcontractuales en Secop I y II",
             "Ausencia o debilidad de medidas y/o políticas para la identificación y manejo de conflictos de interés"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 240,
@@ -77,7 +77,7 @@
             "Evaluación",
             "Otros. ¿Cuáles?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 241,
@@ -86,7 +86,7 @@
         "texto": "Según su Política Institucional de Gestión del Riesgo, durante la vigencia evaluada, ¿Cuántos riesgos de corrupción se materializaron?",
         "tipo": "Abierta numérica",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 242,
@@ -102,7 +102,7 @@
             "Otra autoridad. ¿Cuál?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 243,
@@ -131,7 +131,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 245,
@@ -143,7 +143,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 246,
@@ -156,7 +156,7 @@
             "Parcialmente, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 247,
@@ -185,7 +185,7 @@
             "Envía las comunicaciones o repuestas a sus grupos de valor en un formato que garantiza su preservación digital a largo plazo y que a su vez es accesible (PDF/A-1b o PDF/A1a)",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 249,
@@ -207,7 +207,7 @@
             "Principio de responsabilidad en el uso de la información",
             "No se aplican estos principios"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 250,
@@ -223,7 +223,7 @@
             "Cuatro veces al año",
             "La entidad no tiene conocimiento en relación a la elaboración de un informe sobre acceso a la información, quejas y reclamos"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 251,
@@ -238,7 +238,7 @@
             "Sección de noticias",
             "Ninguno de los anteriores. Describa la razón:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 252,
@@ -315,7 +315,7 @@
             "Control social",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 255,
@@ -327,7 +327,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 256,
@@ -340,7 +340,7 @@
             "No",
             "Dentro de la caracterización de los grupos de valor y de interés realizada por la entidad, no se ha identificado población étnica que habla lenguas distintas al castellano"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 257,
@@ -352,7 +352,7 @@
             "Sí, y cuenta con las evidencias:",
             "No implementa las directrices de accesibilidad web"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 258,
@@ -368,7 +368,7 @@
             "Programa de Gestión Documental",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 260,
@@ -380,7 +380,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 261,
@@ -393,7 +393,7 @@
             "Programa de Transparencia y Ética Empresarial",
             "No tiene conocimiento del tema"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 262,
@@ -406,7 +406,7 @@
             "El Programa fue aprobado por la Alta Dirección, pero no se ha publicado",
             "No, aún no se cuenta con un Programa de Transparencia y Ética"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 263,
@@ -418,7 +418,7 @@
             "Sí",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 264,
@@ -434,7 +434,7 @@
             "Publicación",
             "Ejecución"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 265,
@@ -448,6 +448,6 @@
             "Manuales y guías",
             "Diagnósticos"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

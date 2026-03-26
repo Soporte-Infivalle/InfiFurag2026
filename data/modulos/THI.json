@@ -15,7 +15,7 @@
             "Pueblo Rom (gitano):",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 355,
@@ -27,7 +27,7 @@
             "Sí",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 356,
@@ -43,7 +43,7 @@
             "Asistencial:",
             "Otro nivel:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 357,
@@ -60,7 +60,7 @@
             "Psicosocial (mental):",
             "Múltiple:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 358,
@@ -72,7 +72,7 @@
             "Total de recursos:",
             "No le aplica"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 359,
@@ -87,7 +87,7 @@
             "Técnico:",
             "Asistencial:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 360,
@@ -99,7 +99,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 361,
@@ -108,7 +108,7 @@
         "texto": "Indique el número total de servidores públicos y familiares beneficiados por los programas de bienestar:",
         "tipo": "Abierta numérica",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 362,
@@ -138,7 +138,7 @@
             "Técnico:",
             "Asistencial:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 364,
@@ -152,7 +152,7 @@
             "Técnico:",
             "Asistencial:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 365,
@@ -165,7 +165,7 @@
             "Total contratistas:",
             "Contratistas con más de un contrato de apoyo a la gestión y prestación de servicios profesionales:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 366,
@@ -177,7 +177,7 @@
             "Sí, indique el total cargos de planta al 31 de diciembre (de acuerdo con actos administrativos de creación de planta temporal):",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 367,
@@ -193,7 +193,7 @@
             "Cuenta con mecanismos para coordinar políticas de género y derechos de las mujeres. Especifique el tipo de mecanismo:",
             "Ninguno de los anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 368,
@@ -205,7 +205,7 @@
             "Sí. Indique cuántas organizaciones sindicales base tiene la entidad:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 369,
@@ -214,7 +214,7 @@
         "texto": "A continuación, indique por cada organización sindical base el número de afiliados. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos a 31 de diciembre de 2025:",
         "tipo": "Abierta texto",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 370,
@@ -223,7 +223,7 @@
         "texto": "A continuación, por cada organización sindical indique el número de afiliados que pagaron cuota con corte a 31 de diciembre de 2025. Se le desplegará un cuadro de texto en el que deberá incluir el nombre del sindicato y el número de afiliados activos que pagaron la cuota:",
         "tipo": "Abierta texto",
         "opciones": [],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 371,
@@ -235,7 +235,7 @@
             "Sí, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 372,
@@ -249,7 +249,7 @@
             "No contó con un área responsable, pero la función está asignada a un servidor público profesional (sin equipo de trabajo)",
             "Se contratan algunas actividades por orden de prestación de servicios"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 373,
@@ -264,7 +264,7 @@
             "Nombramiento en planta temporal",
             "Otro. ¿Cuál?"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 374,
@@ -279,7 +279,7 @@
             "Técnico",
             "Asistencial"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 375,
@@ -295,7 +295,7 @@
             "Formación media (bachiller)",
             "Formación básica (noveno grado)"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 376,
@@ -314,7 +314,7 @@
             "Ingeniería de Sistemas",
             "Otro. ¿Cuál?"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 377,
@@ -330,7 +330,7 @@
             "Entre 11 - 20 años",
             "Más de 21 años"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 378,
@@ -342,7 +342,7 @@
             "Empleados vinculados a la planta de personal:",
             "Contratistas de prestación de servicios:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 379,
@@ -359,7 +359,7 @@
             "Asistencial adscrito a un área de apoyo",
             "Otro. ¿Cuál?"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 380,
@@ -384,6 +384,6 @@
             "Menos de un (1) millón",
             "Entre cincuenta (50) y cien (100) millones"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]

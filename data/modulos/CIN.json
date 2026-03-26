@@ -15,7 +15,7 @@
             "Otros. ¿Cuáles?:",
             "La entidad no evaluó el cumplimiento de la política de integridad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 320,
@@ -70,7 +70,7 @@
             "Otros. ¿Cuáles?:",
             "No hace seguimiento o evaluación a la gestión del talento humano en la entidad"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 323,
@@ -87,7 +87,7 @@
             "Otros. ¿Cuáles?:",
             "La entidad no gestionó los riesgos institucionales"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 324,
@@ -123,7 +123,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 326,
@@ -138,7 +138,7 @@
             "Se tomaron en cuenta otros elementos. ¿Cuáles?:",
             "No se ha adoptado esta estructura metodológica"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 327,
@@ -170,7 +170,7 @@
             "Riesgos fiscales",
             "Ninguno de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 329,
@@ -188,7 +188,7 @@
             "Otros. ¿Cuáles?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 330,
@@ -239,7 +239,7 @@
             "Se tuvieron en cuenta los riesgos asociados a posibles actos de corrupción, fraude, lavado de activos y financiación del terrorismo LA-FT-FA",
             "Los líderes de proceso (primera línea) no hicieron seguimiento a los controles"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 333,
@@ -255,7 +255,7 @@
             "Se ejecutaron acciones para mejorar la gestión integral del riesgo y, en especial, el diseño de controles por parte de los líderes de proceso",
             "No se adelantaron seguimientos por parte de la segunda línea"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 334,
@@ -268,7 +268,7 @@
             "Parcialmente, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 335,
@@ -282,7 +282,7 @@
             "Solamente documentados",
             "Ni documentados, ni actualizados"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 336,
@@ -301,7 +301,7 @@
             "Contar con los soportes documentales de los registros contables, debidamente organizados y archivados de conformidad con las normas que regulan la materia",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 337,
@@ -320,7 +320,7 @@
             "Otro. ¿Cuál?:",
             "No contó con mecanismos para la gestión de la información"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 338,
@@ -335,7 +335,7 @@
             "Otro. ¿Cuál?:",
             "No se contó con mecanismos de verificación del proceso de gestión de la información"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 339,
@@ -366,7 +366,7 @@
             "Otro. ¿Cuál?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 341,
@@ -382,7 +382,7 @@
             "Ninguna de las anteriores",
             "La entidad no recibió ninguna denuncia durante la vigencia evaluada"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 342,
@@ -398,7 +398,7 @@
             "La valoración de percepciones por parte de los usuarios o grupos de valor que no contribuye con información relevante para la toma de decisiones",
             "Otro. ¿Cuál?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 343,
@@ -431,7 +431,7 @@
             "Resultados de la gestión y ejecución presupuestal, durante y al finalizar la vigencia",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 345,
@@ -476,7 +476,7 @@
             "Otro. ¿Cuál?:",
             "Ninguna de las anteriores"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 348,
@@ -502,7 +502,7 @@
             "Revisó, validó o supervisó que los lineamientos emitidos para el funcionamiento del sistema de control interno se estén implementando",
             "No ha definido o no hace seguimiento a lineamientos para en funcionamiento del sistema de control interno"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 350,
@@ -519,7 +519,7 @@
             "Hacer seguimiento, en especial a la prevención y detección de fraude y mala conducta",
             "Otros. ¿Cuáles?:"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 351,
@@ -532,7 +532,7 @@
             "Parcialmente, y cuenta con las evidencias:",
             "No"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 352,
@@ -549,7 +549,7 @@
             "Otro. ¿Cuál?:",
             "No analiza información de los reportes que le son suministrados en temas claves de la gestión institucional"
         ],
-        "evidencia": false
+        "evidencia": true
     },
     {
         "id": 353,
@@ -563,6 +563,6 @@
             "Estableció acciones de mejora para subsanar las deficiencias identificadas en los informes presentados por parte del jefe de control Interno o quien hace sus veces",
             "No analizaron los informes presentados por parte del jefe de control interno o quien hace sus veces"
         ],
-        "evidencia": false
+        "evidencia": true
     }
 ]
